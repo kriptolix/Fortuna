@@ -1,0 +1,123 @@
+# main.py
+#
+# Copyright 2025 k
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+from .iooperations import load_from_disk_async, setup_datasets
+from .gtk.widgets.mainwindow import MainWindow
+from gi.repository import Gtk, Gio, Adw
+import sys
+import gi
+
+gi.require_version('Gtk', '4.0')
+gi.require_version('Adw', '1')
+
+
+class Fortuna(Adw.Application):
+    """The main application singleton class."""
+
+    def __init__(self):
+        super().__init__(application_id='io.github.kriptolix.Fortuna',
+                         flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
+        self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
+        self.create_action('about', self.on_about_action)
+        self.create_action('preferences', self.on_preferences_action)
+
+        setup_datasets()
+
+    def do_activate(self):
+        """Called when the application is activated.
+
+        We raise the application's main window, creating it if
+        necessary.
+        """
+        win = self.props.active_window
+        if not win:
+            win = MainWindow(application=self)
+        win.present()
+
+    def on_about_action(self, *args):
+        """Callback for the app.about action."""
+        about = Adw.AboutDialog(application_name='fortuna',
+                                application_icon='io.github.kriptolix.Fortuna',
+                                developer_name='k',
+                                version='0.1.0',
+                                developers=['k'],
+                                copyright='© 2025 k')
+        # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+        about.set_translator_credits(_('translator-credits'))
+        about.present(self.props.active_window)
+
+    def on_preferences_action(self, widget, _):
+        """Callback for the app.preferences action."""
+        print('app.preferences action activated')
+
+    def create_action(self, name, callback, shortcuts=None):
+        """Add an application action.
+
+        Args:
+            name: the name of the action
+            callback: the function to be called when the action is
+              activated
+            shortcuts: an optional list of accelerators
+        """
+        action = Gio.SimpleAction.new(name, None)
+        action.connect("activate", callback)
+        self.add_action(action)
+        if shortcuts:
+            self.set_accels_for_action(f"app.{name}", shortcuts)
+
+    def load_file(self, button, path):
+
+        def when_loaded(gfile, content):
+
+            if not (gfile):
+                self.paned_box.show_toast(str(content.message))
+                return
+
+            self.last_loaded_file = gfile
+
+            xml_project = xmlet.fromstring(content)
+            xml_situation = xml_project.find("situation")
+
+            self.disc_loaded_content = xml_situation
+            self.in_progress_content = xml_situation
+
+            self._reset_state()
+
+            self._window._on_project_opened()
+
+        ##
+
+        gfile = Gio.File.new_for_path(path)  # open dont ask place
+        load_from_disk_async(gfile, when_loaded)
+
+    def _setup_datasets(self):
+        ''
+        # checa de o diretorio datasets existe nas em .var
+        #
+        # se sim, carrega a lista de diretorios em region
+        # pra cada region, teste se existe uma tradução
+        # pro idioma local, se nao carrega enUS
+        #
+        # se não, copia o diretorio datasets para o local
+
+
+def main(version):
+    """The application's entry point."""
+    app = Fortuna()
+    return app.run(sys.argv)

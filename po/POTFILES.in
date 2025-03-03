@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/io.github.kriptolix.Fortuna.desktop.in
+data/io.github.kriptolix.Fortuna.metainfo.xml.in
+data/io.github.kriptolix.Fortuna.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

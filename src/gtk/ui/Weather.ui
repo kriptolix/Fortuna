@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="Weather" parent="GtkBox">
+    <property name="halign">3</property>
+    <property name="orientation">1</property>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-bottom">20</property>
+        <child>
+          <object class="GtkBox">
+            <style>
+              <class name="linked"/>
+            </style>
+            <child>
+              <object class="GtkDropDown" id="_region">
+                <property name="enable-search">true</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item>Standard</item>
+                      <item>Kyoto</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="_season">
+                <property name="enable-search">true</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item>Summer</item>
+                      <item>Winter</item>
+                      <item>Autumn</item>
+                      <item>Springs</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="_evolution">
+                <property name="label" translatable="yes">Check Weather</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="margin-start">15</property>
+            <property name="spacing">15</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Dramatic Mode</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSwitch" id="_dramatic_mode">
+                <property name="valign">3</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="_label">
+        <property name="label" translatable="yes">The weather is...</property>
+        <style>
+          <class name="title-1"/>
+        </style>
+      </object>
+    </child>
+  </template>  
+</interface>

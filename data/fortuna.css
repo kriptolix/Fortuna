@@ -1,0 +1,7 @@
+.rotate-right {
+  transform: rotate(20deg);
+}
+
+.rotate-left {
+  transform: rotate(-20deg);
+}

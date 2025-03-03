@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="fortuna">
+	<schema id="io.github.kriptolix.Fortuna" path="/io/github/kriptolix/Fortuna/">
+	</schema>
+</schemalist>

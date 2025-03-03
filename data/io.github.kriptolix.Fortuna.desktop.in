@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=fortuna
+Exec=fortuna
+Icon=io.github.kriptolix.Fortuna
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

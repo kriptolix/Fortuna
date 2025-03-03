@@ -1,0 +1,211 @@
+summer:
+- occurrence:
+    evolutions:
+    - Chuva
+    - Tempo quente e abafado
+    - Chuva forte
+    - Sereno morno
+    - Garoa morna
+    - Chuva torrencial
+    - tempo limpo e ameno
+    name: Chuva
+    severity: 0
+- occurrence:
+    evolutions:
+    - Garoa morna
+    - Chuva
+    - Sereno morno
+    - Nublado e quente
+    - Tempo quente e abafado
+    - Tempestade!
+    - Tempo ensolarado e claro
+    name: Garoa morna
+    severity: 0
+- occurrence:
+    evolutions:
+    - Garoa morna
+    - Nublado e quente
+    - Quente e com vento
+    - Chuva
+    - Vento forte!
+    - Tempo quente e abafado
+    - Seco,com ondas de calor
+    name: Tempo quente e abafado
+    severity: 1
+- occurrence:
+    evolutions:
+    - Quente e com vento
+    - Chuva forte
+    - Chuva torrencial!
+    - Nublado e humido
+    - Sereno morno
+    - Chuva
+    - parcialmente nublado e ameno
+    name: Chuva forte
+    severity: 1
+- occurrence:
+    evolutions:
+    - Sereno morno
+    - Chuva forte
+    - Nublado e humido
+    - Agradavelmente morno
+    - Nublado e quente
+    - Garoa morna
+    - Chuva
+    name: Sereno morno
+    severity: 0
+- occurrence:
+    evolutions:
+    - Nublado e quente
+    - Sereno morno
+    - Agradavelmente morno
+    - Quente e seco
+    - Quente e com vento
+    - Tempo quente e abafado
+    - Garoa morna
+    name: Nublado e quente
+    severity: 0
+- occurrence:
+    evolutions:
+    - Nublado e quente
+    - Quente e seco
+    - Seco,com ondas de calor
+    - Chuva forte
+    - Quente e com vento
+    - parcialmente nublado e ameno
+    - Tempo quente e abafado
+    name: Quente e com vento
+    severity: 1
+- occurrence:
+    evolutions:
+    - Seco,com ondas de calor
+    - Chuva torrencial!
+    - Chuva
+    - Tempestade!
+    - Nublado e humido
+    - Chuva forte
+    - Vento forte!
+    name: Chuva torrencial!
+    severity: 2
+- occurrence:
+    evolutions:
+    - Nublado e humido
+    - Chuva torrencial!
+    - Tempestade!
+    - Nublado e com vento
+    - Agradavelmente morno
+    - Sereno morno
+    - Nublado e humido
+    name: Nublado e humido
+    severity: 0
+- occurrence:
+    evolutions:
+    - Agradavelmente morno
+    - Nublado e humido
+    - Nublado e com vento
+    - Brisa morna
+    - Quente e seco
+    - Nublado e quente
+    - Sereno morno
+    name: Agradavelmente morno
+    severity: 0
+- occurrence:
+    evolutions:
+    - Quente e seco
+    - Agradavelmente morno
+    - Brisa morna
+    - Tempo ensolarado e claro
+    - Seco,com ondas de calor
+    - Quente e com vento
+    - Nublado e quente
+    name: Quente e seco
+    severity: 1
+- occurrence:
+    evolutions:
+    - Quente e seco
+    - Tempo ensolarado e claro
+    - Tempo quente e abafado
+    - Chuva torrencial!
+    - Seco,com ondas de calor
+    - tempo limpo e ameno
+    - Quente e com vento
+    name: Seco,com ondas de calor
+    severity: 2
+- occurrence:
+    evolutions:
+    - Tempo ensolarado e claro
+    - Tempestade!
+    - Garoa morna
+    - Vento forte!
+    - Nublado e com vento
+    - Nublado e humido
+    - Chuva torrencial!
+    name: Tempestade!
+    severity: 2
+- occurrence:
+    evolutions:
+    - Nublado e com vento
+    - Tempestade!
+    - Vento forte!
+    - parcialmente nublado e ameno
+    - Brisa morna
+    - Agradavelmente morno
+    - Nublado e humido
+    name: Nublado e com vento
+    severity: 0
+- occurrence:
+    evolutions:
+    - Brisa morna
+    - Nublado e com vento
+    - parcialmente nublado e ameno
+    - tempo limpo e ameno
+    - Tempo ensolarado e claro
+    - Quente e seco
+    - Agradavelmente morno
+    name: Brisa morna
+    severity: 0
+- occurrence:
+    evolutions:
+    - Brisa morna
+    - tempo limpo e ameno
+    - Garoa morna
+    - Tempestade!
+    - Tempo ensolarado e claro
+    - Seco,com ondas de calor
+    - Quente e seco
+    name: Tempo ensolarado e claro
+    severity: 0
+- occurrence:
+    evolutions:
+    - tempo limpo e ameno
+    - Tempo quente e abafado
+    - Vento forte!
+    - Chuva torrencial!
+    - parcialmente nublado e ameno
+    - Nublado e com vento
+    - Tempestade!
+    name: Vento forte!
+    severity: 1
+- occurrence:
+    evolutions:
+    - parcialmente nublado e ameno
+    - Vento forte!
+    - Quente e com vento
+    - Chuva forte
+    - tempo limpo e ameno
+    - Brisa morna
+    - Nublado e com vento
+    name: parcialmente nublado e ameno
+    severity: 0
+- occurrence:
+    evolutions:
+    - tempo limpo e ameno
+    - parcialmente nublado e ameno
+    - Seco,com ondas de calor
+    - Chuva
+    - Vento forte!
+    - Tempo ensolarado e claro
+    - Brisa morna
+    name: tempo limpo e ameno
+    severity: 0
+
