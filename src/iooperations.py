@@ -1,9 +1,13 @@
 from gi.repository import Gio, GLib
 
+
 # import xml.etree.ElementTree as xmlet
 
 # from .gtk.widgets.messagedialog import MessageDialog
 # from .utils import update_recent_projects
+
+import zipfile
+import io
 
 
 def set_file_monitor(gfile: Gio.File):
@@ -111,14 +115,14 @@ def scan_for_tmp():
 def setup_datasets():
 
     data_path = GLib.get_user_data_dir()
-    data_dir = Gio.File.new_for_path(data_path)
-    datasets = data_dir.get_child("datasets")
+    data_file = Gio.File.new_for_path(data_path)
+    datasets = data_file.get_child("datasets")
 
     if not datasets.query_exists():
-        print("não existe")
-        datasets.make_directory()
-    else:
-        print("Existe")
+        zipped_bytes = Gio.resources_lookup_data('/io/github/kriptolix/'
+                                           'Fortuna/data/datasets.zip', 0)
+
+        write_to_disk_async(data_file, zipped_bytes)
 
 
 def write_to_disk(file: Gio.File, content: str):  # don't work
@@ -146,8 +150,7 @@ def write_to_disk(file: Gio.File, content: str):  # don't work
 
 
 def write_to_disk_async(gfile: Gio.File,
-                        content: str,
-                        callback: object):
+                        content: GLib.Bytes):
 
     def finish_replace(gfile, result, data):
 
@@ -155,8 +158,6 @@ def write_to_disk_async(gfile: Gio.File,
             result, tag = gfile.replace_contents_finish(result)
 
         except GLib.GError as error:
-            callback(None, error)
-
             print(str(error.message))
             return
 
@@ -173,12 +174,12 @@ def write_to_disk_async(gfile: Gio.File,
             print(f"Unable to save {display_name}")
 
         else:
-            callback(gfile, None)
+            print(gfile)
     ##
 
-    byte_content = GLib.Bytes.new(content.encode('utf-8'))
+    # byte_content = GLib.Bytes.new(content.encode('utf-8'))
 
-    gfile.replace_contents_bytes_async(byte_content,
+    gfile.replace_contents_bytes_async(content,
                                        None,
                                        False,
                                        Gio.FileCreateFlags.NONE,

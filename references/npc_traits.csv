@@ -147,7 +147,7 @@ Closed,Mental,Negative,
 Adam's apple,Physical,Negative,
 Coarse,Mental,Negative,
 Cocky,Mental,Negative,
-Adorable,Physical,Positive,
+Adorable,Physical,Positive,Trace
 Cold,Mental,Negative,
 Cold hearted,Mental,Negative,
 Combative,Mental,Negative,
@@ -316,7 +316,7 @@ Dreamy,Mental,Negative,
 Dreary,Mental,Negative,
 Driven,Mental,Positive,
 Drug addict,Mental,Negative,
-Adaptable,Physical,Negative,
+Adaptable,Physical,Negative,Trace
 Dubious,Mental,Negative,
 Dull,Mental,Negative,
 Dumb,Mental,Negative,
@@ -1359,21 +1359,21 @@ Zany,Mental,Negative,
 Zealot,Mental,Negative,
 Zealous,Mental,Negative,
 Almond-shaped eyes,Physical,Positive,Eye
-Art collector,Physical,Positive,
+Art collector,Physical,Positive,Behavior
 Athletic build,Physical,Positive,Constituition
-Albinism,Physical,Negative,
+Albinism,Physical,Negative,Appearence
 Athletic gait,Physical,Positive,
 Always hungry,Physical,Negative,State
-Bald patches,Physical,Negative,
+Bald patches,Physical,Negative,Hair
 Beer belly,Physical,Negative,Abdomen
 "Athletic, runner's legs",Physical,Positive,Leg
 Birthmarks,Physical,Negative,Marks
 "Athletic, swimmer's build",Physical,Positive,Constituition
 Blistered skin,Physical,Negative,Skin
-Ill,Physical,Negative,
+Ill,Physical,Negative,Situation
 Beautiful,Physical,Positive,Appearence
 Bright eyes,Physical,Positive,Eye
-Bloodied knuckles,Physical,Negative,
+Bloodied knuckles,Physical,Negative,Hand
 Bloodshot eyes,Physical,Negative,Eye
 Bony hands,Physical,Negative,Hand
 Sterile,Mental,Negative,
@@ -1386,46 +1386,46 @@ Broken nose,Physical,Negative,Nose
 Possessed,Mental,Negative,
 Psychopath,Mental,Negative,
 Bulging eyes,Physical,Negative,Eye
-Bunion,Physical,Negative,
+Bunion,Physical,Negative,Feet
 Burn marks,Physical,Negative,Marks
 Calloused hands,Physical,Negative,Hand
 Cauliflower ear,Physical,Negative,Ear
 Chapped lips,Physical,Negative,Lip
-Cleft lip,Physical,Negative,
-Clubfoot,Physical,Negative,
-Clumsy,Physical,Negative,
+Cleft lip,Physical,Negative,Lip
+Clubfoot,Physical,Negative,Feet
+Clumsy,Physical,Negative,Trace
 Corns on feet,Physical,Negative,Feet
 Cross-eyed,Physical,Negative,Eye
 Crow's feet,Physical,Negative,Feet
 Dirty,Physical,Negative,Situation
-Diseased,Physical,Negative,
+Diseased,Physical,Negative,Situation
 Double chin,Physical,Negative,Chin
 Drooping eyelids,Physical,Negative,Eye
 Drunk,Physical,Negative,Situation
 "Dry, cracked skin",Physical,Negative,Skin
-Filthy,Physical,Negative,
+Filthy,Physical,Negative,Situation
 Flabby arms,Physical,Negative,Arm
-Flaring nostrils,Physical,Negative,
-Flat-footed,Physical,Negative,
+Flaring nostrils,Physical,Negative,Situation
+Flat-footed,Physical,Negative,Feet
 Flushed skin,Physical,Negative,Skin
-Frail frame,Physical,Negative,
-Freckles,Physical,Negative,
-Frown lines,Physical,Negative,
+Frail frame,Physical,Negative,Constituition
+Freckles,Physical,Negative,Marks
+Frown lines,Physical,Negative,Marks
 Gangly limbs,Physical,Negative,
 Gapped teeth,Physical,Negative,Teeth
 Graying hair,Physical,Negative,Hair
 Hairy back,Physical,Negative,Hair
 Hairy moles,Physical,Negative,Hair
-Harelip,Physical,Negative,
+Harelip,Physical,Negative,Lip
 Hollow cheeks,Physical,Negative,Cheek
 Hooked nose,Physical,Negative,Nose
 Hormonal,Physical,Negative,
 Hunchback,Physical,Negative,
 Jaundiced skin,Physical,Negative,Skin
-Knock-kneed,Physical,Negative,
+Knock-kneed,Physical,Negative,Leg
 Lanky stature,Physical,Negative,
 Lazy eye,Physical,Negative,Eye
-Limp,Physical,Negative,
+Limp,Physical,Negative,leg
 Liver spots,Physical,Negative,
 Matted hair,Physical,Negative,Hair
 Mismatched eyes,Physical,Negative,Eye
@@ -1436,14 +1436,14 @@ Moles,Physical,Negative,
 Narrow-set eyes,Physical,Negative,Eye
 Obese,Physical,Negative,Constituition
 Oily skin,Physical,Negative,Skin
-Overbite,Physical,Negative,
+Overbite,Physical,Negative,Mounth
 Overweight,Physical,Negative,Constituition
-Pallor,Physical,Negative,
+Pallor,Physical,Negative,Appearence
 Patchy hair,Physical,Negative,Hair
 Peeling skin,Physical,Negative,Skin
-Pigeon-toed,Physical,Negative,
+Pigeon-toed,Physical,Negative,Feet
 Plain,Physical,Negative,
-Pockmarks,Physical,Negative,
+Pockmarks,Physical,Negative,Marks
 Protruding belly,Physical,Negative,Abdomen
 Protruding ears,Physical,Negative,Ear
 Protruding teeth,Physical,Negative,Teeth
@@ -1464,7 +1464,7 @@ Splayed feet,Physical,Negative,Feet
 Stooped gait,Physical,Negative,
 Stooped posture,Physical,Negative,Posture
 Stooped shoulders,Physical,Negative,Shoulder
-Stutter,Physical,Negative,
+Stutter,Physical,Negative,Voice
 Sunburn,Physical,Negative,Marks
 Sunken cheeks,Physical,Negative,Cheek
 Sunken eyes,Physical,Negative,Eye
@@ -1475,21 +1475,21 @@ Thin lips,Physical,Negative,Lip
 Trembling hands,Physical,Negative,Hand
 Ugly,Physical,Negative,Appearence
 Unclean,Physical,Negative,Situation
-Underbite,Physical,Negative,
+Underbite,Physical,Negative,Mounth
 Uneven beard,Physical,Negative,Beard
 Uneven skin tone,Physical,Negative,Skin
 Varicose veins,Physical,Negative,
-Vitiligo patches,Physical,Negative,
-Warts,Physical,Negative,
+Vitiligo patches,Physical,Negative,Marks
+Warts,Physical,Negative,Marks
 Weak constitution,Physical,Negative,
-Wheezing,Physical,Negative,
+Wheezing,Physical,Negative,Voice
 Wide-set eyes,Physical,Negative,Eye
 Yellowed teeth,Physical,Negative,Teeth
 Overgrown nails,Physical,Negative,Nail
 Rigid posture,Physical,Negative,Posture
 Stiff joints,Physical,Negative,Joint
 Constant sniffling,Physical,Negative,Behavior
-Mumbling speech,Physical,Negative,
+Mumbling speech,Physical,Negative,Voice
 Gravelly voice,Physical,Negative,Voice
 Constant cough,Physical,Negative,Behavior
 Visible veins on hands,Physical,Negative,Hand
@@ -1518,7 +1518,7 @@ Visible scars on hands,Physical,Negative,Hand
 Scars from self-harm,Physical,Negative,Marks
 Constantly tapping foot (nervous tic),Physical,Negative,Behavior
 Always looks tired,Physical,Negative,State
-Swollen ankles,Physical,Negative,
+Swollen ankles,Physical,Negative,Feet
 Constantly scratching an itch,Physical,Negative,Behavior
 Always looks pale,Physical,Negative,State
 Visible stretch marks,Physical,Negative,Marks
@@ -1534,7 +1534,7 @@ Overly pointy ears,Physical,Negative,Ear
 Always has a flushed face,Physical,Negative,State
 Constantly clears throat,Physical,Negative,Behavior
 Always seems out of breath,Physical,Negative,State
-Has a limp wrist,Physical,Negative,
+Has a limp wrist,Physical,Negative,Trace
 Always shivers (even when it's not cold),Physical,Negative,State
 Overly hairy chest,Physical,Negative,Hair
 Constant hiccups,Physical,Negative,Behavior
@@ -1559,7 +1559,7 @@ Always looks disheveled,Physical,Negative,State
 Overly thick neck,Physical,Negative,Neck
 Constantly wrings hands,Physical,Negative,Behavior
 Always has flaky skin,Physical,Negative,State
-Overly knobby knees,Physical,Negative,
+Overly knobby knees,Physical,Negative,Leg
 Always has a vacant stare,Physical,Negative,State
 Constantly bites inner cheek,Physical,Negative,Behavior
 Always has a sweaty brow,Physical,Negative,State
@@ -1592,20 +1592,20 @@ Always has a haunted expression,Physical,Negative,State
 "Bright, sapphire-like eyes",Physical,Positive,Eye
 "Bright, sunflower-like smile",Physical,Positive,Smile
 "Calm, serene demeanor",Physical,Positive,
-"Captivating, magnetic gaze",Physical,Positive,
+"Captivating, magnetic gaze",Physical,Positive,Gaze
 Chiseled jawline,Physical,Positive,
 Clean,Physical,Positive,Situation
 Clear complexion,Physical,Positive,
-Coherent,Physical,Positive,
+Coherent,Physical,Positive,Trace
 Confident posture,Physical,Positive,Posture
 Crystal-clear blue eyes,Physical,Positive,Eye
 Curly hair,Physical,Positive,Hair
 "Deep-set, thoughtful eyes",Physical,Positive,Eye
-"Deep, contemplative gaze",Physical,Positive,
+"Deep, contemplative gaze",Physical,Positive,Gaze
 "Deep, resonant voice",Physical,Positive,Voice
 "Deep, soulful eyes",Physical,Positive,Eye
 Defined cheekbones,Physical,Positive,Cheek
-Delicate wrists,Physical,Positive,
+Delicate wrists,Physical,Positive,Hand
 "Delicate, dove-like grace",Physical,Positive,
 "Delicate, fluttering eyelashes",Physical,Positive,Eye
 "Delicate, lace-like fingers",Physical,Positive,Finger
@@ -1624,9 +1624,9 @@ Dimpled smile,Physical,Positive,Smile
 "Enigmatic, sphinx-like gaze",Physical,Positive,
 "Exotic, tiger-like stripes",Physical,Positive,
 Expressive hands,Physical,Positive,Hand
-"Exquisite, elfin features",Physical,Positive,
+"Exquisite, elfin features",Physical,Positive,Appearence
 "Fiery, passionate eyes",Physical,Positive,Eye
-Firm grip,Physical,Positive,
+Firm grip,Physical,Positive,Trace
 "Firm, toned abdomen",Physical,Positive,Abdomen
 Flowing mane of hair,Physical,Positive,Hair
 Freckle-dusted face,Physical,Positive,Face
@@ -1652,7 +1652,7 @@ Graceful posture,Physical,Positive,Posture
 Hardy,Physical,Positive,
 "Harmonious, tuneful whistle",Physical,Positive,
 Healthy,Physical,Positive,
-Heartwarming grin,Physical,Positive,
+Heartwarming grin,Physical,Positive,Smile
 "Hypnotic, oceanic eyes",Physical,Positive,Eye
 "Invigorating, youthful energy",Physical,Positive,
 Inviting smile,Physical,Positive,Smile
@@ -1684,10 +1684,10 @@ Melodious laugh,Physical,Positive,
 Mesmerizing eyes,Physical,Positive,Eye
 Muscular legs,Physical,Positive,Leg
 "Musical, songbird voice",Physical,Positive,Voice
-Nimble,Physical,Positive,
+Nimble,Physical,Positive,Trace
 Nimble movements,Physical,Positive,
 Petite frame,Physical,Positive,
-Piercing gaze,Physical,Positive,
+Piercing gaze,Physical,Positive,Gaze
 Playful dimples,Physical,Positive,
 "Powerful, bear-like embrace",Physical,Positive,
 "Powerful, Hercules-like strength",Physical,Positive,
@@ -1779,7 +1779,7 @@ Vibrant hair color,Physical,Positive,Hair
 "Warm, sunlit hair highlights",Physical,Positive,Hair
 Wavy hair,Physical,Positive,Hair
 Wealthy,Physical,Positive,
-Well-defined calves,Physical,Positive,
+Well-defined calves,Physical,Positive,Leg
 Well-groomed beard,Physical,Positive,Beard
 Wholesome smile,Physical,Positive,Smile
 "Wholesome, rosy glow",Physical,Positive,
