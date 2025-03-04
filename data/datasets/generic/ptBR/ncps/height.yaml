@@ -1,0 +1,28 @@
+altura:
+  - anão: 2     
+  - baixo: 14   
+  - medio: 68     
+  - alto: 14     
+  - gigante: 2    
+
+constituição:
+  - esqueletico: 10   
+  - magro: 40
+  - atletico: 100
+  - regular: 350
+  - forte: 50
+  - musculoso: 25
+  - alterofilista: 2
+  - corpulento: 60  
+  - gordo: 35 
+  - obeso: 8
+
+idade: 
+ - criança: 4
+ - adolescente: 16
+ - jovem: 16
+ - adulto: 38
+ - meia idade: 16
+ - idoso: 8
+ - ancião: 2
+
