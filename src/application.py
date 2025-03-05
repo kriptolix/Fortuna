@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .iooperations import load_from_disk_async, setup_datasets
+from .iooperations import setup_datasets
 from .gtk.widgets.mainwindow import MainWindow
 from gi.repository import Gtk, Gio, Adw
 import sys
@@ -35,9 +35,7 @@ class Fortuna(Adw.Application):
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)
-
-        setup_datasets()
+        self.create_action('preferences', self.on_preferences_action)        
 
     def do_activate(self):
         """Called when the application is activated.
@@ -45,10 +43,12 @@ class Fortuna(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
+        setup_datasets()
+
         win = self.props.active_window
         if not win:
             win = MainWindow(application=self)
-        win.present()
+        win.present()        
 
     def on_about_action(self, *args):
         """Callback for the app.about action."""
@@ -80,41 +80,6 @@ class Fortuna(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
-
-    def load_file(self, button, path):
-
-        def when_loaded(gfile, content):
-
-            if not (gfile):
-                self.paned_box.show_toast(str(content.message))
-                return
-
-            self.last_loaded_file = gfile
-
-            xml_project = xmlet.fromstring(content)
-            xml_situation = xml_project.find("situation")
-
-            self.disc_loaded_content = xml_situation
-            self.in_progress_content = xml_situation
-
-            self._reset_state()
-
-            self._window._on_project_opened()
-
-        ##
-
-        gfile = Gio.File.new_for_path(path)  # open dont ask place
-        load_from_disk_async(gfile, when_loaded)
-
-    def _setup_datasets(self):
-        ''
-        # checa de o diretorio datasets existe nas em .var
-        #
-        # se sim, carrega a lista de diretorios em region
-        # pra cada region, teste se existe uma tradução
-        # pro idioma local, se nao carrega enUS
-        #
-        # se não, copia o diretorio datasets para o local
 
 
 def main(version):

@@ -1,4 +1,4 @@
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gio, GLib
 
 import time
 import threading
@@ -6,7 +6,7 @@ import yaml
 from collections import OrderedDict
 
 
-def generate_yaml(season, name):    
+def generate_yaml(season, name):
 
     table = {
         "season": {
@@ -108,47 +108,61 @@ summer = [
     ["tempo limpo e ameno", 0, 0, 0, 0],
 ]
 
-winter = [
-    "ensolarado e ameno",
-    "nublado e ameno",
-    "frio e limpo",
-    "claro e com vento",
-    "frio e humido",
-    "nublado e frio",
-    "nevoa fria",
-    "garoa leve",
-    "chuva fria!",
-    "chuva forte!",
-    "vento frio",
-    "chuva de granizo!",
-    "gelado e nublado",
-    "nevesca!!",
-    "vento e neve!",
-    "nevando leve"
+spring = [
+    ["garoa fria", 0, 0, 0, 0],
+    ["quente e humido", 0, 0, 0, 6],
+    ["quente e seco", 1, 0, 0, 5],
+    ["chuva leve", 0, 0, 0, 1],
+    ["umido e ameno", 1, 0, 0, 5],
+    ["nublado e quente", 0, 0, 0, 0],
+    ["ar cheio de polem", 1, 0, 4, 5],
+    ["chuva forte", 1, 0, 0, 1],
+    ["granizo pequeno", 1, 0, 0, 1],
+    ["tempo claro e ameno", 1, 0, 0, 0],
+    ["ensolarado e claro", 1, 0, 0, 0],
+    ["agradavelmente morno", 1, 0, 0, 4],
+    ["chuva com neve", 1, 0, 0, 0],
+    ["chuva de granizo", 1, 0, 0, 0],
+    ["nevoa fria", 1, 0, 0, 0],
+    ["frio e seco", 0, 0, 0, 3],
+    ["nevando e com vento", 0, 0, 0, 2],
+    ["nevando forte", 0, 0, 0, 2],
+    ["nevando leve", 0, 0, 0, 1]
 ]
 
-spring = [
-    "chuva forte!",
-    "vento e neve",
-    "chuva de granizo!",
-    "nevando forte!",
-    "garoa morna",
-    "ameno e humido",
-    "nevoa fria",
-    "claro e ameno",
-    "nevando leve",
-    "ensolarado e claro",
-    "frio e seco",
-    "quente e humido",
-    "noblado e morno",
-    "agradavelmente morno",
-    "quente e seco"
+winter = [
+    ["frio e claro", 0, 0, 0, 0],
+    ["chuva de granizo", 1, 0, 0, 0],
+    ["nevasca", 2, 0, 0, 5],
+    ["nublado e ameno", 0, 0, 0, 0],
+    ["claro e com vento", 0, 0, 0, 0],
+    ["chuva com neve", 1, 0, 0, 0],
+    ["nevando e com vento", 1, 0, 0, 0],
+    ["ensolarado e ameno", 0, 0, 0, 0],
+    ["nevoa fria", 0, 0, 0, 0],
+    ["frio e humido", 0, 0, 0, 0],
+    ["chuva com neve", 1, 0, 0, 0],
+    ["nevando leve", 1, 0, 0, 4],
+    ["garoa leve", 0, 0, 0, 0],
+    ["sereno frio", 1, 0, 0, 0],
+    ["nublado e frio", 0, 0, 0, 0],
+    ["chuva de granizo", 0, 0, 0, 0],
+    ["chuva forte", 1, 0, 0, 2],
+    ["ventos gelados", 0, 0, 0, 0],
+    ["nublado e congelante", 0, 0, 0, 0],
 ]
 
 autumn = [
+    ["ensolarado e ameno", 0, 0, 0, 1],
+    ["garoa", 0, 0, 0, 0],
+    ["tempestade", 2, 0, 0, 4],
+    ["agradavelmente morno", 0, 0, 0, 0],
+    ["parcialmente nublado", 0, 0, 0, 0],
+    ["rajadas de chuva e vento", 1, 0, 0, 0],
+    ["chuva pesada", 1, 0, 0, 0],
     "ventos esporadicos!",
     "neblina fria",
-    "agradavelmente morno",
+
     "ensolarado e claro",
     "nublado e congelante",
     "ventos frios",
@@ -381,3 +395,5 @@ class SaveCountdown():
             self.timer.start()
         else:
             self.reset_timer.set()
+
+

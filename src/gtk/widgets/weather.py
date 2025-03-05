@@ -18,11 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Gtk, Gio, GLib
 
 import locale
 
-from .hexagon import Hexagon
+from ...iooperations import list_diretory_content
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -39,9 +39,70 @@ class Weather(Gtk.Box):
     def __init__(self):
         super().__init__()
 
-        locale.setlocale(locale.LC_ALL, "")
-        language = locale.getlocale(locale.LC_MESSAGES)[0]
+        self._data_user_path = GLib.get_user_data_dir()
 
-        # checkar se ha tradução, se nao, mostrar em ingles
-        
-        
+        self._region_model = Gtk.StringList.new()
+        self._season_model = Gtk.StringList.new()
+
+        self._region.set_model(self._region_model)
+        self._season.set_model(self._season_model)
+
+        self._region.connect('notify::selected-item', self._item_selected)
+        self._season.connect('notify::selected-item', self._item_selected)
+
+        self._setup_region()
+        self._setup_weather()
+
+    def _setup_region(self):
+
+        region_dir = Gio.File.new_for_path(
+            self._data_user_path + "/datasets")
+
+        regions_enum = list_diretory_content(region_dir)
+
+        for region in regions_enum:
+            region_name = region.get_name()
+
+            language_dir = Gio.File.new_for_path(
+                self._data_user_path + "/datasets" + "/" + region_name)
+
+            languages_enum = list_diretory_content(language_dir)
+
+            for language in languages_enum:
+                language_name = language.get_name()
+
+                self._region_model.append(
+                    region_name.capitalize() + " - " + language_name)
+
+    def _setup_weather(self):
+
+        items = self._season_model.get_n_items()
+        print(items)
+
+        if items > 0:
+            
+            self._season_model.splice(0, items, None)
+
+        region_selected = self._region.get_selected_item().get_string()
+
+        region = region_selected.replace(" - ", "/")
+        region = region[0].lower() + region[1:]
+
+        weather_dir = Gio.File.new_for_path(
+            self._data_user_path + "/datasets/" + region + "/weather")
+
+        weather_enum = list_diretory_content(weather_dir)
+
+        for weather in weather_enum:
+            weather_name = weather.get_name()
+
+            self._season_model.append(weather_name)
+
+    def _item_selected(self, dropdown, parameter):
+
+        if dropdown == self._region:
+            print("region")
+            self._setup_weather()
+
+        if dropdown == self._season:
+            print("season")

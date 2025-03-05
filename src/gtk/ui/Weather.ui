@@ -14,30 +14,17 @@
             </style>
             <child>
               <object class="GtkDropDown" id="_region">
-                <property name="enable-search">true</property>
-                <property name="model">
-                  <object class="GtkStringList">
-                    <items>
-                      <item>Standard</item>
-                      <item>Kyoto</item>
-                    </items>
-                  </object>
-                </property>
+                <property name="enable-search">false</property>                
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="_climate">
+                <property name="enable-search">false</property>                
               </object>
             </child>
             <child>
               <object class="GtkDropDown" id="_season">
-                <property name="enable-search">true</property>
-                <property name="model">
-                  <object class="GtkStringList">
-                    <items>
-                      <item>Summer</item>
-                      <item>Winter</item>
-                      <item>Autumn</item>
-                      <item>Springs</item>
-                    </items>
-                  </object>
-                </property>
+                <property name="enable-search">false</property>                
               </object>
             </child>
             <child>

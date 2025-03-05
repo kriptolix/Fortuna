@@ -1,32 +1,77 @@
 from gi.repository import Gio, GLib
 
 
-# import xml.etree.ElementTree as xmlet
+def list_diretory_content(dir):
+    query = Gio.FILE_ATTRIBUTE_STANDARD_NAME + \
+        "," + Gio.FILE_ATTRIBUTE_STANDARD_TYPE
+    enumerator = dir.enumerate_children(
+        query, Gio.FileQueryInfoFlags.NONE, None)
 
-# from .gtk.widgets.messagedialog import MessageDialog
-# from .utils import update_recent_projects
-
-import zipfile
-import io
+    return enumerator
 
 
-def set_file_monitor(gfile: Gio.File):
+def copy_file(src, dest):
+    src_file = Gio.File.new_for_path(src)
+    dest_file = Gio.File.new_for_path(dest)
 
-    def _on_file_changed(file_monitor: Gio.FileMonitor,
-                         file: Gio.File,
-                         other_file: Gio.File | None,
-                         event_type: Gio.FileMonitorEvent):
+    src_file.copy(dest_file, Gio.FileCopyFlags.OVERWRITE, None, None)
 
-        if (event_type == Gio.FileMonitorEvent.Changed):
-            print("file was changed, please reload")
 
-        else:
-            print("test")
+def copy_directory_recursive(src, dest):
 
-    ##
+    def copy_recursive(parent_src, parent_dest, parent_enum):
 
-    file_monitor = gfile.monitor_file(Gio.FileMonitorFlags.NONE, None)
-    file_monitor.connect("changed", _on_file_changed)
+        while True:
+            try:
+                info = parent_enum.next_file(None)
+            except GLib.Error:
+                break
+            if info is None:
+                break
+
+            name = info.get_name()
+            child_src = parent_src.get_child(name)
+            child_dest = parent_dest.get_child(name)
+            file_type = info.get_file_type()
+
+            if file_type == Gio.FileType.DIRECTORY:
+                try:
+                    child_dest.make_directory_with_parents(None)
+                except GLib.Error as e:
+                    if e.code != Gio.io_error_exists:
+                        raise e
+
+                child_enum = child_src.enumerate_children(
+                    query, Gio.FileQueryInfoFlags.NONE, None)
+                copy_recursive(child_src, child_dest, child_enum)
+            elif file_type == Gio.FileType.REGULAR:
+                copy_file(child_src.get_path(), child_dest.get_path())
+
+    ###
+
+    query = Gio.FILE_ATTRIBUTE_STANDARD_NAME + \
+        "," + Gio.FILE_ATTRIBUTE_STANDARD_TYPE
+    enumerator = src.enumerate_children(
+        query, Gio.FileQueryInfoFlags.NONE, None)
+
+    copy_recursive(src, dest, enumerator)
+
+
+def setup_datasets():
+
+    data_user_path = GLib.get_user_data_dir()
+    datasets_user_dir = Gio.File.new_for_path(
+        data_user_path + "/datasets")
+
+    if not datasets_user_dir.query_exists():
+
+        datasets_user_dir.make_directory_with_parents(None)
+
+        data_sys_path = GLib.get_system_data_dirs()
+        datasets_sys_dir = Gio.File.new_for_path(
+            data_sys_path[0] + "/fortuna/datasets")
+
+        copy_directory_recursive(datasets_sys_dir, datasets_user_dir)
 
 
 def load_from_disk_async(gfile: Gio.File,
@@ -85,44 +130,6 @@ def load_from_disk(file: Gio.File):
             f"Unable to load the contents of {path}:"
             "the file is not encoded with UTF-8")
         return
-
-
-def scan_for_tmp():
-
-    recovered_list = []
-
-    # tmp_path = GLib.get_user_cache_dir()
-    data_path = GLib.get_user_data_dir()
-    print(data_path)
-
-    # tmp_dir = Gio.File.new_for_path(tmp_path)
-    data_dir = Gio.File.new_for_path(data_path)
-
-    enumerator = data_dir.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_NAME,
-                                             Gio.FileQueryInfoFlags.NONE)
-
-    '''for info in enumerator:
-        file_name = info.get_name()
-
-        if file_name.startswith("project"):
-
-            path = tmp_path + "/" + file_name
-
-            file = Gio.File.new_for_path(path)
-            recovered_list.append(file)'''
-
-
-def setup_datasets():
-
-    data_path = GLib.get_user_data_dir()
-    data_file = Gio.File.new_for_path(data_path)
-    datasets = data_file.get_child("datasets")
-
-    if not datasets.query_exists():
-        zipped_bytes = Gio.resources_lookup_data('/io/github/kriptolix/'
-                                           'Fortuna/data/datasets.zip', 0)
-
-        write_to_disk_async(data_file, zipped_bytes)
 
 
 def write_to_disk(file: Gio.File, content: str):  # don't work
