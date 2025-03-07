@@ -18,11 +18,21 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk, Gio, GLib
-
-import locale
+from gi.repository import Gtk, Gio, GLib, GObject
 
 from ...iooperations import list_diretory_content
+
+
+class KeyValuePair(GObject.Object):
+    key = GObject.Property(
+        type=str, flags=GObject.ParamFlags.READWRITE, default="")
+    value = GObject.Property(
+        type=str,
+        nick="Value",
+        blurb="Value",
+        flags=GObject.ParamFlags.READWRITE,
+        default="",
+    )
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -42,44 +52,32 @@ class Weather(Gtk.Box):
 
         self._data_user_path = GLib.get_user_data_dir()
 
-        self._scenario_model = Gtk.StringList.new()
-        self._season_model = Gtk.StringList.new()
-        self._region_model = Gtk.StringList.new()
+        self._scenario_model = Gio.ListStore(item_type=KeyValuePair)
+        self._season_model = Gio.ListStore(item_type=KeyValuePair)
+        self._region_model = Gio.ListStore(item_type=KeyValuePair)
 
         self._scenario.set_model(self._scenario_model)
         self._region.set_model(self._region_model)
-        self._season.set_model(self._season_model)
+        # self._season.set_model(self._season_model)
 
         self._scenario.connect('notify::selected-item', self._item_selected)
-        self._season.connect('notify::selected-item', self._item_selected)
+        # self._season.connect('notify::selected-item', self._item_selected)
 
         self._setup_scenario()
         self._setup_region()
 
-    def _setup_scenario(self):
+        list_store_expression = Gtk.PropertyExpression.new(
+            KeyValuePair,
+            None,
+            "value",
+        )
 
-        scenario_dir = Gio.File.new_for_path(
-            self._data_user_path + "/datasets")
+        self._scenario.set_expression(list_store_expression)
+        self._region.set_expression(list_store_expression)
 
-        scenarios_enum = list_diretory_content(scenario_dir)
+    def _osetup_region(self):
 
-        for scenario in scenarios_enum:
-            scenario_name = scenario.get_name()
-
-            language_dir = Gio.File.new_for_path(
-                self._data_user_path + "/datasets" + "/" + scenario_name)
-
-            languages_enum = list_diretory_content(language_dir)
-
-            for language in languages_enum:
-                language_name = language.get_name()
-
-                self._scenario_model.append(
-                    scenario_name.capitalize() + " - " + language_name)
-
-    def _setup_region(self):
-
-        items = self._region_model.get_n_items()        
+        items = self._region_model.get_n_items()
 
         if items > 0:
 
@@ -102,7 +100,7 @@ class Weather(Gtk.Box):
 
     def _setup_season(self):
 
-        items = self._season_model.get_n_items()        
+        items = self._season_model.get_n_items()
 
         if items > 0:
 
@@ -132,11 +130,62 @@ class Weather(Gtk.Box):
         if dropdown == self._scenario:
             print("scenario")
             self._setup_region()
-            self._setup_season()
+            # self._setup_season()
 
         if dropdown == self._region:
             print("region")
-            self._setup_season()
+            # self._setup_season()
 
         if dropdown == self._season:
             print("season")
+
+    def _setup_region(self):
+
+        scenario = self._scenario.get_selected_item().key        
+
+        weather_dir = Gio.File.new_for_path(
+            self._data_user_path + "/datasets/" + scenario + "/weather")
+
+        self._setup_dropdown(weather_dir,
+                             self._region_model)
+
+    def _setup_scenario(self):
+
+        scenario_dir = Gio.File.new_for_path(
+            self._data_user_path + "/datasets")
+
+        self._setup_dropdown(scenario_dir,
+                             self._scenario_model)
+
+    def _setup_dropdown(self, gdirectory, model):         
+
+        items = model.get_n_items()
+
+        if items > 0:
+            model.remove_all()        
+
+        if model == self._scenario_model:
+            s_value = "Scenario"
+
+        if model == self._region_model:
+            s_value = "Region"
+
+        pair = KeyValuePair(key="standard", value= s_value)
+        model.append(pair)
+
+        if not gdirectory.query_exists():
+            return
+
+        content_enum = list_diretory_content(gdirectory)
+
+        for content in content_enum:
+            content_name = content.get_name()
+
+            splited = content_name.capitalize().replace("_", " ")
+
+            print(splited)
+
+            pair = KeyValuePair(key=content_name,
+                                value=splited)
+
+            model.append(pair)
