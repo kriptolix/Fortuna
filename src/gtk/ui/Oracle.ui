@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="Oracle" parent="GtkBox">
+    <property name="orientation">1</property>
+    <property name="spacing">20</property>
+    <property name="halign">3</property>
+    <property name="valign">1</property>
+    <property name="margin-top">30</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Ask the Oracle for a answer </property>
+        <property name="margin-bottom">10</property>
+        <style>
+          <class name="title-1"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="halign">3</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Your chances of a yes: </property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown" id="_chances_combo">            
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkButton" id="_ask_button">
+        <property name="label" translatable="yes">Ask</property>
+        <property name="margin-end">70</property>
+        <property name="margin-start">70</property>
+        <style>
+          <class name="suggested-action"/>
+          <class name="pill"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="_answer_label">
+        <property name="label" translatable="yes">No questions asked yet...</property>
+        <property name="margin-top">50</property>
+        <style>
+          <class name="title-1"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

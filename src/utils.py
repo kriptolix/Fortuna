@@ -86,6 +86,8 @@ def generate_yaml(season, name):
     print(yaml_data)
 
 
+
+
 summer = [
     ["Chuva", 0, 0, 0, 0],
     ["Garoa morna", 0, 0, 0, 0],

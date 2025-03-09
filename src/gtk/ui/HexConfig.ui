@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="HexConfig" parent="GtkBox">
+    <property name="orientation">1</property>
+    <property name="halign">3</property>
+    <property name="spacing">10</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Block Diagram:</property>
+        <style>
+          <class name="heading"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkImage" id="_hexagon">
+        <property name="icon-name">hexagon-mod</property>
+        <property name="pixel-size">128</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Content:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry">
+            <property name="halign">2</property>
+            <property name="hexpand">true</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Severity:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown">
+            <property name="halign">2</property>
+            <property name="hexpand">true</property>
+            <property name="model">
+              <object class="GtkStringList">
+                <items>
+                  <item>Not Severe</item>
+                  <item>Severe</item>
+                  <item>Very Severy</item>
+                </items>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Backgorund color:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkDropDown">
+            <property name="model">
+              <object class="GtkStringList">
+                <items>
+                  <item>Not Severe</item>
+                  <item>Severe</item>
+                  <item>Very Severy</item>
+                </items>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

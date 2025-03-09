@@ -47,7 +47,7 @@ class Fortuna(Adw.Application):
 
         win = self.props.active_window
         if not win:
-            win = MainWindow(application=self)
+            win = MainWindow(application=self)        
         win.present()        
 
     def on_about_action(self, *args):

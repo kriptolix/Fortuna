@@ -21,7 +21,7 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules" : [        
         {
             "name" : "fortuna",
             "builddir" : true,

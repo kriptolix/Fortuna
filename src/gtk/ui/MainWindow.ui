@@ -8,20 +8,106 @@
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
-          <object class="AdwHeaderBar">
+          <object class="GtkActionBar">
+            <child type="center">
+              <object class="GtkBox" id="_top_pages">
+                <property name="homogeneous">true</property>
+                <property name="halign">3</property>
+                <property name="hexpand">true</property>
+                <style>
+                  <class name="linked"/>
+                </style>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_t_oracle">
+                    <property name="label" translatable="yes">Oracle</property>
+                    <property name="active">true</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_t_weather">
+                    <property name="label" translatable="yes">Weather</property>
+                    <property name="group">_toggle_t_oracle</property>                    
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_t_character">
+                    <property name="label" translatable="yes">Caracters</property>
+                    <property name="group">_toggle_t_oracle</property>
+                  </object>
+                </child>
+              </object>
+            </child>
             <child type="end">
-              <object class="GtkMenuButton">
-                <property name="primary">true</property>
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Main Menu</property>
-                <property name="menu-model">primary_menu</property>
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkMenuButton">
+                    <property name="primary">true</property>
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Main Menu</property>
+                    <property name="menu-model">primary_menu</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="_close_button">
+                    <property name="icon-name">window-close-symbolic</property>
+                    <property name="action-name">app.quit</property>
+                    <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
         </child>
         <property name="content">
-          <object class="Weather"></object>
+          <object class="GtkStack" id="_stack">
+            <property name="transition-type">1</property>
+            <child>
+              <object class="Oracle" id="_oracle">                
+              </object>
+            </child>
+            <child>
+              <object class="Weather" id="_weather">                
+              </object>
+            </child>
+            <child>
+              <object class="AdwStatusPage" id="_characters">
+                <property name="title" translatable="yes">Fortuna02</property>
+              </object>
+            </child>
+          </object>
         </property>
+        <child type="bottom">
+          <object class="GtkActionBar">
+            <child type="center">
+              <object class="GtkBox" id="_bottom_pages">
+                <property name="homogeneous">true</property>
+                <property name="halign">3</property>
+                <property name="hexpand">true</property>
+                <property name="visible">true</property>
+                <style>
+                  <class name="linked"/>
+                </style>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_b_oracle">
+                    <property name="icon-name">dialog-question-symbolic</property>                    
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_b_weather">
+                    <property name="icon-name">weather-showers-symbolic</property>
+                    <property name="group">_toggle_b_oracle</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_b_character">
+                    <property name="icon-name">system-users-symbolic</property>
+                    <property name="group">_toggle_b_oracle</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </property>
   </template>
