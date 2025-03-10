@@ -7,51 +7,13 @@
         <property name="orientation">1</property>
         <property name="margin-top">120</property>
         <child>
-          <object class="Hexagon" id="_00"></object>
+          <object class="HexBase" id="_00"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_01"></object>
+          <object class="HexBase" id="_01"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_02"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <property name="margin-top">60</property>
-        <child>
-          <object class="Hexagon" id="_03"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_04"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_05"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_06"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <child>
-          <object class="Hexagon" id="_07"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_08"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_09"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_10"></object>
-        </child>
-        <child>
-          <object class="Hexagon" id="_11"></object>
+          <object class="HexBase" id="_02"></object>
         </child>
       </object>
     </child>
@@ -60,16 +22,54 @@
         <property name="orientation">1</property>
         <property name="margin-top">60</property>
         <child>
-          <object class="Hexagon" id="_12"></object>
+          <object class="HexBase" id="_03"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_13"></object>
+          <object class="HexBase" id="_04"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_14"></object>
+          <object class="HexBase" id="_05"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_15"></object>
+          <object class="HexBase" id="_06"></object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">1</property>
+        <child>
+          <object class="HexBase" id="_07"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_08"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_09"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_10"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_11"></object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">1</property>
+        <property name="margin-top">60</property>
+        <child>
+          <object class="HexBase" id="_12"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_13"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_14"></object>
+        </child>
+        <child>
+          <object class="HexBase" id="_15"></object>
         </child>
       </object>
     </child>
@@ -78,13 +78,13 @@
         <property name="orientation">1</property>
         <property name="margin-top">120</property>
         <child>
-          <object class="Hexagon" id="_16"></object>
+          <object class="HexBase" id="_16"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_17"></object>
+          <object class="HexBase" id="_17"></object>
         </child>
         <child>
-          <object class="Hexagon" id="_18"></object>
+          <object class="HexBase" id="_18"></object>
         </child>
       </object>
     </child>

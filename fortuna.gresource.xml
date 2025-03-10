@@ -14,6 +14,10 @@
     <file preprocess="xml-stripblanks">src/gtk/ui/HexConfig.ui</file>
   </gresource>
   <gresource prefix="io/github/kriptolix/Fortuna/icons/scalable/actions">
-    <file alias="hexagon.svg">data/images/hexagon.svg</file>
+    <file alias="hexagon-mod.svg">data/images/hexagon-mod.svg</file>
+    <file alias="rect-left.svg">data/images/rect-left.svg</file>
+    <file alias="rect-right.svg">data/images/rect-right.svg</file>
+    <file alias="rect-side.svg">data/images/rect-side.svg</file>
+    <file alias="important-small-symbolic.svg">data/images/important-small-symbolic.svg</file>
   </gresource>
 </gresources>

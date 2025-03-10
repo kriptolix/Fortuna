@@ -28,7 +28,7 @@ from .hexagon import HexBase, HexBlocks, HexButtons
 class HexConfig(Gtk.Box):
     __gtype_name__ = 'HexConfig'
 
-    _hexagon = Gtk.Template.Child()
+    _hexbase = Gtk.Template.Child()
     _severity = Gtk.Template.Child()
     _description = Gtk.Template.Child()    
 
@@ -38,10 +38,10 @@ class HexConfig(Gtk.Box):
         self._blocks = HexBlocks()
         self._buttons = HexButtons()
 
-        self._hexagon._under_layer.add_overlay(self._blocks)
-        self._hexagon._upper_layer.add_overlay(self._buttons)
+        self._hexbase._upper_layer.add_overlay(self._blocks)
+        self._hexbase._under_layer.add_overlay(self._buttons)
 
-        self._buttons_list = [
+        self._blocks_list = [
             self._blocks._top_right,
             self._blocks._bottom_right,
             self._blocks._top_side,
@@ -50,7 +50,7 @@ class HexConfig(Gtk.Box):
             self._blocks._bottom_left
         ]
 
-        self._blocks_list = [
+        self._buttons_list = [
             self._buttons._top_right,
             self._buttons._bottom_right,
             self._buttons._top_side,
@@ -59,13 +59,13 @@ class HexConfig(Gtk.Box):
             self._buttons._bottom_left
         ]
 
-        for button in self._blocks_list:
+        for button in self._buttons_list:
             button.connect("clicked", self._activate_block)
 
     def _activate_block(self, button):
 
         label = button.get_label()
-        position = self._blocks_list.index(button)
+        position = self._buttons_list.index(button)        
         block = self._blocks_list[position]
 
         if label == "+":

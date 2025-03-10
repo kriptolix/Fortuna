@@ -20,14 +20,32 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
-from .hexagon import Hexagon
+from .hexagon import HexBase, HexBlocks, HexText
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/HexFlower.ui')
 class HexFlower(Gtk.Box):
     __gtype_name__ = 'HexFlower'
 
-    #label = Gtk.Template.Child()
+    _00 = Gtk.Template.Child()
+    _01 = Gtk.Template.Child()
+    _02 = Gtk.Template.Child()
+    _03 = Gtk.Template.Child()
+    _04 = Gtk.Template.Child()
+    _05 = Gtk.Template.Child()
+    _06 = Gtk.Template.Child()
+    _07 = Gtk.Template.Child()
+    _08 = Gtk.Template.Child()
+    _09 = Gtk.Template.Child()
+    _10 = Gtk.Template.Child()
+    _11 = Gtk.Template.Child()
+    _12 = Gtk.Template.Child()
+    _13 = Gtk.Template.Child()
+    _14 = Gtk.Template.Child()
+    _15 = Gtk.Template.Child()
+    _16 = Gtk.Template.Child()
+    _17 = Gtk.Template.Child()
+    _18 = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()

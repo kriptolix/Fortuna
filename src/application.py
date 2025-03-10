@@ -17,14 +17,16 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from .iooperations import setup_datasets
-from .gtk.widgets.mainwindow import MainWindow
-from gi.repository import Gtk, Gio, Adw
-import sys
 import gi
+import sys
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
+
+from gi.repository import Gtk, Gio, Adw
+from .gtk.widgets.mainwindow import MainWindow
+from .iooperations import setup_datasets
+
 
 
 class Fortuna(Adw.Application):
@@ -35,7 +37,7 @@ class Fortuna(Adw.Application):
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)        
+        self.create_action('preferences', self.on_preferences_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -47,8 +49,8 @@ class Fortuna(Adw.Application):
 
         win = self.props.active_window
         if not win:
-            win = MainWindow(application=self)        
-        win.present()        
+            win = MainWindow(application=self)
+        win.present()
 
     def on_about_action(self, *args):
         """Callback for the app.about action."""

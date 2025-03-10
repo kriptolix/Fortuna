@@ -18,6 +18,7 @@
             <property name="valign">1</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>
@@ -30,6 +31,7 @@
             <property name="valign">2</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>
@@ -48,6 +50,7 @@
             <property name="valign">1</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>
@@ -60,6 +63,7 @@
             <property name="valign">2</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>
@@ -80,6 +84,7 @@
             <property name="valign">1</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>
@@ -92,6 +97,7 @@
             <property name="valign">2</property>
             <property name="halign">3</property>
             <property name="vexpand">true</property>
+            <property name="opacity">0</property>
             <style>
               <class name="circular"/>
             </style>

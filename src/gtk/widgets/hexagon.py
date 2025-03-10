@@ -20,6 +20,16 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
+@Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
+              '/src/gtk/ui/HexText.ui')
+class HexText(Gtk.Box):
+    __gtype_name__ = 'HexText'
+
+    _label = Gtk.Template.Child()    
+
+    def __init__(self):
+        super().__init__()
+
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/HexButtons.ui')
@@ -40,15 +50,30 @@ class HexButtons(Gtk.Box):
         self.motion.connect("enter", self._on_overmouse)
         self.motion.connect("leave", self._on_overmouse)
 
-        self.add_controller(self.motion)
+        self._buttons_list = [
+            self._top_right,
+            self._bottom_right,
+            self._top_side,
+            self._bottom_side,
+            self._top_left,
+            self._bottom_left
+        ]
 
-    def _on_overmouse(self, widget, x=None, y=None):
+        for button in self._buttons_list:
+            motion = Gtk.EventControllerMotion.new()
+            motion.connect("enter", self._on_overmouse)
+            motion.connect("leave", self._on_overmouse)
+            button.add_controller(motion)        
+
+    def _on_overmouse(self, event, x=None, y=None):
+
+        widget = event.get_widget()
 
         if x and y:
-            self._severity.set_opacity(1)
+            widget.set_opacity(1)
             return
 
-        self._severity.set_opacity(0)
+        widget.set_opacity(0)
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -62,6 +87,7 @@ class HexBlocks(Gtk.Box):
     _bottom_side = Gtk.Template.Child()
     _top_left = Gtk.Template.Child()
     _bottom_left = Gtk.Template.Child()
+    _severity = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()

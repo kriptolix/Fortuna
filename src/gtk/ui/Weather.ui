@@ -80,5 +80,10 @@
         </style>
       </object>
     </child>
+    <child>
+              <object class="HexConfig" id="_teste">
+                
+              </object>
+            </child>
   </template>
 </interface>

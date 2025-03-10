@@ -14,7 +14,7 @@
       </object>
     </child>
     <child>
-      <object class="Hexbase" id="_hexagon">        
+      <object class="HexBase" id="_hexbase">        
       </object>
     </child>
     <child>
