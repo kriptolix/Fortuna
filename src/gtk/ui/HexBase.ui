@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="HexBase" parent="GtkBox">
+    <property name="orientation">1</property>
+    <property name="halign">3</property>
+    <child>
+      <object class="GtkOverlay" id="_under_layer">
+        <child>
+          <object class="GtkOverlay" id="_upper_layer">
+            <child>
+              <object class="GtkImage" id="_image">
+                <property name="icon-name">hexagon-mod</property>
+                <property name="pixel-size">128</property>
+              </object>                        
+            </child>
+          </object>
+        </child>        
+      </object>
+    </child>
+  </template>
+</interface>

@@ -52,28 +52,20 @@ class MainWindow(Adw.ApplicationWindow):
                      Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         toggles = [
-            self._toggle_t_weather,
-            self._toggle_t_character,
-            self._toggle_t_oracle
+            [self._toggle_t_weather, self._toggle_b_weather],
+            [self._toggle_t_character, self._toggle_b_character],
+            [self._toggle_t_oracle, self._toggle_b_oracle]
         ]
 
-        for toggle in toggles:
-            toggle.connect("toggled", self._toggle_page)
+        binding_flags = GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL
 
-        self._toggle_t_weather.bind_property("active",
-                                             self._toggle_b_weather,
-                                             "active",
-                                             GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL)
-        
-        self._toggle_t_character.bind_property("active",
-                                               self._toggle_b_character,
-                                               "active",
-                                               GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL)
-        
-        self._toggle_t_oracle.bind_property("active",
-                                               self._toggle_b_oracle,
-                                               "active",
-                                               GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL)
+        for toggle in toggles:
+            toggle[0].connect("toggled", self._toggle_page)
+
+            toggle[0].bind_property("active",
+                                    toggle[1],
+                                    "active",
+                                    binding_flags)
 
     def _toggle_page(self, toggle):
 

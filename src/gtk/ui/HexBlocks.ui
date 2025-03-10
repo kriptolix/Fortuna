@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="HexBlocks" parent="GtkBox">
+    <property name="orientation">1</property>
+    <property name="halign">3</property>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <property name="margin-start">2</property>
+            <child>
+              <object class="GtkImage" id="_top_right">
+                <property name="icon-name">rect-right</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">1</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="_bottom_right">
+                <property name="icon-name">rect-left</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">2</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <child>
+              <object class="GtkImage" id="_top_side">
+                <property name="icon-name">rect-side</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">1</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="_bottom_side">
+                <property name="icon-name">rect-side</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">2</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <child>
+              <object class="GtkImage" id="_top_left">
+                <property name="icon-name">rect-left</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">1</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkImage" id="_bottom_left">
+                <property name="icon-name">rect-right</property>
+                <property name="pixel-size">42</property>
+                <property name="valign">2</property>
+                <property name="vexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

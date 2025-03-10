@@ -7,6 +7,11 @@
     <file preprocess="xml-stripblanks">src/gtk/ui/HexFlower.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/Weather.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/Oracle.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexBase.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexBlocks.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexButtons.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexText.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexConfig.ui</file>
   </gresource>
   <gresource prefix="io/github/kriptolix/Fortuna/icons/scalable/actions">
     <file alias="hexagon.svg">data/images/hexagon.svg</file>

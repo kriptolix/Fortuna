@@ -14,9 +14,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkImage" id="_hexagon">
-        <property name="icon-name">hexagon-mod</property>
-        <property name="pixel-size">128</property>
+      <object class="Hexbase" id="_hexagon">        
       </object>
     </child>
     <child>
@@ -31,7 +29,7 @@
           </object>
         </child>
         <child>
-          <object class="GtkEntry">
+          <object class="GtkEntry" id="_description">
             <property name="halign">2</property>
             <property name="hexpand">true</property>
           </object>
@@ -50,15 +48,15 @@
           </object>
         </child>
         <child>
-          <object class="GtkDropDown">
+          <object class="GtkDropDown" id="_severity">
             <property name="halign">2</property>
             <property name="hexpand">true</property>
             <property name="model">
               <object class="GtkStringList">
                 <items>
-                  <item>Not Severe</item>
-                  <item>Severe</item>
-                  <item>Very Severy</item>
+                  <item>unharmful </item>
+                  <item>dangerous</item>
+                  <item>disastrous</item> 
                 </items>
               </object>
             </property>

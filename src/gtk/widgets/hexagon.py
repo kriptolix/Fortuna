@@ -1,4 +1,4 @@
-# hexagon.py
+# Hexagon.py
 #
 # Copyright 2025 k
 #
@@ -22,49 +22,25 @@ from gi.repository import Gtk
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
-              '/src/gtk/ui/Hexagon.ui')
-class Hexagon(Gtk.Box):
-    __gtype_name__ = 'Hexagon'
+              '/src/gtk/ui/HexButtons.ui')
+class HexButtons(Gtk.Box):
+    __gtype_name__ = 'HexButtons'
 
-    _label = Gtk.Template.Child()
-    _entry = Gtk.Template.Child()
-    _top_center = Gtk.Template.Child()
-    _stack = Gtk.Template.Child()
-    _severity = Gtk.Template.Child()
+    _top_right = Gtk.Template.Child()
+    _bottom_right = Gtk.Template.Child()
+    _top_side = Gtk.Template.Child()
+    _bottom_side = Gtk.Template.Child()
+    _top_left = Gtk.Template.Child()
+    _bottom_left = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()
-
-        self.left_click = Gtk.GestureClick.new()
-        self.left_click.set_button(1)
-        self.left_click.connect("released", self._on_left_click)
-        self._label.add_controller(self.left_click)
 
         self.motion = Gtk.EventControllerMotion.new()
         self.motion.connect("enter", self._on_overmouse)
         self.motion.connect("leave", self._on_overmouse)
 
         self.add_controller(self.motion)
-
-        self._entry.connect("activate", self._activate_entry)
-
-    def _on_left_click(self, *args) -> None:
-
-        content = self._label.get_text()
-
-        if content:
-            self._entry.set_text(content)
-
-        if self._stack.set_visible_child != self._entry:
-            self._stack.set_visible_child(self._entry)
-            self._entry.set_editable(True)
-
-    def _activate_entry(self, *args):
-        print("enter")
-        content = self._entry.get_text()
-        self._label.set_text(content)
-        self._stack.set_visible_child(self._label)
-        self._entry.set_editable(False)
 
     def _on_overmouse(self, widget, x=None, y=None):
 
@@ -73,3 +49,32 @@ class Hexagon(Gtk.Box):
             return
 
         self._severity.set_opacity(0)
+
+
+@Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
+              '/src/gtk/ui/HexBlocks.ui')
+class HexBlocks(Gtk.Box):
+    __gtype_name__ = 'HexBlocks'
+
+    _top_right = Gtk.Template.Child()
+    _bottom_right = Gtk.Template.Child()
+    _top_side = Gtk.Template.Child()
+    _bottom_side = Gtk.Template.Child()
+    _top_left = Gtk.Template.Child()
+    _bottom_left = Gtk.Template.Child()
+
+    def __init__(self):
+        super().__init__()
+
+
+@Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
+              '/src/gtk/ui/HexBase.ui')
+class HexBase(Gtk.Box):
+    __gtype_name__ = 'HexBase'
+
+    _image = Gtk.Template.Child()
+    _upper_layer = Gtk.Template.Child()
+    _under_layer = Gtk.Template.Child()
+
+    def __init__(self):
+        super().__init__()
