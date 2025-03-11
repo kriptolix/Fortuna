@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="ToolkitWindow" parent="AdwWindow">
+    <property name="title" translatable="yes">Fortuna</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <property name="content">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child>
+              <object class="GtkBox" id="_top_pages">
+                <property name="homogeneous">true</property>
+                <property name="halign">3</property>
+                <property name="hexpand">true</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="linked"/>
+                </style>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_t_oracle">
+                    <property name="label" translatable="yes">Oracle</property>
+                    <property name="active">true</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_t_weather">
+                    <property name="label" translatable="yes">Weather</property>
+                    <property name="group">_toggle_t_oracle</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkStack" id="_stack">
+            <property name="transition-type">1</property>
+            <child>
+              <object class="GtkBox">
+                <property name="margin-start">25</property>
+                <property name="margin-end">25</property>
+                <property name="margin-top">25</property>
+                <property name="margin-bottom">25</property>
+                <property name="spacing">20</property>
+                <child>
+                  <object class="HexFlower" id="_hexflower">
+                  </object>
+                </child>
+                <child>
+                  <object class="HexConfig" id="_hexconfig">
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwStatusPage" id="_characters">
+                <property name="title" translatable="yes">Fortuna02</property>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

@@ -26,9 +26,6 @@ import os
 from ...iooperations import list_diretory_content, load_from_disk
 from .listobjects import KeyValuePair
 
-from .hexconfig import HexConfig
-
-
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/Weather.ui')
 class Weather(Gtk.Box):

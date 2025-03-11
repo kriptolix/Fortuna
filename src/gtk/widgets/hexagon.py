@@ -46,6 +46,7 @@ class HexButtons(Gtk.Box):
     def __init__(self):
         super().__init__()
 
+        '''
         self.motion = Gtk.EventControllerMotion.new()
         self.motion.connect("enter", self._on_overmouse)
         self.motion.connect("leave", self._on_overmouse)
@@ -74,6 +75,7 @@ class HexButtons(Gtk.Box):
             return
 
         widget.set_opacity(0)
+        '''
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'

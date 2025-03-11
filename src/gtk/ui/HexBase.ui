@@ -10,7 +10,7 @@
           <object class="GtkOverlay" id="_upper_layer">
             <child>
               <object class="GtkImage" id="_image">
-                <property name="icon-name">hexagon-mod</property>
+                <property name="icon-name">hexagon-symbolic</property>
                 <property name="pixel-size">128</property>
               </object>                        
             </child>

@@ -1,7 +1,77 @@
-.rotate-right {
-  transform: rotate(20deg);
+
+checkbutton.color-selector radio:checked {
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+  background-color: transparent;
+  color: white;
 }
 
-.rotate-left {
-  transform: rotate(-20deg);
+checkbutton.color-selector{
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");  
+  color: transparent;
 }
+
+checkbutton.bg-rain-1{
+background-color: #376991;
+}
+
+checkbutton.bg-rain-2{
+background-color: #4191C3;
+}
+
+checkbutton.bg-cold-1{
+background-color: #7396AA;
+}
+
+checkbutton.bg-cold-2{
+background-color: #91B9CD;
+}
+
+checkbutton.bg-cold-3{
+background-color: #BED2DC;
+}
+
+checkbutton.bg-nippy-1{
+background-color: #969B8C;
+}
+
+checkbutton.bg-warm-1{
+background-color: #B49673;
+}
+
+checkbutton.bg-warm-2{
+background-color: #E19150;
+}
+
+.color-rain-1{
+color: #376991;
+}
+
+.color-rain-2{
+color: #4191C3;
+}
+
+.color-cold-1{
+color: #7396AA;
+}
+
+.color-cold-2{
+color: #91B9CD;
+}
+
+.color-cold-3{
+color: #BED2DC;
+}
+
+.color-nippy-1{
+color: #969B8C;
+}
+
+.color-warm-1{
+color: #B49673;
+}
+
+.color-warm-2{
+color: #E19150;
+}
+
+

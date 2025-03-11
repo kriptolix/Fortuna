@@ -12,9 +12,10 @@
     <file preprocess="xml-stripblanks">src/gtk/ui/HexButtons.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/HexText.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/HexConfig.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/ToolkitWindow.ui</file>
   </gresource>
   <gresource prefix="io/github/kriptolix/Fortuna/icons/scalable/actions">
-    <file alias="hexagon-mod.svg">data/images/hexagon-mod.svg</file>
+    <file alias="hexagon-symbolic.svg">data/images/hexagon-symbolic.svg</file>
     <file alias="rect-left.svg">data/images/rect-left.svg</file>
     <file alias="rect-right.svg">data/images/rect-right.svg</file>
     <file alias="rect-side.svg">data/images/rect-side.svg</file>

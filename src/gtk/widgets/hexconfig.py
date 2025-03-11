@@ -30,7 +30,15 @@ class HexConfig(Gtk.Box):
 
     _hexbase = Gtk.Template.Child()
     _severity = Gtk.Template.Child()
-    _description = Gtk.Template.Child()    
+    _description = Gtk.Template.Child()
+    _check_01 = Gtk.Template.Child()
+    _check_02 = Gtk.Template.Child()
+    _check_03 = Gtk.Template.Child()
+    _check_04 = Gtk.Template.Child()
+    _check_05 = Gtk.Template.Child()
+    _check_06 = Gtk.Template.Child()
+    _check_07 = Gtk.Template.Child()
+    _check_08 = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()
@@ -38,8 +46,32 @@ class HexConfig(Gtk.Box):
         self._blocks = HexBlocks()
         self._buttons = HexButtons()
 
+        self._image = self._hexbase._image
+
         self._hexbase._upper_layer.add_overlay(self._blocks)
         self._hexbase._under_layer.add_overlay(self._buttons)
+
+        self._checks_list = [
+            self._check_01,
+            self._check_02,
+            self._check_03,
+            self._check_04,
+            self._check_05,
+            self._check_06,
+            self._check_07,
+            self._check_08,
+        ]
+
+        self._colors_list = [
+            "color-rain-1",
+            "color-rain-2",
+            "color-cold-1",
+            "color-cold-2",
+            "color-cold-3",
+            "color-nippy-1",
+            "color-warm-1",
+            "color-warm-2",
+        ]
 
         self._blocks_list = [
             self._blocks._top_right,
@@ -62,10 +94,15 @@ class HexConfig(Gtk.Box):
         for button in self._buttons_list:
             button.connect("clicked", self._activate_block)
 
+        for check in self._checks_list:
+            check.connect("toggled", self._color_selected)
+
+        self._check_01.set_active(True)
+
     def _activate_block(self, button):
 
         label = button.get_label()
-        position = self._buttons_list.index(button)        
+        position = self._buttons_list.index(button)
         block = self._blocks_list[position]
 
         if label == "+":
@@ -75,6 +112,23 @@ class HexConfig(Gtk.Box):
 
         block.set_opacity(0)
         button.set_label("+")
+
+    def _color_selected(self, check):
+
+        print("color selected")
+
+        if check.get_active():
+
+            position = self._checks_list.index(check)
+            color = self._colors_list[position]
+
+            classes = self._image.get_css_classes()
+
+            if classes:
+                for item in classes:
+                    self._image.remove_css_class(item)
+
+            self._image.add_css_class(color)
 
     def _set_hex_text(self):
         ''

@@ -79,11 +79,6 @@
           <class name="title-1"/>
         </style>
       </object>
-    </child>
-    <child>
-              <object class="HexConfig" id="_teste">
-                
-              </object>
-            </child>
+    </child>    
   </template>
 </interface>

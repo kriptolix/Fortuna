@@ -1,3 +1,14 @@
+color list
+#376991
+#4191C3
+#7396AA
+#91B9CD
+#BED2DC
+#969B8C
+#B49673
+#E19150
+
+
 Brisa morna
 Chuva
 Chuva com neve

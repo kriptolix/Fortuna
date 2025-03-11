@@ -22,6 +22,7 @@ from gi.repository import Gtk
 
 from .hexagon import HexBase, HexBlocks, HexText
 
+
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/HexFlower.ui')
 class HexFlower(Gtk.Box):
@@ -48,4 +49,33 @@ class HexFlower(Gtk.Box):
     _18 = Gtk.Template.Child()
 
     def __init__(self):
-        super().__init__()
+        super().__init__()        
+
+        self._hexs_list = [
+            self._00,
+            self._01,
+            self._02,
+            self._03,
+            self._04,
+            self._05,
+            self._06,
+            self._07,
+            self._08,
+            self._09,
+            self._10,
+            self._11,
+            self._12,
+            self._13,
+            self._14,
+            self._15,
+            self._16,
+            self._17,
+            self._18,
+        ]
+
+        for hex in self._hexs_list:
+            blocks = HexBlocks()
+            text = HexText()
+            hex._upper_layer.add_overlay(text)
+            hex._under_layer.add_overlay(blocks)
+
