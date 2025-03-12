@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="HexBlocks" parent="GtkBox">
+  <template class="HexDisplay" parent="GtkBox">
     <property name="orientation">1</property>
     <property name="halign">3</property>
     <child>
@@ -12,7 +12,7 @@
               <object class="GtkBox">
                 <property name="orientation">1</property>
                 <property name="margin-top">20</property>
-                <property name="margin-bottom">20</property>                
+                <property name="margin-bottom">20</property>
                 <child>
                   <object class="GtkImage" id="_top_right">
                     <property name="icon-name">rect-right</property>
@@ -84,17 +84,41 @@
           </object>
         </child>
         <child type="overlay">
-          <object class="GtkImage" id="_severity">
-            <property name="icon-name">important-small-symbolic</property>
-            <property name="pixel-size">18</property>
-            <property name="valign">2</property>
-            <property name="margin-bottom">25</property>
-            <property name="halign">2</property>
-            <property name="margin-end">30</property>
-            <property name="visible">false</property>
-            <style>
-              <class name="warning"/>
-            </style>
+          <object class="GtkOverlay">
+            <child>
+              <object class="GtkImage" id="_severity">
+                <property name="icon-name">important-small-symbolic</property>
+                <property name="pixel-size">18</property>
+                <property name="valign">2</property>
+                <property name="margin-bottom">25</property>
+                <property name="halign">2</property>
+                <property name="margin-end">30</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="warning"/>
+                </style>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkInscription" id="_description">
+                <property name="text">Parcialmente nublado e quente</property>
+                <property name="nat-lines">3</property>
+                <property name="xalign">0.5</property>
+                <property name="yalign">0.5</property>
+                <property name="text-overflow">3</property>
+                <property name="valign">3</property>
+                <property name="vexpand">true</property>
+                <property name="hexpand">true</property>
+                <property name="margin-start">5</property>
+                <property name="margin-end">5</property>
+                <property name="margin-top">5</property>
+                <property name="margin-bottom">5</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="caption-heading"/>
+                </style>
+              </object>
+            </child>
           </object>
         </child>
       </object>

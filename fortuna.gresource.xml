@@ -3,16 +3,14 @@
   <gresource prefix="/io/github/kriptolix/Fortuna">
     <file compressed="true">data/fortuna.css</file> 
     <file preprocess="xml-stripblanks">src/gtk/ui/MainWindow.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/help-overlay.ui</file>    
-    <file preprocess="xml-stripblanks">src/gtk/ui/HexFlower.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/help-overlay.ui</file>       
     <file preprocess="xml-stripblanks">src/gtk/ui/Weather.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/Oracle.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/HexBase.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/HexBlocks.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/HexButtons.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/HexText.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/HexConfig.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexDisplay.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/HexButtons.ui</file>     
     <file preprocess="xml-stripblanks">src/gtk/ui/ToolkitWindow.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/WeatherToolkit.ui</file>
   </gresource>
   <gresource prefix="io/github/kriptolix/Fortuna/icons/scalable/actions">
     <file alias="hexagon-symbolic.svg">data/images/hexagon-symbolic.svg</file>

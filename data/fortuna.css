@@ -42,6 +42,10 @@ checkbutton.bg-warm-2{
 background-color: #E19150;
 }
 
+.hex-bg-selected{
+  background-color: var(--accent-bg-color);
+}
+
 .color-rain-1{
 color: #376991;
 }

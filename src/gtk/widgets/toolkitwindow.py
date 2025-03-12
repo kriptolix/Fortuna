@@ -20,8 +20,7 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
-from .hexconfig import HexConfig
-from .hexflower import HexFlower
+from .weathertoolkit import WeatherToolkit
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/ToolkitWindow.ui')

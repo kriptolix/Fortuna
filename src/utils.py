@@ -2,8 +2,7 @@ from gi.repository import Gtk, Gio, GLib
 
 import time
 import threading
-import yaml
-from collections import OrderedDict
+# import yaml
 
 
 def generate_yaml(season, name):
@@ -81,11 +80,9 @@ def generate_yaml(season, name):
         table["season"]["occurrences"].append(occurrence)
 
     table["season"]["name"] = "verão"
-    yaml_data = yaml.dump(table, default_flow_style=False, allow_unicode=True)
+    # yaml_data = yaml.dump(table, default_flow_style=False, allow_unicode=True)
 
-    print(yaml_data)
-
-
+    # print(yaml_data)
 
 
 summer = [
@@ -234,6 +231,11 @@ weather = [
 ]
 
 generate_yaml(summer, "verão")
+
+colors_list = [
+    "color-rain-1", "color-rain-2", "color-cold-1", "color-cold-2",
+    "color-cold-3", "color-nippy-1", "color-warm-1", "color-warm-2",
+]
 
 
 def create_action(action_group, prefix, name, callback,
@@ -397,5 +399,3 @@ class SaveCountdown():
             self.timer.start()
         else:
             self.reset_timer.set()
-
-

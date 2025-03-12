@@ -38,20 +38,7 @@
           <object class="GtkStack" id="_stack">
             <property name="transition-type">1</property>
             <child>
-              <object class="GtkBox">
-                <property name="margin-start">25</property>
-                <property name="margin-end">25</property>
-                <property name="margin-top">25</property>
-                <property name="margin-bottom">25</property>
-                <property name="spacing">20</property>
-                <child>
-                  <object class="HexFlower" id="_hexflower">
-                  </object>
-                </child>
-                <child>
-                  <object class="HexConfig" id="_hexconfig">
-                  </object>
-                </child>
+              <object class="WeatherToolkit">             
               </object>
             </child>
             <child>

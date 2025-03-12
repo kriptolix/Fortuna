@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="HexFlower" parent="GtkBox">
+  <template class="WeatherToolkit" parent="GtkBox">
+    <property name="margin-top">25</property>
+    <property name="margin-bottom">25</property>
+    <property name="margin-start">25</property>
+    <property name="margin-end">25</property>
     <child>
       <object class="GtkBox">
         <property name="orientation">1</property>
@@ -89,158 +93,162 @@
       </object>
     </child>
     <child>
-      <object class="GtkBox"><property name="orientation">1</property>
-    <property name="halign">3</property>
-    <property name="spacing">10</property>
-    <child>
-      <object class="GtkLabel">
-        <property name="label" translatable="yes">Block Diagram:</property>
-        <style>
-          <class name="heading"/>
-        </style>
-      </object>
-    </child>
-    <child>
-      <object class="HexBase" id="_hexbase">        
-      </object>
-    </child>
-    <child>
       <object class="GtkBox">
+        <property name="orientation">1</property>
+        <property name="halign">3</property>
         <property name="spacing">10</property>
+        <property name="margin-start">25</property>
         <child>
           <object class="GtkLabel">
-            <property name="label" translatable="yes">Content:</property>
+            <property name="label" translatable="yes">Block Diagram:</property>
             <style>
               <class name="heading"/>
             </style>
           </object>
         </child>
         <child>
-          <object class="GtkEntry" id="_description">
-            <property name="halign">2</property>
-            <property name="hexpand">true</property>
-          </object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="spacing">10</property>
-        <child>
-          <object class="GtkLabel">
-            <property name="label" translatable="yes">Severity:</property>
-            <style>
-              <class name="heading"/>
-            </style>
+          <object class="HexBase" id="__hex_diagram">        
           </object>
         </child>
         <child>
-          <object class="GtkDropDown" id="_severity">
-            <property name="halign">2</property>
-            <property name="hexpand">true</property>
-            <property name="model">
-              <object class="GtkStringList">
-                <items>
-                  <item>unharmful </item>
-                  <item>dangerous</item>
-                  <item>disastrous</item> 
-                </items>
+          <object class="GtkBox">
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Content:</property>
+                <style>
+                  <class name="heading"/>
+                </style>
               </object>
-            </property>
+            </child>
+            <child>
+              <object class="GtkEntry" id="_description">
+                <property name="halign">2</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
           </object>
         </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkLabel">
-        <property name="label" translatable="yes">Background:</property>
-        <property name="halign">1</property>
-        <style>
-          <class name="heading"/>
-        </style>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="spacing">5</property>
-        <property name="margin-top">10</property>
         <child>
-          <object class="GtkCheckButton" id="_check_01">
-            <property name="valign">3</property>
+          <object class="GtkBox">
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Severity:</property>
+                <style>
+                  <class name="heading"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="_severity">
+                <property name="halign">2</property>
+                <property name="hexpand">true</property>
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item>unharmful </item>
+                      <item>dangerous</item>
+                      <item>disastrous</item> 
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Background:</property>
+            <property name="halign">1</property>
             <style>
-              <class name="color-selector"/>
-              <class name="bg-rain-1"/>
+              <class name="heading"/>
             </style>
           </object>
         </child>
         <child>
-          <object class="GtkCheckButton" id="_check_02">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-rain-2"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_03">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-cold-1"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_04">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-cold-2"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_05">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-cold-3"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_06">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-nippy-1"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_07">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-warm-1"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkCheckButton" id="_check_08">
-            <property name="group">_check_01</property>
-            <property name="valign">3</property>
-            <style>
-              <class name="color-selector"/>
-              <class name="bg-warm-2"/>
-            </style>
+          <object class="GtkBox">
+            <property name="spacing">5</property>
+            <property name="margin-top">10</property>
+            <child>
+              <object class="GtkCheckButton" id="_check_01">
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-rain-1"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_02">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-rain-2"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_03">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-cold-1"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_04">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-cold-2"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_05">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-cold-3"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_06">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-nippy-1"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_07">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-warm-1"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="_check_08">
+                <property name="group">_check_01</property>
+                <property name="valign">3</property>
+                <style>
+                  <class name="color-selector"/>
+                  <class name="bg-warm-2"/>
+                </style>
+              </object>
+            </child>
           </object>
         </child>
       </object>

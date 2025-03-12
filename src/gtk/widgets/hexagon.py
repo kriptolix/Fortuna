@@ -21,17 +21,6 @@ from gi.repository import Adw
 from gi.repository import Gtk
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
-              '/src/gtk/ui/HexText.ui')
-class HexText(Gtk.Box):
-    __gtype_name__ = 'HexText'
-
-    _label = Gtk.Template.Child()    
-
-    def __init__(self):
-        super().__init__()
-
-
-@Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/HexButtons.ui')
 class HexButtons(Gtk.Box):
     __gtype_name__ = 'HexButtons'
@@ -79,9 +68,9 @@ class HexButtons(Gtk.Box):
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
-              '/src/gtk/ui/HexBlocks.ui')
-class HexBlocks(Gtk.Box):
-    __gtype_name__ = 'HexBlocks'
+              '/src/gtk/ui/HexDisplay.ui')
+class HexDisplay(Gtk.Box):
+    __gtype_name__ = 'HexDisplay'
 
     _top_right = Gtk.Template.Child()
     _bottom_right = Gtk.Template.Child()
@@ -89,6 +78,7 @@ class HexBlocks(Gtk.Box):
     _bottom_side = Gtk.Template.Child()
     _top_left = Gtk.Template.Child()
     _bottom_left = Gtk.Template.Child()
+    _description = Gtk.Template.Child()
     _severity = Gtk.Template.Child()
 
     def __init__(self):
@@ -100,9 +90,29 @@ class HexBlocks(Gtk.Box):
 class HexBase(Gtk.Box):
     __gtype_name__ = 'HexBase'
 
-    _image = Gtk.Template.Child()
-    _upper_layer = Gtk.Template.Child()
-    _under_layer = Gtk.Template.Child()
+    _image = Gtk.Template.Child() 
+    _display = Gtk.Template.Child()
+    _buttons = Gtk.Template.Child()   
 
     def __init__(self):
         super().__init__()
+
+        self.severity = self._display._severity
+        self.description = self._display._description
+        self.state = []  # description, severity, blocks
+
+        self.blockers_list = [
+            self._display._top_right, self._display._bottom_right,
+            self._display._top_side, self._display._bottom_side,
+            self._display._top_left, self._display._bottom_left
+        ]
+
+        self.buttons_list = [
+            self._buttons._top_right, self._buttons._bottom_right,
+            self._buttons._top_side, self._buttons._bottom_side,
+            self._buttons._top_left, self._buttons._bottom_left
+        ]
+
+    
+        
+

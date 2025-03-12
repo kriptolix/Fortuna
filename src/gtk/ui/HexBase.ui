@@ -5,17 +5,25 @@
     <property name="orientation">1</property>
     <property name="halign">3</property>
     <child>
-      <object class="GtkOverlay" id="_under_layer">
+      <object class="GtkOverlay">
         <child>
-          <object class="GtkOverlay" id="_upper_layer">
-            <child>
-              <object class="GtkImage" id="_image">
-                <property name="icon-name">hexagon-symbolic</property>
-                <property name="pixel-size">128</property>
-              </object>                        
-            </child>
+          <object class="GtkImage" id="_image">
+            <property name="icon-name">hexagon-symbolic</property>
+            <property name="pixel-size">128</property>
           </object>
-        </child>        
+        </child>
+        <child type="overlay">
+          <object class="GtkOverlay">
+            <child>
+              <object class="HexDisplay" id="_display">                
+              </object>
+            </child>            
+            <child type="overlay">
+              <object class="HexButtons" id="_buttons">               
+              </object>
+            </child>            
+          </object>
+        </child>
       </object>
     </child>
   </template>
