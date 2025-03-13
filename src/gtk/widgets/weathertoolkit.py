@@ -21,7 +21,7 @@ from gi.repository import Adw
 from gi.repository import Gtk
 
 from .hexagon import HexBase, HexDisplay, HexButtons
-from ...utils import create_click
+from ...utils import create_click, colors_list
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -50,7 +50,7 @@ class WeatherToolkit(Gtk.Box):
     _18 = Gtk.Template.Child()
 
     _hex_diagram = Gtk.Template.Child()
-    _description = Gtk.Template.Child()
+    _text_entry = Gtk.Template.Child()
     _severity = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
@@ -79,48 +79,49 @@ class WeatherToolkit(Gtk.Box):
             self._check_05, self._check_06, self._check_07, self._check_08,
         ]
 
-        self._blockers_list = self._hex_diagram.blockers_list
-        self._buttons_list = self._hex_diagram.buttons_list
-
         self._image = self._hex_diagram._image
 
         for hex in self._hexs_list:
             hex._buttons.set_visible(False)
             create_click(hex, 1, "released", self._on_hex_selected, hex)
 
-        for button in self._buttons_list:
+        for button in self._hex_diagram.buttons_list:
             button.connect("clicked", self._on_activate_block)
 
         for check in self._checks_list:
             check.connect("toggled", self._on_color_selected)
 
-        self._severity.connect('notify::selected-item', 
+        self._severity.connect('notify::selected-item',
                                self._on_severity_selected)
 
-        self._description.connect("insert-text", self._on_change_description)
-        
+        self._text_entry.connect("insert-text", self._on_change_text)
+        self._text_entry.connect("delete-text", self._on_change_text)
+        self._text_entry.connect("changed", self._on_change_text)
+
         # self._check_01.set_active(True)
-        self._hex_diagram._description.set_visible(True)
+        # self._hex_diagram._text_entry.set_visible(True)
         self._on_hex_selected(None, None, None, None, self._00)
 
-    def _on_change_description(self, entry, itext, length, pos):
+    def _on_change_text(self, *args):
 
-        text = self._description.get_text()
-        self._hex_diagram._description.set_text(text)
-        self._hex_selected._description.set_text(text)
+        text = self._text_entry.get_text()
+
+        self._hex_diagram._set_text(text)
+        self._hex_selected._set_text(text)
 
     def _on_activate_block(self, button):
 
         label = button.get_label()
-        position = self._buttons_list.index(button)
-        block = self._blockers_list[position]
+        position = self._hex_diagram.buttons_list.index(button)
 
         if label == "+":
-            block.set_opacity(1)
+            self._hex_diagram._set_block(position, 1)
+            self._hex_selected._set_block(position, 1)
             button.set_label("-")
             return
 
-        block.set_opacity(0)
+        self._hex_diagram._set_block(position, 0)
+        self._hex_selected._set_block(position, 0)
         button.set_label("+")
 
     def _on_color_selected(self, check):
@@ -146,15 +147,24 @@ class WeatherToolkit(Gtk.Box):
         widget.add_css_class("hex-bg-selected")
 
         self._hex_selected = widget
-        self._clone_state(self._hex_selected)
+        self._clone_state()
 
-    def _clone_state(self, hex_display):
+    def _clone_state(self):
 
-        self._hex_diagram._description = hex_display._description
-        self._hex_diagram._set_severity(hex_display._severity)
+        text = self._hex_selected._get_text()
 
-        for index, block in enumerate(hex_display.blockers_list):
-            self._hex_diagram.blockers_list[index].set_opacity(
+        if text:
+            self._hex_diagram._set_text(text)
+            self._text_entry.set_text(text)
+        
+        self._hex_diagram._set_severity(self._hex_selected._severity)
+
+        for index, block in enumerate(self._hex_selected._blockers_list):
+            self._hex_diagram._blockers_list[index].set_opacity(
                 block.get_opacity())
 
-        self._hex_diagram._set_color(hex_display._color)
+        self._hex_diagram._set_color(self._hex_selected._color)
+
+        position = self._hex_selected._color
+
+        self._checks_list[position].set_active(True)

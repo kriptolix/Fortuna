@@ -102,9 +102,9 @@ class HexBase(Gtk.Box):
 
         self._severity = 0
         self._description = self._display._description
-        self._color = 0
+        self._color = 0        
 
-        self.blockers_list = [
+        self._blockers_list = [
             self._display._top_side, self._display._top_right,
             self._display._bottom_right, self._display._bottom_side,
             self._display._bottom_left, self._display._top_left
@@ -116,21 +116,21 @@ class HexBase(Gtk.Box):
             self._buttons._bottom_left, self._buttons._top_left
         ]
 
-    def _set_severity(self, severity):
+    def _set_severity(self, severity):        
 
         match severity:
             case 0:
-                self._display._severity.set_opacity(0)
+                self._display._severity.set_visible(False)
                 self._severity = 0
             case 1:
-                self._display._severity.set_opacity(1)
+                self._display._severity.set_visible(True)
                 self._severity = 1
                 if self._display._severity.has_css_class("error"):
                     self._display._severity.remove_css_class("error")
                     self._display._severity.add_css_class("warning")
 
             case 2:
-                self._display._severity.set_opacity(1)
+                self._display._severity.set_visible(True)
                 self._severity = 2
                 if self._display._severity.has_css_class("warning"):
                     self._display._severity.remove_css_class("warning")
@@ -147,3 +147,15 @@ class HexBase(Gtk.Box):
 
         self._image.add_css_class(colors_list[color])
         self.color = color
+
+    def _set_text(self, text):
+        self._description.set_text(text)
+
+    def _set_block(self, position, value):
+        
+        block = self._blockers_list[position]
+        block.set_opacity(value)
+
+    def _get_text(self):
+        text = self._description.get_text()
+        return text

@@ -122,7 +122,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkEntry" id="_description">
+              <object class="GtkEntry" id="_text_entry">
                 <property name="halign">2</property>
                 <property name="hexpand">true</property>
               </object>
