@@ -238,6 +238,17 @@ colors_list = [
 ]
 
 
+def clone_state(hex_ori, hex_dst):
+
+    hex_dst._description = hex_ori._description
+    hex_dst._set_severity(hex_ori._severity)
+
+    for index, block in enumerate(hex_ori.blockers_list):
+        hex_dst.blockers_list[index].set_opacity(block.get_opacity())
+
+    hex_dst._set_color(hex_ori._color)
+
+
 def create_action(action_group, prefix, name, callback,
                   shortcuts=None, parameter=None, target=None):
     """
