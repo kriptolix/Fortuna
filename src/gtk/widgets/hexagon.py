@@ -146,7 +146,7 @@ class HexBase(Gtk.Box):
                     self._image.remove_css_class(css)
 
         self._image.add_css_class(colors_list[color])
-        self.color = color
+        self._color = color
 
     def _set_text(self, text):
         self._description.set_text(text)

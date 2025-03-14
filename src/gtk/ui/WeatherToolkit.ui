@@ -141,7 +141,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkDropDown" id="_severity">
+              <object class="GtkDropDown" id="_danger_box">
                 <property name="halign">2</property>
                 <property name="hexpand">true</property>
                 <property name="model">

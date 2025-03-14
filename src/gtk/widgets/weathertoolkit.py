@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Gtk, GObject
 
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click, colors_list
@@ -51,7 +51,7 @@ class WeatherToolkit(Gtk.Box):
 
     _hex_diagram = Gtk.Template.Child()
     _text_entry = Gtk.Template.Child()
-    _severity = Gtk.Template.Child()
+    _danger_box = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
     _check_02 = Gtk.Template.Child()
@@ -91,15 +91,17 @@ class WeatherToolkit(Gtk.Box):
         for check in self._checks_list:
             check.connect("toggled", self._on_color_selected)
 
-        self._severity.connect('notify::selected-item',
-                               self._on_severity_selected)
+        self._danger_box.connect('notify::selected-item',
+                                 self._on_severity_selected)
 
-        self._text_entry.connect("insert-text", self._on_change_text)
-        self._text_entry.connect("delete-text", self._on_change_text)
-        self._text_entry.connect("changed", self._on_change_text)
+        self._insert = self._text_entry.connect("insert-text",
+                                                self._on_change_text)
 
-        # self._check_01.set_active(True)
-        # self._hex_diagram._text_entry.set_visible(True)
+        self._delete = self._text_entry.connect("delete-text",
+                                                self._on_change_text)
+        self._change = self._text_entry.connect("changed",
+                                                self._on_change_text)
+
         self._on_hex_selected(None, None, None, None, self._00)
 
     def _on_change_text(self, *args):
@@ -134,7 +136,7 @@ class WeatherToolkit(Gtk.Box):
 
     def _on_severity_selected(self, dropdown, parameter):
 
-        severity = self._severity.get_selected()
+        severity = self._danger_box.get_selected()
         self._hex_diagram._set_severity(severity)
         self._hex_selected._set_severity(severity)
 
@@ -153,18 +155,23 @@ class WeatherToolkit(Gtk.Box):
 
         text = self._hex_selected._get_text()
 
-        if text:
-            self._hex_diagram._set_text(text)
-            self._text_entry.set_text(text)
-        
-        self._hex_diagram._set_severity(self._hex_selected._severity)
+        self._hex_diagram._set_text(text)
+        GObject.signal_handler_disconnect(self._text_entry,  self._insert)
+        self._text_entry.set_text(text)
+        self._insert = self._text_entry.connect("insert-text",
+                                                self._on_change_text)
+
+        severity = self._hex_selected._severity
+
+        self._hex_diagram._set_severity(severity)
+        self._danger_box.set_selected(severity)
 
         for index, block in enumerate(self._hex_selected._blockers_list):
             self._hex_diagram._blockers_list[index].set_opacity(
                 block.get_opacity())
 
         self._hex_diagram._set_color(self._hex_selected._color)
-
         position = self._hex_selected._color
 
-        self._checks_list[position].set_active(True)
+        check = self._checks_list[position]
+        check.set_active(True)
