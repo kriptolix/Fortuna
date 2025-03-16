@@ -22,6 +22,7 @@ from gi.repository import Gtk, Gdk, GObject
 
 from .weather import Weather
 from .oracle import Oracle
+from .character import Character
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -38,7 +39,7 @@ class MainWindow(Adw.ApplicationWindow):
     _toggle_b_character = Gtk.Template.Child()
     _oracle = Gtk.Template.Child()
     _weather = Gtk.Template.Child()
-    _characters = Gtk.Template.Child()
+    _character = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -57,7 +58,7 @@ class MainWindow(Adw.ApplicationWindow):
             [self._toggle_t_oracle, self._toggle_b_oracle]
         ]
 
-        binding_flags = GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL
+        flags = GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL
 
         for toggle in toggles:
             toggle[0].connect("toggled", self._toggle_page)
@@ -65,7 +66,7 @@ class MainWindow(Adw.ApplicationWindow):
             toggle[0].bind_property("active",
                                     toggle[1],
                                     "active",
-                                    binding_flags)
+                                    flags)
 
     def _toggle_page(self, toggle):
 
@@ -75,7 +76,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         if (toggle == (self._toggle_t_character or self._toggle_t_character)
                 and toggle.get_active()):
-            self._stack.set_visible_child(self._characters)
+            self._stack.set_visible_child(self._character)
 
         if (toggle == (self._toggle_t_oracle or self._toggle_t_oracle)
                 and toggle.get_active()):

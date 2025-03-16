@@ -230,7 +230,32 @@ weather = [
     "sereno morno"
 ]
 
-generate_yaml(summer, "verão")
+# p1 esquerda, p4 direta
+vertical = [
+    [0, 1, 2],
+    [3, 4, 5, 6],
+    [7, 8, 9, 10, 11],
+    [12, 13, 14, 15],
+    [16, 17, 18]
+]
+
+# p6 esquerda, p3 direta
+left = [
+    [7, 12, 16],
+    [3, 8, 13, 17],
+    [0, 4, 9, 14, 18],
+    [1, 5, 10, 15],
+    [2, 6, 11]
+]
+
+# p5 esquerda, p2 direita
+right = [
+    [0, 3, 7],
+    [1, 4, 6, 12],
+    [2, 5, 9, 13, 16],
+    [6, 10, 14, 17],
+    [11, 15, 18]
+]
 
 colors_list = [
     "color-rain-1", "color-rain-2", "color-cold-1", "color-cold-2",

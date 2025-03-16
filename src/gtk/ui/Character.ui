@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="Character" parent="GtkBox">
+    <property name="orientation">1</property>
+    <property name="spacing">15</property>
+    <property name="halign">3</property>
+    <property name="valign">3</property>
+    <property name="margin-bottom">25</property>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkBox">
+            <style>
+              <class name="linked"/>
+            </style>
+            <property name="width-request">360</property>
+            <child>
+              <object class="GtkDropDown" id="_scenario">
+                <property name="enable-search">false</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkDropDown" id="_region">
+                <property name="enable-search">false</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkDropDown" id="_arquetype">
+        <property name="enable-search">false</property>
+        <property name="hexpand">true</property>
+        <property name="halign">1</property>
+        <property name="width-request">155</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkButton" id="_generate">
+            <property name="label" translatable="yes">Generate</property>
+            <property name="valign">3</property>
+            <property name="vexpand">false</property>
+            <style>
+              <class name="suggested-action"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="margin-start">15</property>
+            <property name="halign">2</property>
+            <property name="hexpand">true</property>
+            <property name="homogeneous">true</property>
+            <style>
+              <class name="linked"/>
+            </style>
+            <child>
+              <object class="GtkToggleButton" id="_male">
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Male</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="_female">
+                <property name="group">_male</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Female</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="_undefined">
+                <property name="group">_male</property>
+                <property name="child">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Undefined</property>
+                  </object>
+                </property>
+                <property name="active">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="_label">
+        <property name="label" translatable="yes">Hot and Dry</property>
+        <property name="margin-top">50</property>
+        <style>
+          <class name="title-1"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

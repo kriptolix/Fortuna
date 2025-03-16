@@ -21,7 +21,7 @@ from gi.repository import Adw
 from gi.repository import Gtk, GObject
 
 from .hexagon import HexBase, HexDisplay, HexButtons
-from ...utils import create_click, colors_list
+from ...utils import create_click
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'

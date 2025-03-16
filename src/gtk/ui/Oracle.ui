@@ -11,6 +11,8 @@
       <object class="GtkLabel">
         <property name="label" translatable="yes">Ask the Oracle for a answer </property>
         <property name="margin-bottom">10</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
         <style>
           <class name="title-1"/>
         </style>

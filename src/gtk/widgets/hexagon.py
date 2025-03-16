@@ -38,37 +38,6 @@ class HexButtons(Gtk.Box):
     def __init__(self):
         super().__init__()
 
-        '''
-        self.motion = Gtk.EventControllerMotion.new()
-        self.motion.connect("enter", self._on_overmouse)
-        self.motion.connect("leave", self._on_overmouse)
-
-        self._buttons_list = [
-            self._top_right,
-            self._bottom_right,
-            self._top_side,
-            self._bottom_side,
-            self._top_left,
-            self._bottom_left
-        ]
-
-        for button in self._buttons_list:
-            motion = Gtk.EventControllerMotion.new()
-            motion.connect("enter", self._on_overmouse)
-            motion.connect("leave", self._on_overmouse)
-            button.add_controller(motion)        
-
-    def _on_overmouse(self, event, x=None, y=None):
-
-        widget = event.get_widget()
-
-        if x and y:
-            widget.set_opacity(1)
-            return
-
-        widget.set_opacity(0)
-        '''
-
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/HexDisplay.ui')
@@ -102,7 +71,7 @@ class HexBase(Gtk.Box):
 
         self._severity = 0
         self._description = self._display._description
-        self._color = 0        
+        self._color = 0
 
         self._blockers_list = [
             self._display._top_side, self._display._top_right,
@@ -116,7 +85,7 @@ class HexBase(Gtk.Box):
             self._buttons._bottom_left, self._buttons._top_left
         ]
 
-    def _set_severity(self, severity):        
+    def _set_severity(self, severity):
 
         match severity:
             case 0:
@@ -152,7 +121,7 @@ class HexBase(Gtk.Box):
         self._description.set_text(text)
 
     def _set_block(self, position, value):
-        
+
         block = self._blockers_list[position]
         block.set_opacity(value)
 
