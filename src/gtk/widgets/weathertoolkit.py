@@ -52,6 +52,7 @@ class WeatherToolkit(Gtk.Box):
     _hex_diagram = Gtk.Template.Child()
     _text_entry = Gtk.Template.Child()
     _danger_box = Gtk.Template.Child()
+    _export_button = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
     _check_02 = Gtk.Template.Child()
@@ -101,6 +102,8 @@ class WeatherToolkit(Gtk.Box):
                                                 self._on_change_text)
         self._change = self._text_entry.connect("changed",
                                                 self._on_change_text)
+        
+        self._export_button.connect("clicked", self._serialize_flower)
 
         self._on_hex_selected(None, None, None, None, self._00)
 
@@ -175,3 +178,20 @@ class WeatherToolkit(Gtk.Box):
 
         check = self._checks_list[position]
         check.set_active(True)
+
+    def _serialize_flower(self, button):
+
+        serialized = []
+
+        for hex in self._hexs_list:
+            row = [hex._get_text(),
+                   hex._severity,
+                   hex._color,
+                   ]
+            
+            for block in hex._blockers_list:
+                row.append(int(block.get_opacity()))
+
+            serialized.append(row)
+
+        print(serialized)        

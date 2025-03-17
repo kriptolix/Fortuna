@@ -96,14 +96,18 @@ class HexBase(Gtk.Box):
                 self._severity = 1
                 if self._display._severity.has_css_class("error"):
                     self._display._severity.remove_css_class("error")
-                    self._display._severity.add_css_class("warning")
+                    # self._display._severity.add_css_class("warning")
 
             case 2:
                 self._display._severity.set_visible(True)
                 self._severity = 2
+                self._display._severity.add_css_class("error")
+                
+                '''
                 if self._display._severity.has_css_class("warning"):
                     self._display._severity.remove_css_class("warning")
                     self._display._severity.add_css_class("error")
+                '''
 
     def _set_color(self, color):
 

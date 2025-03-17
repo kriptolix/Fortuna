@@ -1,22 +1,57 @@
-weather_events = [  
+weather_events = [
     "Neblina",
-    "Neblina fria",    
+    "Neblina fria",
     "Névoa densa",
-    "Névoa fria",    
+    "Névoa fria",
     "Nuvem de poeira",
-    "Ondas de calor extremo",
-    "Frio Extremo",  
-    "Tempo ensolarado e limpo",
-    "Tempo frio e com vento",
-    "Tempo frio e limpo",
-    "Tempo frio e seco",
-    "Tempo frio e úmido",
-    "Tempo limpo e com vento",
-    "Tempo limpo e fresco",
-    "Tempo quente e abafado",
-    "Tempo quente e com vento",
-    "Tempo quente e seco",
-    "Tempo úmido e fresco", 
+    "Frio Extremo",
+    "Tempo ensolarado e limpo"
+]
+
+rain = [
+    "Ensolarado",    
+    "Parcialmente Nublado",
+    "Nublado",
+    ["Garoa", "morna"],
+    ["Sereno","morno"],
+    ["Chuva", "morna"],
+    "Chuva torrencial",
+    ["Tempestade", "tropical"]
+]
+
+
+fog = ["combina com "
+    "Neblina",
+    "Neblina fria",
+    "Névoa densa",
+    "Névoa fria",
+    "Nuvem de poeira",
+    ]
+
+temp_humi = ["vento", "umidade", "precipitação"
+             "Frio Extremo",
+             "Frio",
+             "Confortavel",
+             "Calor",
+             "Ondas de calor extremo",
+
+
+             "Tempo frio e com vento",
+             "Tempo frio e ensolarado",
+             "Tempo frio e seco",
+             "Tempo frio e úmido",
+             "Tempo ensolarado e com vento",
+             "Tempo ensolarado e fresco",
+             "Tempo quente e abafado",
+             "Tempo quente e com vento",
+             "Tempo quente e seco",
+             "Tempo úmido e fresco",
+             ]
+
+humidity = [
+    "seco",
+    "fresco"
+    "úmido",
 ]
 
 rain_events = [
@@ -37,9 +72,13 @@ snow_events = [
     "Nevando leve",
     "Nevando e com vento",
     "Nevando forte",
-    "Chuva de granizo",    
+    "Chuva de granizo",
+    "Neve granizada",
+    "Neve semi derretida",
+    "Chuva com neve",
     "Nevasca",
 ]
+
 
 cloud_events = [
     "Nublado e com vento",
@@ -54,14 +93,17 @@ cloud_events = [
     "Parcialmente nublado e fresco",
 ]
 
+
 wind_events = [
+    "Parado"
     "Brisa"
     "Brisa morna",
     "Vento frio",
     "Vento gelado",
     "Vento quente e úmido",
-    "Ventos fortes",
     "Rajadas de vento esporádicas",
+    "Ventos fortes",
+    "vendaval"
 ]
 
 summer = [
