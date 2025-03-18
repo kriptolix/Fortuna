@@ -8,41 +8,60 @@
     <property name="valign">3</property>
     <property name="margin-bottom">25</property>
     <child>
+      <object class="GtkDropDown" id="_climate">
+        <property name="enable-search">false</property>
+        <property name="hexpand">true</property>
+      </object>
+    </child>
+    <child>
       <object class="GtkBox">
+        <property name="hexpand">false</property>
+        <property name="halign">3</property>
+        <property name="orientation">1</property>
+        <property name="spacing">5</property>
         <child>
-          <object class="GtkBox">
+          <object class="GtkLabel" id="_description">
+            <property name="label" translatable="yes">High temperatures with distinct wet and dry seasons</property>
+            <property name="wrap">true</property>
+            <property name="hexpand">false</property>
+            <property name="xalign">0</property>
             <style>
-              <class name="linked"/>
+              <class name="dimmed"/>
+              <class name="explain"/>
             </style>
-            <property name="width-request">360</property>
-            <child>
-              <object class="GtkDropDown" id="_scenario">
-                <property name="enable-search">false</property>
-                <property name="hexpand">true</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkDropDown" id="_region">
-                <property name="enable-search">false</property>
-                <property name="hexpand">true</property>
-              </object>
-            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="_biomes">
+            <property name="label" translatable="yes">Biomes: Savannas, tropical grasslands.</property>
+            <property name="wrap">true</property>
+            <property name="hexpand">false</property>
+            <property name="xalign">0</property>
+            <style>
+              <class name="dimmed"/>
+              <class name="explain"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="_exemples">
+            <property name="label" translatable="yes">Examples: Indian Subcontinent, African savannas, 
+Northern Australia.</property>
+            <property name="wrap">true</property>
+            <property name="hexpand">false</property>
+            <property name="xalign">0</property>
+            <style>
+              <class name="dimmed"/>
+              <class name="explain"/>
+            </style>
           </object>
         </child>
       </object>
     </child>
     <child>
-      <object class="GtkDropDown" id="_season">
-        <property name="enable-search">false</property>
-        <property name="hexpand">true</property>
-        <property name="halign">1</property>
-        <property name="width-request">155</property>
-      </object>
-    </child>
-    <child>
       <object class="GtkBox">
         <child>
-          <object class="GtkButton" id="_evolution">
+          <object class="GtkButton" id="_weather_button">
             <property name="label" translatable="yes">Check Weather</property>
             <property name="valign">3</property>
             <property name="vexpand">false</property>
@@ -72,13 +91,13 @@
       </object>
     </child>
     <child>
-      <object class="GtkLabel" id="_label">
+      <object class="GtkLabel" id="_weather_label">
         <property name="label" translatable="yes">Hot and Dry</property>
         <property name="margin-top">50</property>
         <style>
           <class name="title-1"/>
         </style>
       </object>
-    </child>    
+    </child>
   </template>
 </interface>

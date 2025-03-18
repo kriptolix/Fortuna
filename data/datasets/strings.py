@@ -1,109 +1,37 @@
-weather_events = [
-    "Neblina",
-    "Neblina fria",
-    "Névoa densa",
-    "Névoa fria",
-    "Nuvem de poeira",
-    "Frio Extremo",
-    "Tempo ensolarado e limpo"
-]
-
 rain = [
-    "Ensolarado",    
-    "Parcialmente Nublado",
-    "Nublado",
-    ["Garoa", "morna"],
-    ["Sereno","morno"],
-    ["Chuva", "morna"],
-    "Chuva torrencial",
-    ["Tempestade", "tropical"]
+    "Garoa", "Garoa Morna", "Sereno", "Sereno Morno", "Chuva",
+    "Chuva Morna", "Chuva Intensa", "Chuva torrencial", "Tempestade",
+    "Chuva com Neve", "Chuva com Vento", "Chuva de Granizo",
+    "Chuva Congelante", "Chuva e Neblina", "Tesmpestade Tropical"
 ]
 
-
-fog = ["combina com "
-    "Neblina",
-    "Neblina fria",
-    "Névoa densa",
-    "Névoa fria",
-    "Nuvem de poeira",
-    ]
-
-temp_humi = ["vento", "umidade", "precipitação"
-             "Frio Extremo",
-             "Frio",
-             "Confortavel",
-             "Calor",
-             "Ondas de calor extremo",
-
-
-             "Tempo frio e com vento",
-             "Tempo frio e ensolarado",
-             "Tempo frio e seco",
-             "Tempo frio e úmido",
-             "Tempo ensolarado e com vento",
-             "Tempo ensolarado e fresco",
-             "Tempo quente e abafado",
-             "Tempo quente e com vento",
-             "Tempo quente e seco",
-             "Tempo úmido e fresco",
-             ]
-
-humidity = [
-    "seco",
-    "fresco"
-    "úmido",
+snow = [
+    "Geada", "Nevando Leve", "Nevando Forte",
+    "Nevando e com Vento", "Nevasca", "Chuva com Neve"
 ]
 
-rain_events = [
-    "Garoa",
-    "Garoa morna",
-    "Sereno",
-    "Sereno morno",
-    "Chuva",
-    "Chuva morna",
-    "Chuva com rajadas de vento",
-    "Chuva torrencial",
-    "Tempestade",
-    "Tempestade tropical",
+wind = [
+    "Bisa", "Bisa Morna", "Vento frio",
+    "Ventos fortes", "Vendaval", "Rajadas de vento"
 ]
 
-snow_events = [
-    "Geada",
-    "Nevando leve",
-    "Nevando e com vento",
-    "Nevando forte",
-    "Chuva de granizo",
-    "Neve granizada",
-    "Neve semi derretida",
-    "Chuva com neve",
-    "Nevasca",
+cloud = [
+    "Nublado e com Vento", "Nublado e Congelante",
+    "Nublado e Fresco", "Nublado e Frio",
+    "Nublado e Quente", "Nublado e Úmido",
+    "Parcialmente nublado",
 ]
 
-
-cloud_events = [
-    "Nublado e com vento",
-    "Nublado e congelante",
-    "Nublado e fresco",
-    "Nublado e frio",
-    "Nublado e gelado",
-    "Nublado e morno",
-    "Nublado e quente",
-    "Nublado e úmido",
-    "Parcialmente nublado e fresco",
-    "Parcialmente nublado e fresco",
+termic = [
+    "Ensolarado e Fresco", "Frio e com Vento", "Ensolarado e Frio",
+    "Frio e Seco", "Frio e Úmido", "Esnolarado e com Vento",
+    "Quente e Úmido", "Quente e com Vento", "Quente e Seco",
+    "Frio Extremo", "Ondas de Calor Extremo",
 ]
 
-
-wind_events = [
-    "Parado"
-    "Brisa"
-    "Brisa morna",
-    "Vento frio",
-    "Vento gelado",
-    "Vento quente e úmido",
-    "Rajadas de vento esporádicas",
-    "Ventos fortes",
-    "vendaval"
+fog = [
+    "Neblina", "Névoa Densa",
+    "Névoa Esparsa", "Nuvem de Poeira",
 ]
 
 summer = [
@@ -194,4 +122,27 @@ autumn = [
     "chuva e neblina!",
     "limpo e com vento",
     "tempestade!"
+]
+
+
+semi_arid_dry = [
+    ['Nublado e com Vento', 0, 5, 0, 0, 0, 0, 0, 0],
+    ['Nublado e úmido', 0, 5, 0, 0, 0, 0, 0, 0],
+    ['Nuvem de Poeira', 0, 7, 1, 0, 0, 1, 0, 0],
+    ['Nublado e Fresco', 0, 5, 1, 0, 0, 0, 0, 0],
+    ['Nublado e Quente', 0, 6, 0, 0, 0, 0, 0, 0],
+    ['Brisa morna', 0, 6, 0, 0, 0, 0, 0, 0],
+    ['Quente e com vento', 1, 7, 0, 0, 1, 1, 0, 0],
+    ['Sereno morno', 0, 2, 1, 0, 0, 0, 0, 0],
+    ['Parcialmente nublado', 0, 5, 0, 0, 0, 0, 0, 0],
+    ['Ensolarado e quente', 0, 6, 0, 0, 0, 0, 0, 0],
+    ['Quente e seco', 1, 7, 0, 0, 0, 0, 0, 0],
+    ['Ondas de calor extremo', 2, 7, 0, 0, 0, 1, 0, 0],
+    ['Chuva morna', 0, 2, 0, 0, 0, 0, 0, 0],
+    ['Ensolarado e úmido', 0, 5, 0, 0, 0, 0, 0, 0],
+    ['Ensolarado e com vento', 0, 5, 0, 0, 0, 0, 0, 0],
+    ['Quente e úmido', 1, 7, 0, 0, 0, 0, 0, 0],
+    ['Ventos fortes', 1, 5, 0, 0, 0, 0, 0, 0],
+    ['Nublado e úmido', 0, 2, 0, 0, 0, 0, 0, 1],
+    ['Nublado e Quente', 0, 6, 0, 0, 0, 0, 0, 0]
 ]

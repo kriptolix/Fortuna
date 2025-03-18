@@ -10,64 +10,21 @@ color list
 
 
 
-Brisa morna
-Chuva
-Chuva com neve
-Chuva com rajadas de vento
-Chuva de granizo
-Chuva e neblina
-Chuva forte
-Chuva fria
-Chuva intensa
-Chuva leve
-Chuva torrencial
-Garoa
-Garoa morna
-Geada
-Granizo
-Frio Extremo
-Neblina
-Neblina fria
-Nevando e com vento
-Nevando forte
-Nevando leve
-Nevasca
-Névoa densa
-Névoa fria
-Nublado e com vento
-Nublado e congelante
-Nublado e fresco
-Nublado e frio
-Nublado e gelado
-Nublado e morno
-Nublado e quente
-Nublado e úmido
-Nuvem de poeira
-Ondas de calor extremo
-Parcialmente nublado e fresco
-Rajadas de vento esporádicas
-Sereno
-Sereno morno
-Tempestade
-Tempestade abafada
-Tempo ensolarado e limpo
-Tempo frio e com vento
-Tempo frio e limpo
-Tempo frio e seco
-Tempo frio e úmido
-Tempo limpo e com vento
-Tempo limpo e fresco
-Tempo quente e abafado
-Tempo quente e com vento
-Tempo quente e seco
-Tempo úmido e fresco
-Temporal
-Vento frio
-Vento gelado
+Garoa, Garoa Morna, Sereno, Sereno Morno, Chuva, Chuva Morna, Chuva Intensa, Chuva torrencial, Tempestade, Chuva com Vento, Chuva de Granizo, Chuva Congelante, Chuva e Neblina,
+
+"Geada", "Nevando leve", "Nevando forte", "Nevando e com vento", "Nevasca", "Chuva com Neve"
+
+"Vento frio", "Vento gelado", "Ventos fortes", "Vendaval", "Rajadas de vento"
+
+"Nublado e com Vento", "Nublado e Congelante", "Nublado e Fresco", "Nublado e Frio", "Nublado e Morno", "Nublado e Quente", "Nublado e Úmido"
+
+"Ensolarado e Fresco", "Frio e com Vento", "Ensolarado e Frio", "Frio e Seco", "Frio e Úmido", "Esnolarado e com Vento", "Quente e Úmido", "Quente e com Vento", "Quente e Seco",
+
+"Neblina", "Névoa densa", "Névoa Esparsa", "Nuvem de poeira",
+
+,  Ondas de calor extremo, Parcialmente nublado e fresco, Rajadas de vento esporádicas, Sereno, Sereno morno, Tempestade, Tempestade abafada,  Temporal, 
+
 Vento quente e úmido
-Ventos fortes
-
-
 
     Tempestade elétrica
     Geada
@@ -86,7 +43,7 @@ HEAVY RAIN, DRIZZLE, HUMID & CLOUDY, COLD WAFTS OF MIST, CLEAR & WINDY, COLD RAI
 
 Fenômenos na estação seca (semiárido)
 
-    Céu limpo e seco
+    Ensolarado e seco
     Quente e seco
     Rajadas esporádicas
     Ventos frios (durante noites ou madrugadas)
@@ -104,8 +61,7 @@ Fenômenos na estação chuvosa (semiárido)
     Chuva com rajadas de vento
     Céu nublado e úmido
     Tempestade quente (chuva associada a calor e trovões)
-    Névoa densa (após chuvas intensas)
-    Granizo (ocasional e raro, mas possível)
+    Névoa densa (após chuvas intensas)    
     Chuvas torrenciais
 
 Clima Tropical (com estações seca e chuvosa)
@@ -265,3 +221,116 @@ Outros Fenômenos Naturais
     Emanações de gás natural (como o fenômeno de fogo em campos de metano)
     Formação de cavernas subterrâneas (erosão geológica)
     Colapsos de calotas de gelo
+
+
+Clima Equatorial
+
+Biomas: Florestas Tropicais, Zonas Alagadas Situações Meteorológicas:
+
+    Chuva forte, Chuva intensa, Chuva leve, Chuva torrencial, Garoa, Garoa morna
+
+    Tempestade, Tempestade abafada
+
+    Nublado e úmido, Nublado e quente
+
+    Tempo ensolarado e limpo
+
+    Ventos fortes, Rajadas de vento esporádicas
+
+Exemplos: Floresta Amazônica (Brasil), Congo (África).
+Clima Tropical
+
+Biomas: Savana Tropical, Zonas Alagadas Situações Meteorológicas:
+
+    Brisa morna, Chuva, Chuva forte, Chuva leve, Chuva torrencial
+
+    Ondas de calor extremo, Tempestade, Nublado e quente
+
+    Tempo quente e abafado, Vento quente e úmido
+
+    Sereno, Sereno morno
+
+Exemplos: Cerrado (Brasil), Serengeti (Tanzânia).
+Clima Temperado
+
+Biomas: Florestas Temperadas, Pradarias Temperadas, Zonas Alagadas Temperadas Situações Meteorológicas:
+
+    Chuva leve, Chuva forte, Garoa
+
+    Nublado e fresco, Parcialmente nublado e fresco, Tempo limpo e fresco
+
+    Rajadas de vento esporádicas, Ventos fortes
+
+    Frio Extremo, Geada, Vento frio
+
+    Tempestade, Temporal
+
+Exemplos: Floresta dos Apalaches (EUA), Pampas (América do Sul).
+Clima Subpolar
+
+Biomas: Florestas Boreais (Taiga) Situações Meteorológicas:
+
+    Nevando leve, Nevando forte, Nevando e com vento, Nevasca
+
+    Nublado e frio, Nublado e gelado
+
+    Tempo frio e seco, Vento gelado, Frio Extremo
+
+    Geada, Névoa fria
+
+Exemplos: Sibéria (Rússia), Alasca (EUA).
+Clima Polar
+
+Biomas: Tundra Polar, Desertos Gelados Situações Meteorológicas:
+
+    Frio Extremo, Geada, Névoa fria, Nublado e congelante
+
+    Nevando leve, Nevando forte, Nevasca
+
+    Chuva com neve, Nevando e com vento, Granizo
+
+Exemplos: Norte do Canadá, Antártica.
+Clima Semiárido
+
+Biomas: Caatinga, Desertos Semiáridos, Pradarias Semiáridas Situações Meteorológicas:
+
+    Ondas de calor extremo, Nuvem de poeira
+
+    Tempo quente e seco, Vendaval
+
+    Vento quente e úmido, Ventos fortes
+
+Exemplos: Caatinga (Brasil), Patagônia (América do Sul).
+Clima Árido
+
+Biomas: Desertos Situações Meteorológicas:
+
+    Ondas de calor extremo, Tempo quente e seco
+
+    Nuvem de poeira, Ventos fortes, Vendaval
+
+    Nublado e quente
+
+Exemplos: Deserto do Saara (África), Atacama (Chile).
+Clima Mediterrâneo
+
+Biomas: Bioma Mediterrâneo Situações Meteorológicas:
+
+    Chuva leve, Chuva forte, Garoa
+
+    Nublado e fresco, Parcialmente nublado e fresco
+
+    Tempo quente e seco, Brisa morna, Ventos fortes
+
+Exemplos: Sul da Espanha, Califórnia (EUA).
+Clima de Altitude
+
+Biomas: Tundra Alpina Situações Meteorológicas:
+
+    Frio Extremo, Vento frio, Geada
+
+    Nevando leve, Nevando forte, Nevando e com vento
+
+    Nublado e frio, Nublado e gelado
+
+Exemplos: Andes (América do Sul), Himalaia (Ásia).

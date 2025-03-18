@@ -20,6 +20,8 @@
 from gi.repository import Adw
 from gi.repository import Gtk, GObject
 
+import csv
+
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click
 
@@ -102,7 +104,7 @@ class WeatherToolkit(Gtk.Box):
                                                 self._on_change_text)
         self._change = self._text_entry.connect("changed",
                                                 self._on_change_text)
-        
+
         self._export_button.connect("clicked", self._serialize_flower)
 
         self._on_hex_selected(None, None, None, None, self._00)
@@ -188,10 +190,26 @@ class WeatherToolkit(Gtk.Box):
                    hex._severity,
                    hex._color,
                    ]
-            
+
             for block in hex._blockers_list:
                 row.append(int(block.get_opacity()))
 
             serialized.append(row)
 
-        print(serialized)        
+        print(serialized)
+
+    def _list_to_csv(self, season, csv_file):
+
+        csv_writer = csv.writer(csv_file)
+        for item in season:
+            csv_writer.writerow(item)
+
+    def _csv_to_list(self, csv_file):
+        season = []
+
+        csv_reader = csv.reader(csv_file)
+        for linha in csv_reader:
+            # Converte os 8 últimos itens para inteiros
+            item = [linha[0]] + list(map(int, linha[1:]))
+            season.append(item)
+        return season

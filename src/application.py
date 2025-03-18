@@ -17,17 +17,15 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+from .iooperations import setup_datasets
+from .gtk.widgets.toolkitwindow import ToolkitWindow
+from .gtk.widgets.mainwindow import MainWindow
+from gi.repository import Gtk, Gio, Adw
 import gi
 import sys
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-
-from gi.repository import Gtk, Gio, Adw
-from .gtk.widgets.mainwindow import MainWindow
-from .gtk.widgets.toolkitwindow import ToolkitWindow
-from .iooperations import setup_datasets
-
 
 
 class Fortuna(Adw.Application):
@@ -47,7 +45,6 @@ class Fortuna(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
-        setup_datasets()
 
         win = self.props.active_window
         if not win:
@@ -71,7 +68,7 @@ class Fortuna(Adw.Application):
         print('app.preferences action activated')
 
     def on_toolkit_action(self, widget, _):
-        
+
         toolkit = ToolkitWindow()
         toolkit.present()
 

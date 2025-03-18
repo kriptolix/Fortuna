@@ -18,132 +18,43 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk, Gio, GLib, GObject
+from gi.repository import Gtk, Gio
 
 import os
-# import yaml
 
-from ...iooperations import list_diretory_content, load_from_disk
 from .listobjects import KeyValuePair
+
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/Weather.ui')
 class Weather(Gtk.Box):
     __gtype_name__ = 'Weather'
 
-    _scenario = Gtk.Template.Child()
-    _region = Gtk.Template.Child()
-    _season = Gtk.Template.Child()
+    _climate = Gtk.Template.Child()
+    _description = Gtk.Template.Child()
+    _biomes = Gtk.Template.Child()
+    _exemples = Gtk.Template.Child()
     _dramatic_mode = Gtk.Template.Child()
-    _evolution = Gtk.Template.Child()
-    _label = Gtk.Template.Child()
+    _weather_button = Gtk.Template.Child()
+    _weather_label = Gtk.Template.Child()
 
     def __init__(self):
-        super().__init__()
+        super().__init__()        
 
-        self._data_user_path = GLib.get_user_data_dir()
+        self._climate_model = Gio.ListStore(item_type=KeyValuePair)
 
-        self._scenario_model = Gio.ListStore(item_type=KeyValuePair)
-        self._season_model = Gio.ListStore(item_type=KeyValuePair)
-        self._region_model = Gio.ListStore(item_type=KeyValuePair)
-
-        self._scenario.set_model(self._scenario_model)
-        self._region.set_model(self._region_model)
-        self._season.set_model(self._season_model)
+        self._climate.set_model(self._climate_model)
 
         list_store_expression = Gtk.PropertyExpression.new(
             KeyValuePair, None, "value",)
 
-        self._scenario.set_expression(list_store_expression)
-        self._region.set_expression(list_store_expression)
-        self._season.set_expression(list_store_expression)
+        self._climate.set_expression(list_store_expression)
+        self._climate.connect('notify::selected-item', self._item_selected)
 
-        self._setup_scenario()
-        self._setup_region()
-        self._setup_season()
+        self._weather_button.connect('clicked', self._pick_weather)
 
-        self._scenario.connect('notify::selected-item', self._item_selected)
-        self._region.connect('notify::selected-item', self._item_selected)
-        self._season.connect('notify::selected-item', self._item_selected)
+    def _item_selected(self, dropdown, parameter):        
+        ''
 
-    def _item_selected(self, dropdown, parameter):
-
-        if dropdown == self._scenario:
-            self._setup_region()
-
-        if dropdown == self._region:
-            self._setup_season()
-
-        if dropdown == self._season:
-            self._load_season()
-
-    def _setup_season(self):
-
-        scenario = self._scenario.get_selected_item().key
-        region = self._region.get_selected_item().key
-
-        season = Gio.File.new_for_path(self._data_user_path
-                                       + "/datasets/" + scenario
-                                       + "/weather/" + region)
-
-        self._setup_dropdown(season, self._season_model)
-
-    def _setup_region(self):
-
-        scenario = self._scenario.get_selected_item().key
-
-        weather_dir = Gio.File.new_for_path(
-            self._data_user_path + "/datasets/" + scenario + "/weather")
-
-        self._setup_dropdown(weather_dir,
-                             self._region_model)
-
-    def _setup_scenario(self):
-
-        scenario_dir = Gio.File.new_for_path(
-            self._data_user_path + "/datasets")
-
-        self._setup_dropdown(scenario_dir,
-                             self._scenario_model)
-
-    def _setup_dropdown(self, gdirectory, model):
-
-        items = model.get_n_items()
-
-        if items > 0:
-            model.remove_all()
-
-        content_enum = list_diretory_content(gdirectory)
-
-        for content in content_enum:
-
-            content_name = content.get_name()
-            value = content_name.capitalize().replace("_", " ")
-
-            if content.get_file_type() == Gio.FileType.REGULAR:
-                tmp_value = os.path.splitext(content_name)
-                value = tmp_value[0].capitalize().replace("_", " ")
-
-            pair = KeyValuePair(key=content_name, value=value)
-
-            model.append(pair)
-
-    def _load_season(self):
-
-        scenario = self._scenario.get_selected_item().key
-        region = self._region.get_selected_item().key
-        season = self._season.get_selected_item().key
-
-        season = Gio.File.new_for_path(self._data_user_path
-                                       + "/datasets/" + scenario
-                                       + "/weather/" + region
-                                       + "/" + season)
-
-        if not season.query_exists():
-            print("directory: ", season.get_path())
-            return
-
-        # file = load_from_disk(season)
-        # season_obj = yaml.safe_load(file)
-
-        # print(season_obj)
+    def _pick_weather(self. button):
+        ''
