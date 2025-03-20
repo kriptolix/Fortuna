@@ -44,6 +44,6 @@ configure_file(
   install_mode: 'r-xr-xr-x'
 )
 
-install_subdir('data/datasets', install_dir: pkgdatadir)
+# install_subdir('data/datasets', install_dir: pkgdatadir)
 install_subdir('src', install_dir: pkgdatadir)
 

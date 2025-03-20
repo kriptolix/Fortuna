@@ -18,12 +18,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk, GObject
+from gi.repository import Gtk, GObject, Gdk
 
 import csv
 
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click
+from ...datasets.strings import weather
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -52,8 +53,8 @@ class WeatherToolkit(Gtk.Box):
     _18 = Gtk.Template.Child()
 
     _hex_diagram = Gtk.Template.Child()
-    _text_entry = Gtk.Template.Child()
-    _danger_box = Gtk.Template.Child()
+    _text_combo = Gtk.Template.Child()
+    _danger_combo = Gtk.Template.Child()
     _export_button = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
@@ -69,6 +70,7 @@ class WeatherToolkit(Gtk.Box):
         super().__init__()
 
         self._hex_selected = None
+        self._drag_coords = [0, 0]
 
         self._hexs_list = [
             self._00, self._01, self._02, self._03, self._04,
@@ -82,11 +84,23 @@ class WeatherToolkit(Gtk.Box):
             self._check_05, self._check_06, self._check_07, self._check_08,
         ]
 
+        model = Gtk.StringList.new(weather)
+        self._text_combo.set_model(model)
+
         self._image = self._hex_diagram._image
 
         for hex in self._hexs_list:
             hex._buttons.set_visible(False)
             create_click(hex, 1, "released", self._on_hex_selected, hex)
+            hex.drag_source.connect("drag-begin", self._on_drag_begin, hex)
+            hex.drag_source.connect("prepare", self._on_prepare, hex)
+
+            # Update row visuals during DnD operation
+            hex.drop_controller.connect("enter", self._on_drop_hover)
+            hex.drop_controller.connect("leave", self._on_drop_hover)
+            hex.drop_controller.connect("motion", self._on_drop_hover)
+
+            hex.drop_target.connect("drop", self._on_drop, hex)
 
         for button in self._hex_diagram.buttons_list:
             button.connect("clicked", self._on_activate_block)
@@ -94,27 +108,22 @@ class WeatherToolkit(Gtk.Box):
         for check in self._checks_list:
             check.connect("toggled", self._on_color_selected)
 
-        self._danger_box.connect('notify::selected-item',
-                                 self._on_severity_selected)
+        self._danger_combo.connect('notify::selected-item',
+                                   self._on_severity_selected)
 
-        self._insert = self._text_entry.connect("insert-text",
-                                                self._on_change_text)
-
-        self._delete = self._text_entry.connect("delete-text",
-                                                self._on_change_text)
-        self._change = self._text_entry.connect("changed",
-                                                self._on_change_text)
+        self._text_combo.connect('notify::selected-item',
+                                 self._on_text_selected)
 
         self._export_button.connect("clicked", self._serialize_flower)
 
         self._on_hex_selected(None, None, None, None, self._00)
+        self._text_combo.set_selected(Gtk.INVALID_LIST_POSITION)
 
-    def _on_change_text(self, *args):
+    def _on_text_selected(self, dropdown, parameter):
 
-        text = self._text_entry.get_text()
-
-        self._hex_diagram._set_text(text)
-        self._hex_selected._set_text(text)
+        position = self._text_combo.get_selected()
+        self._hex_diagram._set_text(position)
+        self._hex_selected._set_text(position)
 
     def _on_activate_block(self, button):
 
@@ -154,31 +163,33 @@ class WeatherToolkit(Gtk.Box):
         widget.add_css_class("hex-bg-selected")
 
         self._hex_selected = widget
-        self._clone_state()
+        self._clone_state(self._hex_selected, self._hex_diagram)
+        self._update_hex_config()
 
-    def _clone_state(self):
+    def _clone_state(self, ori_hex, dst_hex):
 
-        text = self._hex_selected._get_text()
+        text_ref = ori_hex._text_ref
+        dst_hex._set_text(text_ref)
 
-        self._hex_diagram._set_text(text)
-        GObject.signal_handler_disconnect(self._text_entry,  self._insert)
-        self._text_entry.set_text(text)
-        self._insert = self._text_entry.connect("insert-text",
-                                                self._on_change_text)
+        severity = ori_hex._severity
+        dst_hex._set_severity(severity)
 
-        severity = self._hex_selected._severity
-
-        self._hex_diagram._set_severity(severity)
-        self._danger_box.set_selected(severity)
-
-        for index, block in enumerate(self._hex_selected._blockers_list):
-            self._hex_diagram._blockers_list[index].set_opacity(
+        for index, block in enumerate(ori_hex._blockers_list):
+            dst_hex._blockers_list[index].set_opacity(
                 block.get_opacity())
 
-        self._hex_diagram._set_color(self._hex_selected._color)
-        position = self._hex_selected._color
+        dst_hex._set_color(ori_hex._color)
 
-        check = self._checks_list[position]
+    def _update_hex_config(self):
+
+        text_ref = self._hex_diagram._text_ref
+        severity = self._hex_diagram._severity
+        color_check = self._hex_diagram._color
+
+        self._text_combo.set_selected(text_ref)
+        self._danger_combo.set_selected(severity)
+
+        check = self._checks_list[color_check]
         check.set_active(True)
 
     def _serialize_flower(self, button):
@@ -213,3 +224,51 @@ class WeatherToolkit(Gtk.Box):
             item = [linha[0]] + list(map(int, linha[1:]))
             season.append(item)
         return season
+
+    def _on_prepare(self, source, x, y, hexagon):
+
+        self._drag_coords[0] = x
+        self._drag_coords[1] = y
+
+        value = GObject.Value()
+        value.init(HexBase)
+        value.set_object(hexagon)
+
+        return Gdk.ContentProvider.new_for_value(value)
+
+    def _on_drag_begin(self, _source, drag_object, hexagon):
+
+        drag_widget = HexBase()
+
+        self._clone_state(hexagon, drag_widget)
+
+        icon = Gtk.DragIcon.get_for_drag(drag_object)
+        icon.set_child(drag_widget)
+
+        drag_object.set_hotspot(self._drag_coords[0], self._drag_coords[1])
+
+    def _on_drop_hover(self,
+                       controller: Gtk.DropControllerMotion,
+                       x: int | None = None,
+                       y: int | None = None,) -> None:
+
+        hexagon = controller.get_widget()
+
+        if (x and y):
+
+            hexagon.add_css_class("hex-bg-selected")
+            return
+
+        hexagon.remove_css_class("hex-bg-selected")
+
+    def _on_drop(self, _drop, drag_target, x, y, drop_target):
+
+        if (not drag_target or not drop_target
+                or drag_target == drop_target):
+
+            return False
+
+        cache_hex = HexBase()
+        self._clone_state(drop_target, cache_hex)
+        self._clone_state(drag_target, drop_target)
+        self._clone_state(cache_hex, drag_target)

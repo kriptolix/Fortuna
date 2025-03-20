@@ -122,9 +122,9 @@
               </object>
             </child>
             <child>
-              <object class="GtkEntry" id="_text_entry">
+              <object class="GtkDropDown" id="_text_combo">
                 <property name="halign">2</property>
-                <property name="hexpand">true</property>
+                <property name="hexpand">true</property>                
               </object>
             </child>
           </object>
@@ -141,7 +141,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkDropDown" id="_danger_box">
+              <object class="GtkDropDown" id="_danger_combo">
                 <property name="halign">2</property>
                 <property name="hexpand">true</property>
                 <property name="model">

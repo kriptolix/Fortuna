@@ -18,9 +18,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 from ...utils import colors_list
+from ...datasets.strings import weather 
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -70,7 +71,7 @@ class HexBase(Gtk.Box):
         super().__init__()
 
         self._severity = 0
-        self._description = self._display._description
+        self._text_ref = 0
         self._color = 0
 
         self._blockers_list = [
@@ -84,6 +85,14 @@ class HexBase(Gtk.Box):
             self._buttons._bottom_right, self._buttons._bottom_side,
             self._buttons._bottom_left, self._buttons._top_left
         ]
+
+        self.drop_controller = Gtk.DropControllerMotion()
+        self.drag_source = Gtk.DragSource(actions=Gdk.DragAction.MOVE)
+        self.drop_target = Gtk.DropTarget.new(self, Gdk.DragAction.MOVE)
+
+        self.add_controller(self.drag_source)
+        self.add_controller(self.drop_target)
+        self.add_controller(self.drop_controller)
 
     def _set_severity(self, severity):
 
@@ -121,14 +130,16 @@ class HexBase(Gtk.Box):
         self._image.add_css_class(colors_list[color])
         self._color = color
 
-    def _set_text(self, text):
-        self._description.set_text(text)
+    def _set_text(self, position):
+        text = weather[position]
+        self._display._description.set_text(text)
+        self._text_ref = position
 
     def _set_block(self, position, value):
 
         block = self._blockers_list[position]
         block.set_opacity(value)
 
-    def _get_text(self):
-        text = self._description.get_text()
+    def _get_text_ref(self):
+        text = weather[self._text_ref]
         return text

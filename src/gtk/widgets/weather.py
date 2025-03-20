@@ -56,5 +56,5 @@ class Weather(Gtk.Box):
     def _item_selected(self, dropdown, parameter):        
         ''
 
-    def _pick_weather(self. button):
+    def _pick_weather(self, button):
         ''

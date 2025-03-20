@@ -34,6 +34,8 @@ fog = [
     "Névoa Esparsa", "Nuvem de Poeira",
 ]
 
+weather = rain + snow + wind + cloud + termic + fog
+
 summer = [
     ["Chuva", 0, 0, 0, 0],
     ["Garoa morna", 0, 0, 0, 0],
