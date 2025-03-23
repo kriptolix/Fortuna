@@ -21,7 +21,7 @@ from gi.repository import Adw
 from gi.repository import Gtk, Gdk
 
 from ...utils import colors_list
-from ...datasets.strings import weather 
+from ...datasets.strings import weather_names_list
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -71,7 +71,7 @@ class HexBase(Gtk.Box):
         super().__init__()
 
         self._severity = 0
-        self._text_ref = 0
+        self._text_ref = None
         self._color = 0
 
         self._blockers_list = [
@@ -111,7 +111,7 @@ class HexBase(Gtk.Box):
                 self._display._severity.set_visible(True)
                 self._severity = 2
                 self._display._severity.add_css_class("error")
-                
+
                 '''
                 if self._display._severity.has_css_class("warning"):
                     self._display._severity.remove_css_class("warning")
@@ -131,7 +131,11 @@ class HexBase(Gtk.Box):
         self._color = color
 
     def _set_text(self, position):
-        text = weather[position]
+
+        if not position:
+            return
+
+        text = weather_names_list[position]
         self._display._description.set_text(text)
         self._text_ref = position
 
@@ -141,5 +145,8 @@ class HexBase(Gtk.Box):
         block.set_opacity(value)
 
     def _get_text_ref(self):
-        text = weather[self._text_ref]
+        return self._text_ref
+
+    def _get_text(self):
+        text = weather_names_list[self._text_ref]
         return text

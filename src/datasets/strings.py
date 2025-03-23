@@ -1,8 +1,8 @@
 rain = [
     "Garoa", "Garoa Morna", "Sereno", "Sereno Morno", "Chuva",
-    "Chuva Morna", "Chuva Intensa", "Chuva torrencial", "Tempestade",
-    "Chuva com Neve", "Chuva com Vento", "Chuva de Granizo",
-    "Chuva Congelante", "Chuva e Neblina", "Tesmpestade Tropical"
+    "Chuva Morna", "Chuva Intensa", "Chuva torrencial", "Chuva com Vento",
+    "Tempestade", "Tesmpestade Tropical", "Chuva com Neve",
+    "Chuva de Granizo", "Chuva Congelante", "Chuva e Neblina",
 ]
 
 snow = [
@@ -11,8 +11,8 @@ snow = [
 ]
 
 wind = [
-    "Bisa", "Bisa Morna", "Vento frio",
-    "Ventos fortes", "Vendaval", "Rajadas de vento"
+    "Brisa", "Brisa Morna", "Vento Frio",
+    "Ventos Fortes", "Vendaval", "Rajadas de Vento"
 ]
 
 cloud = [
@@ -23,10 +23,10 @@ cloud = [
 ]
 
 termic = [
-    "Ensolarado e Fresco", "Frio e com Vento", "Ensolarado e Frio",
-    "Frio e Seco", "Frio e Úmido", "Esnolarado e com Vento",
-    "Quente e Úmido", "Quente e com Vento", "Quente e Seco",
-    "Frio Extremo", "Ondas de Calor Extremo",
+    "Ensolarado e Frio",  "Ensolarado e Fresco", "Ensolarado e com Vento",
+    "Ensolarado e Quente", "Quente e com Vento", "Quente e Seco",
+    "Quente e Úmido", "Ondas de Calor Extremo", "Frio e com Vento",
+    "Frio e Seco",  "Frio e Úmido", "Frio Extremo",
 ]
 
 fog = [
@@ -34,7 +34,7 @@ fog = [
     "Névoa Esparsa", "Nuvem de Poeira",
 ]
 
-weather = rain + snow + wind + cloud + termic + fog
+weather_names_list = rain + snow + wind + cloud + termic + fog
 
 summer = [
     ["Chuva", 0, 0, 0, 0],
@@ -126,25 +126,36 @@ autumn = [
     "tempestade!"
 ]
 
+climate_names_list = [
+    "Semi Arid: Dry Season",
+    "Semi Arid: Wet Season"
+    ]
+
+
+semi_arid = [
+    "High temperatures with distinct wet and dry seasons",
+    "Biomes: Savannas, tropical grasslands.",
+    "Examples: Indian Subcontinent, African savannas, Northern Australia."
+    ]
 
 semi_arid_dry = [
-    ['Nublado e com Vento', 0, 5, 0, 0, 0, 0, 0, 0],
-    ['Nublado e úmido', 0, 5, 0, 0, 0, 0, 0, 0],
-    ['Nuvem de Poeira', 0, 7, 1, 0, 0, 1, 0, 0],
-    ['Nublado e Fresco', 0, 5, 1, 0, 0, 0, 0, 0],
-    ['Nublado e Quente', 0, 6, 0, 0, 0, 0, 0, 0],
-    ['Brisa morna', 0, 6, 0, 0, 0, 0, 0, 0],
-    ['Quente e com vento', 1, 7, 0, 0, 1, 1, 0, 0],
-    ['Sereno morno', 0, 2, 1, 0, 0, 0, 0, 0],
-    ['Parcialmente nublado', 0, 5, 0, 0, 0, 0, 0, 0],
-    ['Ensolarado e quente', 0, 6, 0, 0, 0, 0, 0, 0],
-    ['Quente e seco', 1, 7, 0, 0, 0, 0, 0, 0],
-    ['Ondas de calor extremo', 2, 7, 0, 0, 0, 1, 0, 0],
-    ['Chuva morna', 0, 2, 0, 0, 0, 0, 0, 0],
-    ['Ensolarado e úmido', 0, 5, 0, 0, 0, 0, 0, 0],
-    ['Ensolarado e com vento', 0, 5, 0, 0, 0, 0, 0, 0],
-    ['Quente e úmido', 1, 7, 0, 0, 0, 0, 0, 0],
-    ['Ventos fortes', 1, 5, 0, 0, 0, 0, 0, 0],
-    ['Nublado e úmido', 0, 2, 0, 0, 0, 0, 0, 1],
-    ['Nublado e Quente', 0, 6, 0, 0, 0, 0, 0, 0]
+    [24, 0, 3, 0, 1, 0, 0, 0, 0], 
+    [26, 0, 3, 0, 0, 0, 0, 0, 0], 
+    [38, 0, 6, 0, 0, 1, 0, 0, 0], 
+    [21, 0, 3, 0, 0, 0, 0, 0, 0], 
+    [35, 0, 6, 0, 0, 0, 0, 0, 0], 
+    [22, 0, 6, 0, 0, 0, 0, 0, 0], 
+    [40, 1, 7, 0, 0, 0, 0, 0, 0], 
+    [27, 0, 5, 1, 0, 0, 0, 0, 0], 
+    [33, 0, 5, 0, 0, 0, 0, 0, 0], 
+    [37, 0, 6, 0, 0, 0, 0, 0, 0], 
+    [39, 1, 7, 0, 0, 0, 0, 0, 0], 
+    [49, 1, 7, 0, 0, 0, 1, 1, 0], 
+    [29, 0, 5, 0, 0, 0, 0, 0, 0], 
+    [32, 0, 5, 0, 0, 0, 0, 0, 0], 
+    [31, 0, 5, 0, 0, 0, 0, 0, 0], 
+    [41, 2, 7, 0, 0, 0, 0, 0, 0], 
+    [8, 0, 2, 0, 0, 0, 0, 0, 1], 
+    [5, 0, 1, 0, 0, 0, 0, 0, 0], 
+    [3, 0, 1, 0, 0, 0, 0, 1, 0]
 ]

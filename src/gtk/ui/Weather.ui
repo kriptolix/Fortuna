@@ -8,7 +8,7 @@
     <property name="valign">3</property>
     <property name="margin-bottom">25</property>
     <child>
-      <object class="GtkDropDown" id="_climate">
+      <object class="GtkDropDown" id="_climate_combo">
         <property name="enable-search">false</property>
         <property name="hexpand">true</property>
       </object>
@@ -20,8 +20,7 @@
         <property name="orientation">1</property>
         <property name="spacing">5</property>
         <child>
-          <object class="GtkLabel" id="_description">
-            <property name="label" translatable="yes">High temperatures with distinct wet and dry seasons</property>
+          <object class="GtkLabel" id="_description">            
             <property name="wrap">true</property>
             <property name="hexpand">false</property>
             <property name="xalign">0</property>
@@ -32,8 +31,7 @@
           </object>
         </child>
         <child>
-          <object class="GtkLabel" id="_biomes">
-            <property name="label" translatable="yes">Biomes: Savannas, tropical grasslands.</property>
+          <object class="GtkLabel" id="_biomes">            
             <property name="wrap">true</property>
             <property name="hexpand">false</property>
             <property name="xalign">0</property>
@@ -44,9 +42,7 @@
           </object>
         </child>
         <child>
-          <object class="GtkLabel" id="_exemples">
-            <property name="label" translatable="yes">Examples: Indian Subcontinent, African savannas, 
-Northern Australia.</property>
+          <object class="GtkLabel" id="_exemples">            
             <property name="wrap">true</property>
             <property name="hexpand">false</property>
             <property name="xalign">0</property>
@@ -92,7 +88,7 @@ Northern Australia.</property>
     </child>
     <child>
       <object class="GtkLabel" id="_weather_label">
-        <property name="label" translatable="yes">Hot and Dry</property>
+        <property name="label" translatable="yes">No Weahter...</property>
         <property name="margin-top">50</property>
         <style>
           <class name="title-1"/>

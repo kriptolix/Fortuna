@@ -24,7 +24,7 @@ import csv
 
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click
-from ...datasets.strings import weather
+from ...datasets.strings import weather_names_list
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -56,6 +56,7 @@ class WeatherToolkit(Gtk.Box):
     _text_combo = Gtk.Template.Child()
     _danger_combo = Gtk.Template.Child()
     _export_button = Gtk.Template.Child()
+    _used_label = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
     _check_02 = Gtk.Template.Child()
@@ -84,8 +85,13 @@ class WeatherToolkit(Gtk.Box):
             self._check_05, self._check_06, self._check_07, self._check_08,
         ]
 
-        model = Gtk.StringList.new(weather)
-        self._text_combo.set_model(model)
+        weather_model = Gtk.StringList.new(weather_names_list)
+        severity_model = Gtk.StringList.new(["Unharmful",
+                                             "Dangerous",
+                                             "Disastrous"])
+
+        self._text_combo.set_model(weather_model)
+        self._danger_combo.set_model(severity_model)
 
         self._image = self._hex_diagram._image
 
@@ -122,6 +128,12 @@ class WeatherToolkit(Gtk.Box):
     def _on_text_selected(self, dropdown, parameter):
 
         position = self._text_combo.get_selected()
+        self._used_label.set_opacity(0)
+
+        for hex in self._hexs_list:
+            if position == hex._text_ref:
+                self._used_label.set_opacity(1)
+
         self._hex_diagram._set_text(position)
         self._hex_selected._set_text(position)
 
@@ -150,7 +162,7 @@ class WeatherToolkit(Gtk.Box):
 
     def _on_severity_selected(self, dropdown, parameter):
 
-        severity = self._danger_box.get_selected()
+        severity = self._danger_combo.get_selected()
         self._hex_diagram._set_severity(severity)
         self._hex_selected._set_severity(severity)
 
@@ -186,6 +198,9 @@ class WeatherToolkit(Gtk.Box):
         severity = self._hex_diagram._severity
         color_check = self._hex_diagram._color
 
+        if not text_ref:
+            text_ref = Gtk.INVALID_LIST_POSITION
+
         self._text_combo.set_selected(text_ref)
         self._danger_combo.set_selected(severity)
 
@@ -197,7 +212,7 @@ class WeatherToolkit(Gtk.Box):
         serialized = []
 
         for hex in self._hexs_list:
-            row = [hex._get_text(),
+            row = [hex._get_text_ref(),
                    hex._severity,
                    hex._color,
                    ]

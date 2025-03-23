@@ -21,8 +21,10 @@ from gi.repository import Adw
 from gi.repository import Gtk, Gio
 
 import os
+import random
 
-from .listobjects import KeyValuePair
+from ...datasets.strings import semi_arid_dry, weather_names_list, climate_names_list
+from ...utils import setup_animation, vertical, right, left
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -30,7 +32,7 @@ from .listobjects import KeyValuePair
 class Weather(Gtk.Box):
     __gtype_name__ = 'Weather'
 
-    _climate = Gtk.Template.Child()
+    _climate_combo = Gtk.Template.Child()
     _description = Gtk.Template.Child()
     _biomes = Gtk.Template.Child()
     _exemples = Gtk.Template.Child()
@@ -39,22 +41,115 @@ class Weather(Gtk.Box):
     _weather_label = Gtk.Template.Child()
 
     def __init__(self):
-        super().__init__()        
+        super().__init__()
 
-        self._climate_model = Gio.ListStore(item_type=KeyValuePair)
+        self._selected_climate = semi_arid_dry
+        self._actual_weather = None
+        self._chances_wigths = [1, 1, 1, 2, 2, 2, 2]
+        self._text = ''
 
-        self._climate.set_model(self._climate_model)
+        climate_model = Gtk.StringList.new(climate_names_list)
 
-        list_store_expression = Gtk.PropertyExpression.new(
-            KeyValuePair, None, "value",)
+        self._climate_combo.set_model(climate_model)
 
-        self._climate.set_expression(list_store_expression)
-        self._climate.connect('notify::selected-item', self._item_selected)
+        self._climate_combo.connect('notify::selected-item',
+                                    self._item_selected)
 
         self._weather_button.connect('clicked', self._pick_weather)
 
-    def _item_selected(self, dropdown, parameter):        
+    def _item_selected(self, dropdown, parameter):
         ''
 
     def _pick_weather(self, button):
-        ''
+
+        if not self._actual_weather:
+            self._actual_weather = random.choice(self._selected_climate)
+            self._text = weather_names_list[self._actual_weather[0]]
+            self._fade_out()
+            return
+
+        move = random.choices([1, 2, 3, 4, 5, 6, 7],
+                              self._chances_wigths)
+
+        # print("Move: ", move[0])
+        # print(self._actual_weather)
+
+        blockers = self._actual_weather[3:]
+
+        # print(blockers)
+
+        for index, element in enumerate(blockers):
+            if element == 1:
+                if index == move[0]:
+                    return
+
+        match move[0]:
+            case 1:
+                self._make_move(-1, vertical)
+            case 4:
+                self._make_move(1, vertical)
+            case 5:
+                self._make_move(-1, right)
+            case 2:
+                self._make_move(1, right)
+            case 6:
+                self._make_move(-1, left)
+            case 3:
+                self._make_move(1, left)
+
+        self._fade_out()
+
+    def _fade_out(self):
+        self._hide = setup_animation(1, 0, self._weather_label, "opacity")
+
+        self._hide.connect("done", self._animation_end)
+
+        self._weather_button.set_sensitive(False)
+        self._hide.play()
+
+    def _fade_in(self):
+        self._show = setup_animation(0, 1, self._weather_label, "opacity")
+
+        self._show.connect("done", self._animation_end)
+
+        self._show.play()
+
+    def _animation_end(self, animation):
+
+        if animation == self._hide:
+            self._weather_label.set_text(self._text)
+            self._fade_in()
+            return
+
+        self._weather_button.set_sensitive(True)
+        self._weather_button.grab_focus()
+
+    def _make_move(self, route, groups):
+
+        index = self._selected_climate.index(self._actual_weather)
+
+        # print("index: ", index)
+
+        for group in groups:
+            if index in group:
+
+                position = group.index(index)
+
+                # print(group, position)
+
+                next_pos = position + route
+
+                if next_pos < 0:
+                    next_pos = len(group) - 1
+
+                if next_pos > len(group) - 1:
+                    next_pos = 0
+
+                next_ref = group[next_pos]
+
+                next_elem = self._selected_climate[next_ref]
+                self._text = weather_names_list[next_elem[0]]
+                self._actual_weather = next_elem
+
+                # print(self._text)
+                # print(next_elem)

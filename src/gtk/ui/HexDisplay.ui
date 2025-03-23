@@ -93,10 +93,7 @@
                 <property name="margin-bottom">25</property>
                 <property name="halign">2</property>
                 <property name="margin-end">30</property>
-                <property name="visible">false</property>
-                <style>
-                  <class name="warning"/>
-                </style>
+                <property name="visible">false</property>                
               </object>
             </child>
             <child type="overlay">

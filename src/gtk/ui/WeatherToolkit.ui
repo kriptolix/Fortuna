@@ -129,6 +129,16 @@
             </child>
           </object>
         </child>
+         <child>
+          <object class="GtkLabel" id="_used_label">
+            <property name="label" translatable="yes">This event is alread selected</property>
+            <property name="opacity">0</property>
+            <style>
+              <class name="error"/>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
         <child>
           <object class="GtkBox">
             <property name="spacing">10</property>
@@ -143,16 +153,7 @@
             <child>
               <object class="GtkDropDown" id="_danger_combo">
                 <property name="halign">2</property>
-                <property name="hexpand">true</property>
-                <property name="model">
-                  <object class="GtkStringList">
-                    <items>
-                      <item>unharmful </item>
-                      <item>dangerous</item>
-                      <item>disastrous</item> 
-                    </items>
-                  </object>
-                </property>
+                <property name="hexpand">true</property>                
               </object>
             </child>
           </object>

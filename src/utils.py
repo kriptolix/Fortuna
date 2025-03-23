@@ -1,4 +1,4 @@
-from gi.repository import Gtk, Gio, GLib
+from gi.repository import Gtk, Gio, Adw
 
 import time
 import threading
@@ -257,6 +257,8 @@ right = [
     [11, 15, 18]
 ]
 
+directions = [vertical, left, right]
+
 colors_list = [
     "color-rain-1", "color-rain-2", "color-cold-1", "color-cold-2",
     "color-cold-3", "color-nippy-1", "color-warm-1", "color-warm-2",
@@ -359,6 +361,20 @@ def update_recent_projects(settings, path):
         recent_projects.pop()
 
     settings.set_strv("recent-projects", recent_projects)
+
+def setup_animation(start, end, widget, property):
+
+        target_property = Adw.PropertyAnimationTarget.new(widget,
+                                                          property)
+
+        animation_timed = Adw.TimedAnimation.new(widget,
+                                                 start,
+                                                 end,
+                                                 550,
+                                                 target_property)
+
+        animation_timed.set_easing(6)
+        return animation_timed
 
 
 class SaveCountdown():

@@ -15,7 +15,6 @@ Garoa, Garoa Morna, Sereno, Sereno Morno, Chuva, Chuva Morna, Chuva Intensa, Chu
 "Geada", "Nevando leve", "Nevando forte", "Nevando e com vento", "Nevasca", "Chuva com Neve"
 
 "Vento frio", "Vento gelado", "Ventos fortes", "Vendaval", "Rajadas de vento"
-
 "Nublado e com Vento", "Nublado e Congelante", "Nublado e Fresco", "Nublado e Frio", "Nublado e Morno", "Nublado e Quente", "Nublado e Úmido"
 
 "Ensolarado e Fresco", "Frio e com Vento", "Ensolarado e Frio", "Frio e Seco", "Frio e Úmido", "Esnolarado e com Vento", "Quente e Úmido", "Quente e com Vento", "Quente e Seco",
@@ -31,6 +30,7 @@ Vento quente e úmido
     Neblina congelante
     Neve granizada
 
+Equatorial Climate, Tropical Climate, Arid Climate, Semi-Arid Climate, Mediterranean Climate, Temperate Climate ,Humid Subtropical Climate, Subpolar Climate, Polar Climate, Mountain Climate.
 
 SHORT SHOWERS, HEAVY RAINFALL, TORRENTIAL RAIN, DOWNPOUR, WARM STORM, WARM DRIZZLE
 WARM RAIN, WARM DRIZZLE, LIGHT DRIZZLE, COLD RAIN, RAIN, HEAVY DOWNPOUR, SHORT, LIGHT SHOWERS,

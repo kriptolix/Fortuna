@@ -20,9 +20,9 @@
 from gi.repository import Adw
 from gi.repository import Gtk, Gio
 
-
 import random
 
+from ...utils import setup_animation
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
               '/src/gtk/ui/Oracle.ui')
@@ -79,24 +79,10 @@ class Oracle(Gtk.Box):
                                 self._chances_wigths[selected])
 
         self._text = result[0]
-        self._fade_out()
-
-    def _setup_animation(self, start, end):
-
-        target_property = Adw.PropertyAnimationTarget.new(self._answer_label,
-                                                          "opacity")
-
-        animation_timed = Adw.TimedAnimation.new(self._answer_label,
-                                                 start,
-                                                 end,
-                                                 550,
-                                                 target_property)
-
-        animation_timed.set_easing(6)
-        return animation_timed
+        self._fade_out()    
 
     def _fade_out(self):
-        self._hide = self._setup_animation(1, 0)
+        self._hide = setup_animation(1, 0, self._answer_label, "opacity")
 
         self._hide.connect("done", self._animation_end)
 
@@ -104,7 +90,7 @@ class Oracle(Gtk.Box):
         self._hide.play()
 
     def _fade_in(self):
-        self._show = self._setup_animation(0, 1)
+        self._show = setup_animation(0, 1, self._answer_label, "opacity")
 
         self._show.connect("done", self._animation_end)
 
