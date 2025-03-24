@@ -23,7 +23,8 @@ from gi.repository import Gtk, Gio
 import os
 import random
 
-from ...datasets.strings import semi_arid_dry, weather_names_list, climate_names_list
+from ...datasets.strings import semi_arid_dry, weather_names_list
+from ...datasets.strings import climate_names_list
 from ...utils import setup_animation, vertical, right, left
 
 
@@ -45,7 +46,7 @@ class Weather(Gtk.Box):
 
         self._selected_climate = semi_arid_dry
         self._actual_weather = None
-        self._chances_wigths = [1, 1, 1, 2, 2, 2, 2]
+        
         self._text = ''
 
         climate_model = Gtk.StringList.new(climate_names_list)
@@ -67,20 +68,28 @@ class Weather(Gtk.Box):
             self._text = weather_names_list[self._actual_weather[0]]
             self._fade_out()
             return
-
+        
+        chances_wigths = [1, 1, 1, 2, 2, 2, 2]
+        
         move = random.choices([1, 2, 3, 4, 5, 6, 7],
-                              self._chances_wigths)
+                              chances_wigths)
 
-        # print("Move: ", move[0])
+        print("Move: ", move[0])
         # print(self._actual_weather)
 
         blockers = self._actual_weather[3:]
 
-        # print(blockers)
+        print(blockers)
 
         for index, element in enumerate(blockers):
             if element == 1:
-                if index == move[0]:
+                if index + 1 == move[0] or move == 7:
+                    if self._dramatic_mode.get_active():
+                        self._pick_weather(None)
+                        print("retry")
+                        return
+                    print("blocked")
+                    self._fade_out()
                     return
 
         match move[0]:
@@ -135,7 +144,7 @@ class Weather(Gtk.Box):
 
                 position = group.index(index)
 
-                # print(group, position)
+                print(group, position, route)
 
                 next_pos = position + route
 

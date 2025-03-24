@@ -24,7 +24,7 @@ import csv
 
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click
-from ...datasets.strings import weather_names_list
+from ...datasets.strings import weather_names_list, semi_arid_dry
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -56,6 +56,7 @@ class WeatherToolkit(Gtk.Box):
     _text_combo = Gtk.Template.Child()
     _danger_combo = Gtk.Template.Child()
     _export_button = Gtk.Template.Child()
+    _import_button = Gtk.Template.Child()
     _used_label = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
@@ -121,6 +122,7 @@ class WeatherToolkit(Gtk.Box):
                                  self._on_text_selected)
 
         self._export_button.connect("clicked", self._serialize_flower)
+        self._import_button.connect("clicked", self._deserialize_flower)
 
         self._on_hex_selected(None, None, None, None, self._00)
         self._text_combo.set_selected(Gtk.INVALID_LIST_POSITION)
@@ -223,6 +225,23 @@ class WeatherToolkit(Gtk.Box):
             serialized.append(row)
 
         print(serialized)
+
+    def _deserialize_flower(self, button):
+
+        climate_season = semi_arid_dry
+
+        for index, weather in enumerate(climate_season):
+            hex = self._hexs_list[index]
+
+            hex._set_text(weather[0])
+            hex._set_severity(weather[1])
+            hex._set_color(weather[2])
+
+            blockers = weather[3:]
+
+            for index, block in enumerate(blockers):
+                if block == 1:
+                    hex._blockers_list[index].set_opacity(1)
 
     def _list_to_csv(self, season, csv_file):
 
