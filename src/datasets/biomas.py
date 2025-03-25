@@ -36,7 +36,6 @@ Mediterranean Climate
     Description: Hot, dry summers and mild, rainy winters.
 
     Biomes: Mediterranean vegetation (maquis, garrigue).
-
     Examples: Southern Italy, coastal California (USA), South Africa's Cape Region.
 
 Temperate Climate

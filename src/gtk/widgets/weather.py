@@ -24,7 +24,7 @@ import os
 import random
 
 from ...datasets.strings import semi_arid_dry, weather_names_list
-from ...datasets.strings import climate_names_list
+from ...datasets.strings import climate_names_list, season_tips
 from ...utils import setup_animation, vertical, right, left
 
 
@@ -34,10 +34,8 @@ class Weather(Gtk.Box):
     __gtype_name__ = 'Weather'
 
     _climate_combo = Gtk.Template.Child()
-    _description = Gtk.Template.Child()
-    _biomes = Gtk.Template.Child()
-    _exemples = Gtk.Template.Child()
     _dramatic_mode = Gtk.Template.Child()
+    _info_icon = Gtk.Template.Child()
     _weather_button = Gtk.Template.Child()
     _weather_label = Gtk.Template.Child()
 
@@ -46,7 +44,7 @@ class Weather(Gtk.Box):
 
         self._selected_climate = semi_arid_dry
         self._actual_weather = None
-        
+
         self._text = ''
 
         climate_model = Gtk.StringList.new(climate_names_list)
@@ -59,7 +57,12 @@ class Weather(Gtk.Box):
         self._weather_button.connect('clicked', self._pick_weather)
 
     def _item_selected(self, dropdown, parameter):
-        ''
+        
+        tooltip = (season_tips[0][0] + '\n\n'
+                   + season_tips[0][1] + '\n\n'
+                   + season_tips[0][2])
+
+        self._info_icon.set_tooltip_text(tooltip)        
 
     def _pick_weather(self, button):
 
@@ -68,9 +71,9 @@ class Weather(Gtk.Box):
             self._text = weather_names_list[self._actual_weather[0]]
             self._fade_out()
             return
-        
+
         chances_wigths = [1, 1, 1, 2, 2, 2, 2]
-        
+
         move = random.choices([1, 2, 3, 4, 5, 6, 7],
                               chances_wigths)
 
