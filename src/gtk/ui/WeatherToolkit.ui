@@ -7,88 +7,92 @@
     <property name="margin-start">25</property>
     <property name="margin-end">25</property>
     <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <property name="margin-top">120</property>
+      <object class="GtkBox" id="_hex_box">
         <child>
-          <object class="HexBase" id="_00"></object>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">120</property>
+            <child>
+              <object class="HexBase" id="_00"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_01"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_02"></object>
+            </child>
+          </object>
         </child>
         <child>
-          <object class="HexBase" id="_01"></object>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">60</property>
+            <child>
+              <object class="HexBase" id="_03"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_04"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_05"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_06"></object>
+            </child>
+          </object>
         </child>
         <child>
-          <object class="HexBase" id="_02"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <property name="margin-top">60</property>
-        <child>
-          <object class="HexBase" id="_03"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_04"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_05"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_06"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <child>
-          <object class="HexBase" id="_07"></object>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <child>
+              <object class="HexBase" id="_07"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_08"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_09"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_10"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_11"></object>
+            </child>
+          </object>
         </child>
         <child>
-          <object class="HexBase" id="_08"></object>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">60</property>
+            <child>
+              <object class="HexBase" id="_12"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_13"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_14"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_15"></object>
+            </child>
+          </object>
         </child>
         <child>
-          <object class="HexBase" id="_09"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_10"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_11"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <property name="margin-top">60</property>
-        <child>
-          <object class="HexBase" id="_12"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_13"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_14"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_15"></object>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">1</property>
-        <property name="margin-top">120</property>
-        <child>
-          <object class="HexBase" id="_16"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_17"></object>
-        </child>
-        <child>
-          <object class="HexBase" id="_18"></object>
+          <object class="GtkBox">
+            <property name="orientation">1</property>
+            <property name="margin-top">120</property>
+            <child>
+              <object class="HexBase" id="_16"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_17"></object>
+            </child>
+            <child>
+              <object class="HexBase" id="_18"></object>
+            </child>
+          </object>
         </child>
       </object>
     </child>
@@ -107,7 +111,7 @@
           </object>
         </child>
         <child>
-          <object class="HexBase" id="_hex_diagram">        
+          <object class="HexBase" id="_hex_diagram">
           </object>
         </child>
         <child>
@@ -124,12 +128,12 @@
             <child>
               <object class="GtkDropDown" id="_text_combo">
                 <property name="halign">2</property>
-                <property name="hexpand">true</property>                
+                <property name="hexpand">true</property>
               </object>
             </child>
           </object>
         </child>
-         <child>
+        <child>
           <object class="GtkLabel" id="_used_label">
             <property name="label" translatable="yes">This event is alread selected</property>
             <property name="opacity">0</property>
@@ -153,7 +157,7 @@
             <child>
               <object class="GtkDropDown" id="_danger_combo">
                 <property name="halign">2</property>
-                <property name="hexpand">true</property>                
+                <property name="hexpand">true</property>
               </object>
             </child>
           </object>
@@ -250,6 +254,18 @@
                 </style>
               </object>
             </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="_save_button">
+            <property name="label" translatable="yes">Save as image</property>
+            <property name="halign">3</property>
+            <property name="valign">2</property>
+            <property name="vexpand">true</property>
+            <style>
+              <class name="suggested-action"/>
+              <class name="pill"/>
+            </style>
           </object>
         </child>
         <child>

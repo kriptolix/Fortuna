@@ -1,4 +1,4 @@
-from gi.repository import Gtk, Gio, Adw
+from gi.repository import Gtk, Gsk, Graphene, Gdk, Gio, GLib, Adw
 
 # p1 esquerda, p4 direta
 vertical = [
@@ -119,3 +119,68 @@ def setup_animation(start, end, widget, property):
 
     animation_timed.set_easing(6)
     return animation_timed
+
+
+def take_screeshot(widget):
+
+    snapshot = Gtk.Snapshot.new()
+    widget.do_snapshot(widget, snapshot)
+    node = snapshot.to_node()
+
+    rect = Graphene.Rect().init(0, 0, widget.get_width(), widget.get_height())
+
+    renderer = Gtk.Native.get_renderer(widget.get_native())
+    texture = Gsk.Renderer.render_texture(renderer,
+                                          node,
+                                          rect)
+
+    # Gdk.Texture.save_to_png(texture, png_file)
+
+    b_texture = Gdk.Texture.save_to_png_bytes(texture)
+
+    return b_texture
+
+
+def write_to_disk_async(gfile: Gio.File,
+                        content: bytes,
+                        callback: object):
+
+    def finish_replace(gfile, result, data):
+
+        try:
+            result, tag = gfile.replace_contents_finish(result)
+
+        except GLib.GError as error:
+            callback(None, error)
+
+            print(str(error.message))
+            return
+
+        info = gfile.query_info("standard::display-name",
+                                Gio.FileQueryInfoFlags.NONE)
+
+        if info:
+            display_name = info.get_attribute_string(
+                "standard::display-name")
+        else:
+            display_name = gfile.get_basename()
+
+        if not (result):
+            print(f"Unable to save {display_name}")
+
+        else:
+            callback(gfile, None)
+    ##
+
+    # byte_content = GLib.Bytes.new(content.encode('utf-8'))
+
+    gfile.replace_contents_bytes_async(content,
+                                       None,
+                                       False,
+                                       Gio.FileCreateFlags.NONE,
+                                       None,
+                                       finish_replace,
+                                       None)
+
+
+

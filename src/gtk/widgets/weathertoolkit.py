@@ -17,13 +17,13 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
-from gi.repository import Gtk, GObject, Gdk
+
+from gi.repository import Gtk, GObject, Gdk, Gio, GLib
 
 import csv
 
 from .hexagon import HexBase, HexDisplay, HexButtons
-from ...utils import create_click
+from ...utils import create_click, take_screeshot, write_to_disk_async
 from ...datasets.strings import weather_names_list, semi_arid_dry
 
 
@@ -53,10 +53,12 @@ class WeatherToolkit(Gtk.Box):
     _18 = Gtk.Template.Child()
 
     _hex_diagram = Gtk.Template.Child()
+    _hex_box = Gtk.Template.Child()
     _text_combo = Gtk.Template.Child()
     _danger_combo = Gtk.Template.Child()
     _export_button = Gtk.Template.Child()
     _import_button = Gtk.Template.Child()
+    _save_button = Gtk.Template.Child()
     _used_label = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
@@ -123,6 +125,7 @@ class WeatherToolkit(Gtk.Box):
 
         self._export_button.connect("clicked", self._serialize_flower)
         self._import_button.connect("clicked", self._deserialize_flower)
+        self._save_button.connect("clicked", self._save_screenshot)
 
         self._on_hex_selected(None, None, None, None, self._00)
         self._text_combo.set_selected(Gtk.INVALID_LIST_POSITION)
@@ -306,3 +309,42 @@ class WeatherToolkit(Gtk.Box):
         self._clone_state(drop_target, cache_hex)
         self._clone_state(drag_target, drop_target)
         self._clone_state(cache_hex, drag_target)
+
+    def _save_screenshot(self, button):
+
+        def when_writed(gfile, error):
+
+            if (error):
+                print(str(error.message))
+                return
+
+        def _choose_dialog_callback(file_dialog: Gtk.FileDialog,
+                                    task: Gio.AsyncResult,
+                                    data: bytes):
+
+            try:
+                gfile = file_dialog.save_finish(task)
+
+            except GLib.GError as error:
+
+                print(str(error.message))
+                return
+
+            self.last_loaded_file = gfile
+            write_to_disk_async(gfile, data, when_writed)
+
+        ##
+
+        for hex in self._hexs_list:
+            if hex.has_css_class("hex-bg-selected"):
+                hex.remove_css_class("hex-bg-selected")        
+
+        screenshot = take_screeshot(self._hex_box)
+
+        self._hex_selected.add_css_class("hex-bg-selected")
+
+        file_dialog = Gtk.FileDialog.new()
+        file_dialog.set_title("Export File")
+        file_dialog.save(None, None,
+                         _choose_dialog_callback,
+                         screenshot)
