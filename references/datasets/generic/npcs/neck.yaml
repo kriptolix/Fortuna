@@ -1,0 +1,22 @@
+neck:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: curved_neck
+      text: "Curved neck"
+      weight: 2
+
+    - id: very_thick_neck
+      text: "Very thick neck"
+      weight: 1.5
+      constraints:
+        min_age: 16
+
+    - id: long_elegant_neck
+      text: "Long, elegant neck"
+      weight: 2
+
+    - id: very_thin_neck
+      text: "Very thin neck"
+      weight: 1.5

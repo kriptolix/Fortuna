@@ -1,0 +1,66 @@
+skin:
+  weight: 2
+  selection:
+    type: multiple
+    required: false    
+    max: 2    
+  traits:
+    - id: blistered_skin
+      text: "Blistered skin"
+      weight: 2
+
+    - id: dry_cracked_skin
+      text: "Dry, cracked skin"
+      weight: 3
+
+    - id: reddened_skin
+      text: "Reddened skin"
+      weight: 2
+
+    - id: jaundiced_skin
+      text: "Jaundiced skin"
+      weight: 0.5
+      constraints:
+        min_age: 12
+
+    - id: oily_skin
+      text: "Oily skin"
+      weight: 3
+
+    - id: peeling_skin
+      text: "Peeling skin"
+      weight: 2
+
+    - id: yellowish_skin
+      text: "Yellowish skin"
+      weight: 1
+
+    - id: uneven_skin_tone
+      text: "Uneven skin tone"
+      weight: 2
+
+    - id: discolored_patches
+      text: "Discolored skin patches"
+      weight: 1.5
+
+    - id: prematurely_wrinkled_skin
+      text: "Excessively wrinkled skin for their age"
+      weight: 0.8
+      constraints:
+        min_age: 25
+
+    - id: porcelain_skin
+      text: "Delicate, porcelain-like skin"
+      weight: 1
+
+    - id: radiant_skin
+      text: "Radiant skin"
+      weight: 1.2    
+
+    - id: velvety_skin
+      text: "Soft, velvety skin"
+      weight: 1.3
+
+    - id: tanned_skin
+      text: "Tanned skin"
+      weight: 1

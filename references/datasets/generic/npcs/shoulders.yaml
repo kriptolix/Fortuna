@@ -1,0 +1,19 @@
+shoulders:
+  selection:
+    type: multiple
+    required: false    
+    max: 2    
+  traits:
+    - id: rounded_shoulders
+      text: "Rounded shoulders"
+      weight: 1.5
+
+    - id: uneven_shoulders
+      text: "Uneven shoulders"
+      weight: 1.2
+
+    - id: broad_strong_shoulders
+      text: "Broad, strong shoulders"
+      weight: 1.8
+      constraints:
+        min_age: 16

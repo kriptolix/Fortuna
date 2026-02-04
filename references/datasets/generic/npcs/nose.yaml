@@ -1,0 +1,16 @@
+nose:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: broken_nose
+      text: "Broken nose"
+      weight: 2
+
+    - id: hooked_nose
+      text: "Hooked nose"
+      weight: 2
+
+    - id: soft_rabbit_nose
+      text: "Soft, rabbit-like nose"
+      weight: 1

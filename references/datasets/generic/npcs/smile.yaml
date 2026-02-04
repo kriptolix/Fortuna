@@ -1,0 +1,26 @@
+smile:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: bright_cheerful_smile
+      text: "Bright and cheerful smile"
+      weight: 4    
+
+    - id: dimpled_smile
+      text: "Dimpled smile"
+      weight: 3
+
+    - id: charming_smile
+      text: "Moonlit, charming smile"
+      weight: 1
+
+    - id: comforting_smile
+      text: "Comforting smile"
+      weight: 3
+
+    - id: inviting_smile
+      text: "Inviting smile"
+      weight: 3
+
+    

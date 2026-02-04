@@ -1,0 +1,26 @@
+body_locations:
+  head:
+    weight: 3
+    parts: [scalp, forehead, cheeks, jaw]
+
+  face:
+    weight: 4
+    parts: [nose, cheeks, chin, lips]
+
+  arms:
+    weight: 4
+    parts: [upper_arm, forearm, wrist, hands]
+
+  torso:
+    weight: 3
+    parts: [chest, abdomen, back, sides]
+
+  legs:
+    weight: 4
+    parts: [thighs, knees, calves, ankles]
+
+  shoulders:
+    weight: 2
+
+  neck:
+    weight: 2

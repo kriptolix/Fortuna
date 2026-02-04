@@ -1,0 +1,153 @@
+eyes:
+  selection:
+    type: multiple
+    required: false
+    min: 0
+    max: 5
+    allow_duplicates: false
+  traits:
+    # Eyebrows
+    - id: missing_eyebrow
+      text: "Missing eyebrow"
+      weight: 1
+
+    - id: sparse_eyebrows
+      text: "Sparse eyebrows"
+      weight: 1.2
+
+    - id: well_shaped_eyebrows
+      text: "Well-shaped eyebrows"
+      weight: 1.5
+
+    - id: partially_missing_eyebrow
+      text: "Part of eyebrow missing"
+      weight: 1
+
+    # Eyelashes
+    - id: missing_eyelashes
+      text: "Missing eyelashes"
+      weight: 1
+
+    - id: delicate_floating_eyelashes
+      text: "Delicate, floating eyelashes"
+      weight: 1.2
+
+    - id: snowflake_eyelashes
+      text: "Delicate eyelashes, like snowflakes"
+      weight: 1.2
+
+    - id: thick_attractive_eyelashes
+      text: "Thick, attractive eyelashes"
+      weight: 1.3
+
+    # Eye color
+    - id: warm_chocolate_eyes
+      text: "Warm, chocolate-colored eyes"
+      weight: 1.5
+
+    - id: crystal_blue_eyes
+      text: "Crystal blue eyes"
+      weight: 1.5
+
+    # Eye shape
+    - id: wide_set_eyes
+      text: "Wide-set eyes"
+      weight: 1.2
+
+    - id: narrow_eyes
+      text: "Narrow eyes"
+      weight: 1.2
+
+    - id: misaligned_eyes
+      text: "Misaligned eyes"
+      weight: 1
+
+    - id: cross_eyed
+      text: "Cross-eyed"
+      weight: 0.8
+
+    - id: bulging_eyes
+      text: "Bulging eyes"
+      weight: 1
+
+    # Eye traits
+    - id: almond_shaped_eyes
+      text: "Almond-shaped eyes"
+      weight: 1.3
+
+    - id: bright_eyes
+      text: "Bright eyes"
+      weight: 1.3
+
+    - id: red_eyes
+      text: "Red eyes"
+      weight: 0.8
+
+    - id: droopy_eyelids
+      text: "Droopy eyelids"
+      weight: 1
+
+    - id: deep_set_eyes
+      text: "Deep-set eyes"
+      weight: 1.2
+
+    - id: dull_eyes
+      text: "Dull eyes"
+      weight: 1
+
+    - id: sparkling_eyes
+      text: "Sparkling eyes"
+      weight: 1.3
+
+    - id: starry_eyes
+      text: "Bright, starry eyes"
+      weight: 1.3
+
+    - id: thoughtful_eyes
+      text: "Deep, thoughtful eyes"
+      weight: 1.3
+
+    - id: expressive_eyes
+      text: "Deep, expressive eyes"
+      weight: 1.3
+
+    - id: passionate_eyes
+      text: "Burning, passionate eyes"
+      weight: 1.3
+
+    - id: gentle_deer_eyes
+      text: "Gentle eyes, like a deer"
+      weight: 1.3
+
+    - id: hypnotic_ocean_eyes
+      text: "Hypnotic, oceanic eyes"
+      weight: 1.3
+
+    - id: glowing_eyes
+      text: "Glowing eyes, like lanterns"
+      weight: 1.3
+
+    - id: starry_gaze
+      text: "Starry, luminous gaze"
+      weight: 1.3
+
+    - id: mesmerizing_eyes
+      text: "Mesmerizing eyes"
+      weight: 1.3
+
+    - id: warm_inviting_eyes
+      text: "Warm, inviting eyes"
+      weight: 1.3
+
+    # Gaze
+    - id: captivating_gaze
+      text: "Captivating, magnetic gaze"
+      weight: 1.3
+
+    - id: contemplative_gaze
+      text: "Deep, contemplative gaze"
+      weight: 1.3
+
+    - id: penetrating_gaze
+      text: "Piercing, penetrating gaze"
+      weight: 1.3

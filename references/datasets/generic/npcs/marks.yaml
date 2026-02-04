@@ -1,0 +1,57 @@
+marks:
+  selection:
+    type: multiple
+    required: false    
+    max: 3   
+  traits:
+    - id: birthmarks
+      text: "Birthmarks"
+      weight: 3
+
+    - id: burn_marks
+      text: "Burn marks"
+      weight: 2
+
+    - id: freckles
+      text: "Freckles"
+      weight: 4
+      constraints:
+        allowed_locations: [face, arms, shoulders]
+
+    - id: expression_lines
+      text: "Expression lines"
+      weight: 4
+
+    - id: pockmarks
+      text: "Pockmarks"
+      weight: 1
+
+    - id: sunburn_damage
+      text: "Sunburn damage"
+      weight: 2
+
+    - id: vitiligo_patches
+      text: "Vitiligo patches"
+      weight: 1
+
+    - id: warts
+      text: "Warts"
+      weight: 2
+
+    - id: faded_tattoos
+      text: "Faded tattoos"
+      weight: 1.5
+
+    - id: self_harm_scars
+      text: "Self-harm scars"
+      weight: 0.5
+      constraints:
+        allowed_locations: [arms, torso, thighs]
+
+    - id: visible_stretch_marks
+      text: "Visible stretch marks"
+      weight: 2
+
+    - id: visible_burn_scars
+      text: "Visible burn scars"
+      weight: 1

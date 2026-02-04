@@ -1,0 +1,51 @@
+feet:
+  selection:
+    type: multiple
+    required: false
+    min: 0
+    max: 3
+    allow_duplicates: false
+  traits:
+    - id: bunion
+      text: "Bunion"
+      weight: 1.5
+      constraints:
+        min_age: 12
+
+    - id: twisted_foot
+      text: "Twisted foot"
+      weight: 2
+
+    - id: foot_calluses
+      text: "Foot calluses"
+      weight: 1.5
+      constraints:
+        min_age: 10
+
+    - id: chicken_feet
+      text: "Chicken feet"
+      weight: 1.5
+
+    - id: flat_foot
+      text: "Flat foot"
+      weight: 2
+
+    - id: pigeon_toes
+      text: "Pigeon toes"
+      weight: 1.5
+
+    - id: wide_feet
+      text: "Wide feet"
+      weight: 1.5
+
+    - id: swollen_ankles
+      text: "Swollen ankles"
+      weight: 1.2
+      constraints:
+        min_age: 12
+
+    - id: delicate_feet
+      text: "Delicate feet"
+      weight: 1.2
+      constraints:
+        min_age: 12

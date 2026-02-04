@@ -1,0 +1,11 @@
+constitution: 
+  skeletal: "Esquelético"
+  skinny: "Magro"
+  athletic: "Atlético"
+  strong: "Forte"
+  muscular: "Musculoso"
+  weightlifter: "Halterofilista"
+  stocky: "Corpulento"
+  fat: "Gordo"
+  obese: "Obeso"
+      

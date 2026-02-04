@@ -1,0 +1,13 @@
+marks:
+  birthmarks: "Marcas de nascença"
+  burn_marks: "Marcas de queimadura"
+  freckles: "Sardas"
+  expression_lines: "Linhas de expressão"
+  pockmarks: "Marcas de varíola"
+  sunburn_damage: "Queimaduras de sol"
+  vitiligo_patches: "Manchas de vitiligo"
+  warts: "Verrugas"
+  faded_tattoos: "Tatuagens desbotadas"
+  self_harm_scars: "Cicatrizes de automutilação"
+  visible_stretch_marks: "Estrias visíveis"
+  visible_burn_scars: "Cicatrizes de queimadura visíveis"
