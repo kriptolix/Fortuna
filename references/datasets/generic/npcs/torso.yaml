@@ -1,0 +1,25 @@
+torso:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: beer_belly
+      text: "Beer belly"
+      weight: 3
+      constraints:
+        min_age: 18
+
+    - id: protruding_belly
+      text: "Protruding belly"
+      weight: 3
+      constraints:
+        min_age: 12
+
+    - id: toned_abdomen
+      text: "Firm, toned abdomen"
+      weight: 2
+      constraints:
+        min_age: 16
+      conflicts_with:
+        - obese
+        - protruding_belly

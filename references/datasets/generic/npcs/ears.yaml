@@ -1,0 +1,20 @@
+ears:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: cauliflower_ear
+      text: "Cauliflower ear"
+      weight: 1
+
+    - id: prominent_ears
+      text: "Prominent ears"
+      weight: 3
+
+    - id: missing_earlobe
+      text: "Missing earlobe"
+      weight: 1
+
+    - id: very_pointed_ears
+      text: "Very pointed ears"
+      weight: 2

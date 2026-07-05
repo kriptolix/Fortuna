@@ -1,0 +1,8 @@
+age:
+  child: "Criança"
+  teenager: "Adolescente"
+  young: "Jovem"
+  adult: "Adulto"
+  middle: "Meia idade"
+  old: "Idoso"
+  elder: "Ancião"

@@ -1,0 +1,47 @@
+eyes:
+  # Eyebrows
+  missing_eyebrow: "Sobrancelha faltando"
+  sparse_eyebrows: "Sobrancelhas esparsas"
+  well_shaped_eyebrows: "Sobrancelhas bem traçadas"
+  partially_missing_eyebrow: "Um pedaço da sobrancelha faltando"
+
+  # Eyelashes
+  missing_eyelashes: "Cílios faltando"
+  delicate_floating_eyelashes: "Cílios delicados e esvoaçantes"
+  snowflake_eyelashes: "Cílios delicados, como flocos de neve"
+  thick_attractive_eyelashes: "Cílios grossos e atraentes"
+
+  # Eye color
+  warm_chocolate_eyes: "Olhos castanhos quentes e cor de cacau"
+  crystal_blue_eyes: "Olhos azuis cristalinos"
+
+  # Eye shape
+  wide_set_eyes: "Olhos separados"
+  narrow_eyes: "Olhos estreitos"
+  misaligned_eyes: "Olhos desalinhados"
+  cross_eyed: "Olhos vesgalhados"
+  bulging_eyes: "Olhos esbugalhados"
+
+  # Eye traits
+  almond_shaped_eyes: "Olhos amendoados"
+  bright_eyes: "Olhos brilhantes"
+  red_eyes: "Olhos vermelhos"
+  droopy_eyelids: "Pálpebras caídas"
+  deep_set_eyes: "Olhos fundos"
+  dull_eyes: "Olhos opacos"
+  sparkling_eyes: "Olhos cintilantes"
+  starry_eyes: "Olhos brilhantes e estrelados"
+  thoughtful_eyes: "Olhos profundos e pensativos"
+  expressive_eyes: "Olhos profundos e emocionantes"
+  passionate_eyes: "Olhos ardentes e apaixonados"
+  gentle_deer_eyes: "Olhos gentis, como cervos"
+  hypnotic_ocean_eyes: "Olhos hipnóticos, oceânicos"
+  glowing_eyes: "Olhos luminosos, como lanternas"
+  starry_gaze: "Olhar luminoso, estrelado"
+  mesmerizing_eyes: "Olhos hipnotizantes"
+  warm_inviting_eyes: "Olhos quentes e convidativos"
+
+  # Gaze
+  captivating_gaze: "Olhar cativante e magnético"
+  contemplative_gaze: "Olhar profundo e contemplativo"
+  penetrating_gaze: "Olhar penetrante"

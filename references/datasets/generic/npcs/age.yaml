@@ -1,0 +1,27 @@
+age: 
+  weight: 1
+  selection:
+    type: single   # single | multiple
+    required: true
+  traits:
+    - id: child
+      text: "Child"
+      weight: 1 # 1,5%
+    - id: teenager
+      text: "Teenager"
+      weight: 2 # 3,0%
+    - id: young
+      text: "Young"
+      weight: 10 # 15,2%
+    - id: adult
+      text: "Adult"
+      weight: 30 # 45,5%
+    - id: middle
+      text: "Niddle Aged"
+      weight: 15 # 22,7%
+    - id: old
+      text: "old"
+      weight: 6 # 9,1%
+    - id: elder
+      text: "Elder"
+      weight: 2 # 3,0%

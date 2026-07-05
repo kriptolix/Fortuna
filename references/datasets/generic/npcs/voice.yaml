@@ -1,0 +1,60 @@
+voice:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: hoarse_voice
+      text: "Hoarse voice"
+      weight: 1.5
+
+    - id: stuttering
+      text: "Stuttering"
+      weight: 1
+
+    - id: high_pitched_voice
+      text: "High-pitched, shrill voice"
+      weight: 1.2
+
+    - id: raspy_speech
+      text: "Raspy speech"
+      weight: 1
+
+    - id: murmuring_speech
+      text: "Murmuring speech"
+      weight: 1.2
+
+    - id: deep_voice
+      text: "Deep voice"
+      weight: 2
+
+    - id: resonant_voice
+      text: "Resonant, full voice"
+      weight: 1.8
+
+    - id: soft_relaxing_voice
+      text: "Soft, relaxing voice"
+      weight: 1.5
+
+    - id: musical_voice
+      text: "Musical, singing voice"
+      weight: 1.5
+
+    - id: powerful_thundering_voice
+      text: "Powerful, thundering voice"
+      weight: 0.8
+
+    - id: silky_voice
+      text: "Silky voice"
+      weight: 1.2
+
+    - id: gentle_voice
+      text: "Gentle voice"
+      weight: 1.5
+
+    - id: velvety_melodious_voice
+      text: "Velvety, melodious voice"
+      weight: 1.2
+
+    - id: warm_sweet_voice
+      text: "Warm, sweet voice"
+      weight: 1.3

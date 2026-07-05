@@ -1,0 +1,39 @@
+height: 
+  selection:
+    type: single   # single | multiple
+    required: false
+  weight: 1
+  traits:
+    - id: dwarf
+      text: "Dwarf"
+      weight: 1
+
+    - id: very_short
+      text: "Very short"
+      weight: 2
+      constraints:
+        allowed_age: [teenager, young, adult, middle_aged, old, elder]
+
+    - id: short
+      text: "Short"
+      weight: 3
+      constraints:
+        allowed_age: [teenager, young, adult, middle_aged, old, elder]
+
+    - id: tall
+      text: "Tall"
+      weight: 3
+      constraints:
+        allowed_age: [young, adult, middle_aged, old]
+
+    - id: very_tall
+      text: "Very tall"
+      weight: 2
+      constraints:
+        allowed_age: [young, adult, middle_aged]
+
+    - id: giant
+      text: "Giant"
+      weight: 1
+      constraints:
+        allowed_age: [adult, middle_aged]

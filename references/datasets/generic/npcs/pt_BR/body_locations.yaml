@@ -1,0 +1,33 @@
+body_locations:
+  head: "Cabeça"
+  face: "Rosto"
+  arms: "Braços"
+  torso: "Tronco"
+  legs: "Pernas"
+  shoulders: "Ombros"
+  neck: "Pescoço"
+
+  parts:
+    scalp: "Couro cabeludo"
+    forehead: "Testa"
+    cheeks: "Bochechas"
+    jaw: "Mandíbula"
+
+    nose: "Nariz"
+    chin: "Queixo"
+    lips: "Lábios"
+
+    upper_arm: "Parte superior do braço"
+    forearm: "Antebraço"
+    wrist: "Pulso"
+    hands: "Mãos"
+
+    chest: "Peito"
+    abdomen: "Abdômen"
+    back: "Costas"
+    sides: "Laterais do tronco"
+
+    thighs: "Coxas"
+    knees: "Joelhos"
+    calves: "Panturrilhas"
+    ankles: "Tornozelos"

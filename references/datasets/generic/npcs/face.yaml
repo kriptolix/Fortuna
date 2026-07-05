@@ -1,0 +1,40 @@
+face:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: sunken_cheeks
+      text: "Sunken cheeks"
+      weight: 2    
+
+    - id: defined_cheekbones
+      text: "Defined cheekbones"
+      weight: 3
+
+    - id: rosy_cheeks
+      text: "Rosy cheeks"
+      weight: 3
+
+    - id: sculpted_cheekbones
+      text: "Sculpted cheekbones"
+      weight: 2
+
+    - id: soft_plump_cheeks
+      text: "Soft, plump cheeks"
+      weight: 3    
+
+    - id: double_chin
+      text: "Double chin"
+      weight: 2
+
+    - id: strong_chin
+      text: "Strong chin"
+      weight: 3
+
+    - id: asymmetrical_face
+      text: "Asymmetrical face"
+      weight: 1
+
+    - id: symmetrical_face
+      text: "Symmetrical face"
+      weight: 4

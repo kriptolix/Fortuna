@@ -1,0 +1,25 @@
+arms:
+  selection:
+    type: multiple
+    required: false
+    min: 0
+    max: 2
+    allow_duplicates: false
+  traits:
+    - id: flabby_arms
+      text: "Flabby arms"
+      weight: 1.5
+      constraints:
+        min_age: 12
+
+    - id: missing_arm_hair
+      text: "Patches of missing hair on arms"
+      weight: 1.2
+      constraints:
+        min_age: 14
+
+    - id: toned_arms
+      text: "Toned arms"
+      weight: 1.8
+      constraints:
+        min_age: 16

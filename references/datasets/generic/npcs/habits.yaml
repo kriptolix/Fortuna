@@ -1,0 +1,101 @@
+habits:
+  selection:
+    type: multiple
+    required: false    
+    max: 5    
+  traits:
+    - id: constantly_sniffing
+      text: "Constantly sniffing"
+      weight: 1
+
+    - id: constant_coughing
+      text: "Constant coughing"
+      weight: 1
+
+    - id: constantly_sweaty_palms
+      text: "Constantly sweaty palms"
+      weight: 1
+
+    - id: constantly_dirty_hands
+      text: "Constantly dirty hands"
+      weight: 1
+
+    - id: constantly_chapped_hands
+      text: "Constantly chapped hands"
+      weight: 1
+
+    - id: constantly_red_nose
+      text: "Constantly red nose"
+      weight: 1
+
+    - id: constantly_biting_nails
+      text: "Constantly biting nails"
+      weight: 1
+
+    - id: constantly_tapping_feet
+      text: "Constantly tapping feet"
+      weight: 1
+
+    - id: constantly_scratching
+      text: "Constantly scratching"
+      weight: 1
+
+    - id: constantly_blinking
+      text: "Constantly blinking"
+      weight: 1
+
+    - id: constantly_clearing_throat
+      text: "Constantly clearing throat"
+      weight: 1
+
+    - id: constant_hiccups
+      text: "Constant hiccups"
+      weight: 1
+
+    - id: constantly_snorting
+      text: "Constantly snorting"
+      weight: 1
+
+    - id: constantly_flaring_nose
+      text: "Constantly flaring nose"
+      weight: 1
+
+    - id: constantly_grinding_teeth
+      text: "Constantly grinding teeth"
+      weight: 1
+
+    - id: constantly_snuffling
+      text: "Constantly snuffling"
+      weight: 1
+
+    - id: constantly_twisting_hands
+      text: "Constantly twisting hands"
+      weight: 1
+
+    - id: constantly_biting_inner_cheek
+      text: "Constantly biting the inside of the cheek"
+      weight: 1
+
+    - id: constantly_picking_skin
+      text: "Constantly picking skin"
+      weight: 1
+
+    - id: constantly_nodding_head
+      text: "Constantly nodding head"
+      weight: 1
+
+    - id: constantly_snapping_fingers
+      text: "Constantly snapping fingers"
+      weight: 1
+
+    - id: constantly_pursing_lips
+      text: "Constantly pursing lips"
+      weight: 1
+
+    - id: constantly_clenching_jaw
+      text: "Constantly clenching jaw"
+      weight: 1
+
+    - id: constantly_rubbing_hands
+      text: "Constantly rubbing hands"
+      weight: 1

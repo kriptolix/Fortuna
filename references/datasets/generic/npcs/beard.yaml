@@ -1,0 +1,53 @@
+beard:
+  selection:
+    type: single   # only one beard type per character
+    required: false
+  traits:
+    - id: sparse_beard
+      text: "Sparse beard"
+      weight: 2
+      constraints:
+        min_age: 14
+        allowed_sexes: [male]
+
+    - id: uneven_beard
+      text: "Uneven beard"
+      weight: 2
+      constraints:
+        min_age: 14
+        allowed_sexes: [male]
+
+    - id: scruffy_beard
+      text: "Scruffy beard"
+      weight: 1.5
+      constraints:
+        min_age: 16
+        allowed_sexes: [male]
+
+    - id: patchy_beard
+      text: "Patchy beard"
+      weight: 1.5
+      constraints:
+        min_age: 14
+        allowed_sexes: [male]
+
+    - id: well_groomed_beard
+      text: "Well-groomed beard"
+      weight: 1.5
+      constraints:
+        min_age: 16
+        allowed_sexes: [male]
+
+    - id: long_beard
+      text: "Long beard"
+      weight: 1
+      constraints:
+        min_age: 18
+        allowed_sexes: [male]
+
+    - id: massive_beard
+      text: "Massive beard"
+      weight: 0.5
+      constraints:
+        min_age: 25
+        allowed_sexes: [male]

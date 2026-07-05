@@ -1,0 +1,51 @@
+legs:
+  selection:
+    type: multiple
+    required: false    
+    max: 3    
+  traits:
+    - id: athletic_runner_legs
+      text: "Athletic runner legs"
+      weight: 2
+      constraints:
+        min_age: 14
+
+    - id: bowed_legs
+      text: "Bowed legs"
+      weight: 1.5
+
+    - id: crooked_knees
+      text: "Crooked knees"
+      weight: 1.5
+
+    - id: limping
+      text: "Limping"
+      weight: 1.2
+
+    - id: thin_legs
+      text: "Thin legs"
+      weight: 1.5
+
+    - id: knobby_knees
+      text: "Excessively knobby knees"
+      weight: 1.2
+      constraints:
+        min_age: 12
+
+    - id: muscular_legs
+      text: "Muscular legs"
+      weight: 1.8
+      constraints:
+        min_age: 16
+
+    - id: elegant_toned_legs
+      text: "Elegant, toned legs"
+      weight: 1.5
+      constraints:
+        min_age: 14
+
+    - id: defined_calves
+      text: "Well-defined calves"
+      weight: 1.5
+      constraints:
+        min_age: 14

@@ -1,0 +1,119 @@
+hair:
+  selection:
+    type: multiple
+    required: false    
+    max: 3   
+  traits:
+    - id: bald_spots
+      text: "Bald spots"
+      weight: 1
+      constraints:
+        min_age: 18
+
+    - id: gray_hair
+      text: "Gray hair"
+      weight: 1.5
+      constraints:
+        min_age: 35
+
+    - id: hairy_back
+      text: "Hairy back"
+      weight: 1
+      constraints:
+        min_age: 16
+
+    - id: bushy_eyebrows
+      text: "Bushy eyebrows"
+      weight: 2
+      constraints:
+        min_age: 14
+
+    - id: tangled_hair
+      text: "Tangled hair"
+      weight: 2
+
+    - id: uneven_hair
+      text: "Uneven hair"
+      weight: 1.5
+
+    - id: receding_hairline
+      text: "Receding hairline"
+      weight: 1.2
+      constraints:
+        min_age: 18
+
+    - id: thinning_hair
+      text: "Thinning hair"
+      weight: 1.5
+      constraints:
+        min_age: 16
+
+    - id: excessive_ear_hair
+      text: "Excessive ear hair"
+      weight: 0.8
+      constraints:
+        min_age: 30
+
+    - id: visible_lice
+      text: "Visible lice in the hair"
+      weight: 0.5
+
+    - id: curly_hair
+      text: "Curly hair"
+      weight: 3
+
+    - id: flowing_mane
+      text: "Flowing mane"
+      weight: 1.5
+      constraints:
+        min_age: 14
+
+    - id: shiny_hair
+      text: "Shiny hair"
+      weight: 3
+
+    - id: glossy_black_hair
+      text: "Glossy black hair"
+      weight: 2
+
+    - id: cascading_silky_hair
+      text: "Silky, cascading hair"
+      weight: 1.5
+      constraints:
+        min_age: 10
+
+    - id: silky_soft_hair
+      text: "Silky, soft hair"
+      weight: 2
+
+    - id: cloud_soft_hair
+      text: "Cloud-soft hair"
+      weight: 1.5
+
+    - id: silky_texture
+      text: "Silky hair texture"
+      weight: 2
+
+    - id: sun_kissed_highlights
+      text: "Sun-kissed highlights"
+      weight: 2
+
+    - id: thick_healthy_hair
+      text: "Thick, healthy hair"
+      weight: 3
+
+    - id: vibrant_hair_color
+      text: "Vibrant hair color"
+      weight: 2
+
+    - id: fiery_red_hair
+      text: "Fiery red hair"
+      weight: 1.2
+
+    - id: warm_sunlit_streaks
+      text: "Warm, sunlit streaks"
+      weight: 1.5
+
+    - id: wavy_hair
+      text: "Wavy hair"
+      weight: 3

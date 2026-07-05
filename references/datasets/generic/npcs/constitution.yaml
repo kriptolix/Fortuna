@@ -1,0 +1,55 @@
+constitution: 
+  weight: 1
+  selection:
+    type: single   # single | multiple
+    required: false
+  traits:
+    - id: skeletal
+      text: "Skeletal"
+      weight: 1
+      constraints:
+        allowed_age: [young, adult, middle_aged, old, elder]
+
+    - id: skinny
+      text: "Skinny"
+      weight: 2
+      constraints:
+        allowed_age: [teenager, young, adult, middle_aged, old]
+
+    - id: athletic
+      text: "Athletic"
+      weight: 3
+      constraints:
+        allowed_age: [young, adult]
+
+    - id: strong
+      text: "Strong"
+      weight: 3
+      constraints:
+        allowed_age: [young, adult]
+
+    - id: muscular
+      text: "Muscular"
+      weight: 2
+      constraints:
+        allowed_age: [young, adult]
+
+    - id: weightlifter
+      text: "Weightlifter"
+      weight: 1
+      constraints:
+        allowed_age: [young, adult]
+
+    - id: stocky
+      text: "Stocky"
+      weight: 2
+      constraints:
+        allowed_age: [adult, middle_aged]
+
+    - id: fat
+      text: "Fat"
+      weight: 1.5
+
+    - id: obese
+      text: "Obese"
+      weight: 1

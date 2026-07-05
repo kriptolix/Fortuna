@@ -1,0 +1,24 @@
+lips:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: chapped_lips
+      text: "Chapped lips"
+      weight: 2
+
+    - id: cleft_lip
+      text: "Cleft lip"
+      weight: 1
+
+    - id: harelip
+      text: "Harelip"
+      weight: 1   
+
+    - id: very_thin_lips
+      text: "Very thin lips"
+      weight: 2
+
+    - id: full_lips
+      text: "Full lips"
+      weight: 4

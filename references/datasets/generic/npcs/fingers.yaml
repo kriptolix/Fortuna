@@ -1,0 +1,49 @@
+fingers:
+  selection:
+    type: multiple
+    required: false
+    min: 0
+    max: 3
+    allow_duplicates: false
+  traits:
+    - id: missing_fingers
+      text: "Missing fingers"
+      weight: 1.2
+      constraints:
+        min_age: 6
+
+    - id: excessively_long_fingers
+      text: "Excessively long fingers"
+      weight: 1.5
+
+    - id: delicate_fingers
+      text: "Delicate fingers"
+      weight: 1.5
+
+    - id: graceful_fingers
+      text: "Graceful fingers"
+      weight: 1.5
+
+    - id: thin_fingers
+      text: "Thin fingers"
+      weight: 1.5
+
+    - id: brittle_nails
+      text: "Brittle nails"
+      weight: 1.2
+
+    - id: very_long_nails
+      text: "Very long nails"
+      weight: 1.2
+      constraints:
+        min_age: 10
+
+    - id: shiny_well_cared_nails
+      text: "Shiny, well-cared nails"
+      weight: 1.2
+      constraints:
+        min_age: 8
+
+    - id: strong_healthy_nails
+      text: "Strong, healthy nails"
+      weight: 1.5

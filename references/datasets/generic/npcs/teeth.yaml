@@ -1,0 +1,40 @@
+teeth:
+  selection:
+    type: single
+    required: false
+  traits:
+    - id: gapped_teeth
+      text: "Gapped teeth"
+      weight: 2
+
+    - id: missing_teeth
+      text: "Missing teeth"
+      weight: 1
+
+    - id: protruding_teeth
+      text: "Protruding teeth"
+      weight: 2
+
+    - id: yellowed_teeth
+      text: "Yellowed teeth"
+      weight: 2
+
+    - id: even_smooth_teeth
+      text: "Even, smooth teeth"
+      weight: 3
+
+    - id: shiny_teeth
+      text: "Shiny teeth"
+      weight: 3
+
+    - id: straight_white_teeth
+      text: "Straight, white teeth"
+      weight: 4
+
+    - id: underbite
+      text: "Underbite"
+      weight: 1
+
+    - id: overbite
+      text: "Overbite"
+      weight: 1

@@ -1,0 +1,129 @@
+state:
+  selection:
+    type: multiple
+    required: false    
+    max: 5    
+  traits:
+    - id: always_hungry
+      text: "Always hungry"
+      weight: 1
+
+    - id: always_squinting
+      text: "Always squinting"
+      weight: 1
+
+    - id: always_runny_nose
+      text: "Always with a runny nose"
+      weight: 1
+
+    - id: always_looks_tired
+      text: "Always looks tired"
+      weight: 1
+
+    - id: always_looks_pale
+      text: "Always looks pale"
+      weight: 1
+
+    - id: always_looks_dehydrated
+      text: "Always looks dehydrated"
+      weight: 1
+
+    - id: always_furrowed_brow
+      text: "Always has a furrowed brow"
+      weight: 1
+
+    - id: always_frowning
+      text: "Always frowning"
+      weight: 1
+
+    - id: always_red_face
+      text: "Always has a red face"
+      weight: 1
+
+    - id: always_out_of_breath
+      text: "Always looks out of breath"
+      weight: 1
+
+    - id: always_trembling
+      text: "Always trembling"
+      weight: 1
+
+    - id: always_food_stains
+      text: "Always has food stains on face or clothes"
+      weight: 1
+
+    - id: always_malnourished
+      text: "Always looks malnourished"
+      weight: 1
+
+    - id: always_hoarse_voice
+      text: "Always has a hoarse voice"
+      weight: 1
+
+    - id: always_expression_of_pain
+      text: "Always has an expression of pain"
+      weight: 1
+
+    - id: always_windblown_hair
+      text: "Always has windblown hair"
+      weight: 1
+
+    - id: always_nervous_laugh
+      text: "Always has a nervous laugh"
+      weight: 1
+
+    - id: always_cold_hands
+      text: "Always has cold hands"
+      weight: 1
+
+    - id: always_disheveled
+      text: "Always looks disheveled"
+      weight: 1
+
+    - id: always_flaky_skin
+      text: "Always has flaky skin"
+      weight: 1
+
+    - id: always_blank_stare
+      text: "Always has a blank stare"
+      weight: 1
+
+    - id: always_sweaty_forehead
+      text: "Always has a sweaty forehead"
+      weight: 1
+
+    - id: always_harsh_breathing
+      text: "Always has harsh breathing"
+      weight: 1
+
+    - id: always_nervous_tic
+      text: "Always has a nervous tic"
+      weight: 1
+
+    - id: always_looks_skinny
+      text: "Always looks skinny"
+      weight: 1
+
+    - id: always_crying_voice
+      text: "Always has a crying voice"
+      weight: 1
+
+    - id: always_oily_appearance
+      text: "Always looks oily"
+      weight: 1
+
+    - id: always_cautious_stare
+      text: "Always has a cautious stare"
+      weight: 1
+
+    - id: always_making_face
+      text: "Always making a face"
+      weight: 1
+
+    - id: always_looks_frightened
+      text: "Always looks frightened"
+      weight: 1
+
+    - id: always_haunted_expression
+      text: "Always has a haunted expression"
+      weight: 1
