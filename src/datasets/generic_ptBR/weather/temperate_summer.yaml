@@ -1,0 +1,231 @@
+season:
+  name: 'Temperate: Summer'
+  occurrences:
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Sereno Morno
+      - Nublado e Quente
+      - Garoa Morna
+      - Parcialmente nublado
+      - Parcialmente nublado
+  - occurrence:
+      name: Garoa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa Morna
+      - Chuva
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Chuva
+      - Tempestade
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Garoa Morna
+      - Nublado e Úmido
+      - Quente e com Vento
+      - Chuva
+      - Nublado e Quente
+      - Quente e Úmido
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno Morno
+      - Quente e com Vento
+      - Parcialmente nublado
+      - Brisa Morna
+      - Nublado e Quente
+      - Chuva
+      - Nublado e Úmido
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Sereno Morno
+      - Brisa Morna
+      - Ensolarado e com Vento
+      - Nublado e Úmido
+      - Garoa Morna
+      - Chuva
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Nublado e Quente
+      - Ensolarado e com Vento
+      - Ventos Fortes
+      - Quente e com Vento
+      - Chuva Intensa
+      - Garoa Morna
+  - occurrence:
+      name: Quente e com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Quente e com Vento
+      - Nublado e Úmido
+      - Ventos Fortes
+      - Quente e Úmido
+      - Sereno Morno
+      - Nublado e Úmido
+      - Chuva Intensa
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Quente e Úmido
+      - Chuva
+      - Chuva
+      - Brisa Morna
+      - Sereno Morno
+      - Nublado e Quente
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Parcialmente nublado
+      - Chuva
+      - Garoa Morna
+      - Ensolarado e com Vento
+      - Nublado e Quente
+      - Sereno Morno
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Brisa Morna
+      - Garoa Morna
+      - Sereno Morno
+      - Ventos Fortes
+      - Nublado e Úmido
+      - Nublado e Quente
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Sereno Morno
+      - Tempestade
+      - Quente e Úmido
+      - Quente e com Vento
+      - Nublado e Úmido
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Ventos Fortes
+      - Tempestade
+      - Chuva Intensa
+      - Parcialmente nublado
+      - Parcialmente nublado
+      - Quente e com Vento
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Tempestade
+      - Garoa Morna
+      - Nublado e Quente
+      - Garoa Morna
+      - Brisa Morna
+      - Parcialmente nublado
+  - occurrence:
+      name: Garoa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa Morna
+      - Chuva
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Sereno Morno
+      - Ensolarado e com Vento
+      - Brisa Morna
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno Morno
+      - Garoa Morna
+      - Nublado e Úmido
+      - Parcialmente nublado
+      - Tempestade
+      - Ventos Fortes
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Tempestade
+      severity: 2
+      color: 0
+      evolutions:
+      - Tempestade
+      - Sereno Morno
+      - Parcialmente nublado
+      - Garoa Morna
+      - Chuva
+      - Quente e Úmido
+      - Ventos Fortes
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Parcialmente nublado
+      - Chuva Intensa
+      - Parcialmente nublado
+      - Nublado e Úmido
+      - Garoa Morna
+      - Chuva
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Nublado e Quente
+      - Quente e com Vento
+      - Sereno Morno
+      - Parcialmente nublado
+      - Sereno Morno
+      - Garoa Morna
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Nublado e Úmido
+      - Quente e Úmido
+      - Chuva
+      - Nublado e Quente
+      - Tempestade
+      - Sereno Morno

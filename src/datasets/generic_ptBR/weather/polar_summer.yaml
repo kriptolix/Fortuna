@@ -1,0 +1,231 @@
+season:
+  name: 'Polar: Summer'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Frio
+      - Nevando e com Vento
+      - Névoa Densa
+      - Nublado e Frio
+      - Nevando Leve
+      - Névoa Esparsa
+      - Névoa Densa
+  - occurrence:
+      name: Nevando Leve
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Leve
+      - Ensolarado e Frio
+      - Nublado e Frio
+      - Frio e Úmido
+      - Nevando e com Vento
+      - Nublado e Frio
+      - Nevasca
+  - occurrence:
+      name: Nevando e com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando e com Vento
+      - Nevando Leve
+      - Frio e Úmido
+      - Vento Frio
+      - Ensolarado e Frio
+      - Ensolarado e Frio
+      - Névoa Densa
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Vento Frio
+      - Névoa Esparsa
+      - Ensolarado e Frio
+      - Nublado e Frio
+      - Ensolarado e Frio
+      - Nevando Leve
+  - occurrence:
+      name: Nublado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Frio
+      - Névoa Densa
+      - Ensolarado e Frio
+      - Nevando Leve
+      - Frio e Úmido
+      - Nevando Leve
+      - Ensolarado e Frio
+  - occurrence:
+      name: Frio e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e Úmido
+      - Nublado e Frio
+      - Nevando Leve
+      - Nevando e com Vento
+      - Vento Frio
+      - Nevando e com Vento
+      - Nevando Leve
+  - occurrence:
+      name: Vento Frio
+      severity: 1
+      color: 0
+      evolutions:
+      - Vento Frio
+      - Frio e Úmido
+      - Nevando e com Vento
+      - Névoa Densa
+      - Névoa Densa
+      - Nevando Leve
+      - Nevando e com Vento
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Névoa Densa
+      - Ensolarado e Frio
+      - Nublado e Frio
+      - Ensolarado e Frio
+      - Névoa Densa
+      - Ensolarado e Frio
+  - occurrence:
+      name: Ensolarado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Frio
+      - Névoa Esparsa
+      - Nublado e Frio
+      - Frio e Úmido
+      - Nevando Leve
+      - Nublado e Frio
+      - Névoa Densa
+  - occurrence:
+      name: Nevando Leve
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Leve
+      - Ensolarado e Frio
+      - Frio e Úmido
+      - Névoa Esparsa
+      - Nevando e com Vento
+      - Frio e Úmido
+      - Nublado e Frio
+  - occurrence:
+      name: Nevando e com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando e com Vento
+      - Nevando Leve
+      - Névoa Esparsa
+      - Nevasca
+      - Névoa Densa
+      - Vento Frio
+      - Frio e Úmido
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Nevando e com Vento
+      - Nevasca
+      - Nevando e com Vento
+      - Névoa Esparsa
+      - Névoa Densa
+      - Vento Frio
+  - occurrence:
+      name: Nublado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Frio
+      - Nevasca
+      - Nevando Leve
+      - Ensolarado e Frio
+      - Frio e Úmido
+      - Ensolarado e Frio
+      - Névoa Esparsa
+  - occurrence:
+      name: Frio e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e Úmido
+      - Nublado e Frio
+      - Ensolarado e Frio
+      - Nevando Leve
+      - Névoa Esparsa
+      - Nevando Leve
+      - Ensolarado e Frio
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Frio e Úmido
+      - Nevando Leve
+      - Névoa Densa
+      - Nevasca
+      - Nevando e com Vento
+      - Nevando Leve
+  - occurrence:
+      name: Nevasca
+      severity: 2
+      color: 0
+      evolutions:
+      - Nevasca
+      - Névoa Esparsa
+      - Névoa Densa
+      - Nevando Leve
+      - Nublado e Frio
+      - Névoa Densa
+      - Nevando e com Vento
+  - occurrence:
+      name: Ensolarado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Frio
+      - Névoa Densa
+      - Nevando e com Vento
+      - Névoa Esparsa
+      - Nevando Leve
+      - Frio e Úmido
+      - Nublado e Frio
+  - occurrence:
+      name: Nevando Leve
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Leve
+      - Ensolarado e Frio
+      - Vento Frio
+      - Névoa Densa
+      - Névoa Densa
+      - Névoa Esparsa
+      - Frio e Úmido
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Nevando Leve
+      - Névoa Densa
+      - Ensolarado e Frio
+      - Ensolarado e Frio
+      - Nevasca
+      - Névoa Esparsa

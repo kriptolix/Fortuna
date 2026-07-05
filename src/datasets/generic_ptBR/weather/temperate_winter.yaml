@@ -1,0 +1,231 @@
+season:
+  name: 'Temperate: Winter'
+  occurrences:
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Chuva com Neve
+      - Névoa Densa
+      - Nublado e Frio
+      - Ensolarado e Frio
+      - Garoa
+      - Nublado e Fresco
+  - occurrence:
+      name: Ensolarado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Frio
+      - Nublado e Fresco
+      - Nublado e Frio
+      - Sereno
+      - Chuva com Neve
+      - Névoa Densa
+      - Nevasca
+  - occurrence:
+      name: Chuva com Neve
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva com Neve
+      - Ensolarado e Frio
+      - Sereno
+      - Nevando Leve
+      - Nublado e Fresco
+      - Garoa
+      - Ensolarado e Frio
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Nevando Leve
+      - Garoa
+      - Frio e Úmido
+      - Nublado e Frio
+      - Nublado e Fresco
+      - Frio e Úmido
+  - occurrence:
+      name: Nublado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Frio
+      - Névoa Densa
+      - Frio e Úmido
+      - Nublado e Fresco
+      - Sereno
+      - Ensolarado e Frio
+      - Nublado e Fresco
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Nublado e Frio
+      - Nublado e Fresco
+      - Chuva de Granizo
+      - Nevando Leve
+      - Chuva com Neve
+      - Ensolarado e Frio
+  - occurrence:
+      name: Nevando Leve
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando Leve
+      - Sereno
+      - Chuva de Granizo
+      - Ensolarado e Frio
+      - Névoa Densa
+      - Frio e Úmido
+      - Chuva com Neve
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Ensolarado e Frio
+      - Nublado e Fresco
+      - Névoa Densa
+      - Frio e Úmido
+      - Névoa Densa
+      - Garoa
+  - occurrence:
+      name: Frio e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e Úmido
+      - Garoa
+      - Névoa Densa
+      - Nublado e Frio
+      - Nublado e Fresco
+      - Nublado e Frio
+      - Névoa Densa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Frio e Úmido
+      - Nublado e Frio
+      - Sereno
+      - Chuva de Granizo
+      - Sereno
+      - Nublado e Frio
+  - occurrence:
+      name: Chuva de Granizo
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva de Granizo
+      - Nublado e Fresco
+      - Sereno
+      - Nevasca
+      - Ensolarado e Frio
+      - Nevando Leve
+      - Sereno
+  - occurrence:
+      name: Ensolarado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Frio
+      - Chuva de Granizo
+      - Nevasca
+      - Chuva com Neve
+      - Garoa
+      - Nublado e Fresco
+      - Nevando Leve
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Nevasca
+      - Ensolarado e Frio
+      - Garoa
+      - Nublado e Frio
+      - Frio e Úmido
+      - Garoa
+  - occurrence:
+      name: Nublado e Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Frio
+      - Névoa Densa
+      - Garoa
+      - Frio e Úmido
+      - Sereno
+      - Nublado e Fresco
+      - Frio e Úmido
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Nublado e Frio
+      - Frio e Úmido
+      - Nublado e Fresco
+      - Nevasca
+      - Chuva de Granizo
+      - Nublado e Fresco
+  - occurrence:
+      name: Nevasca
+      severity: 2
+      color: 0
+      evolutions:
+      - Nevasca
+      - Sereno
+      - Nublado e Fresco
+      - Ensolarado e Frio
+      - Névoa Densa
+      - Ensolarado e Frio
+      - Chuva de Granizo
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Nublado e Fresco
+      - Chuva com Neve
+      - Garoa
+      - Frio e Úmido
+      - Nublado e Frio
+      - Névoa Densa
+  - occurrence:
+      name: Frio e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e Úmido
+      - Garoa
+      - Nevando Leve
+      - Névoa Densa
+      - Nublado e Fresco
+      - Sereno
+      - Nublado e Frio
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Frio e Úmido
+      - Ensolarado e Frio
+      - Nublado e Fresco
+      - Garoa
+      - Nevasca
+      - Sereno

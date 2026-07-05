@@ -21,10 +21,50 @@
 from gi.repository import Gtk, GObject, Gdk, Gio, GLib
 
 import csv
+import yaml
 
 from .hexagon import HexBase, HexDisplay, HexButtons
 from ...utils import create_click, take_screeshot, write_to_disk_async
 from ...datasets.strings import weather_names_list, semi_arid_dry
+
+# ADJACENCY: mapa index (0-18) -> lista de 6 índices vizinhos, na ordem
+# fixa [Superior, Superior-direita, Inferior-direita, Inferior,
+# Inferior-esquerda, Superior-esquerda] (índice 1 = topo, sentido horário).
+# Essa ordem bate exatamente com hex._blockers_list em hexagon.py:
+#   [top_side, top_right, bottom_right, bottom_side, bottom_left, top_left]
+# Construída diretamente a partir de utils.vertical/left/right (validado
+# batendo com os pesos padrão da especificação: move "vertical,-1" pesa 1
+# e corresponde a "Superior", etc. - ver comentário completo em weather.py).
+from ...utils import vertical, left, right
+
+_DIRECTIONS = [
+    ("Superior", vertical, -1),
+    ("Superior direita", right, +1),
+    ("Inferior direita", left, +1),
+    ("Inferior", vertical, +1),
+    ("Inferior esquerda", right, -1),
+    ("Superior esquerda", left, -1),
+]
+
+DIRECTION_LABELS = [name for name, _, _ in _DIRECTIONS]
+
+
+def _move_index(index, groups, step):
+    for group in groups:
+        if index in group:
+            pos = group.index(index) + step
+            if pos < 0:
+                pos = len(group) - 1
+            elif pos > len(group) - 1:
+                pos = 0
+            return group[pos]
+    raise ValueError(f"índice {index} não encontrado nos grupos")
+
+
+ADJACENCY = {
+    i: [_move_index(i, groups, step) for _, groups, step in _DIRECTIONS]
+    for i in range(19)
+}
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -131,16 +171,21 @@ class WeatherToolkit(Gtk.Box):
         self._text_combo.set_selected(Gtk.INVALID_LIST_POSITION)
 
     def _on_text_selected(self, dropdown, parameter):
-
+ 
         position = self._text_combo.get_selected()
         self._used_label.set_opacity(0)
-
+ 
         for hex in self._hexs_list:
+            if hex is self._hex_selected:
+                # o próprio hexágono selecionado já tem esse texto (é o
+                # valor atual dele) - não conta como "em uso" por outro.
+                continue
             if position == hex._text_ref:
                 self._used_label.set_opacity(1)
-
+ 
         self._hex_diagram._set_text(position)
         self._hex_selected._set_text(position)
+
 
     def _on_activate_block(self, button):
 
@@ -212,40 +257,142 @@ class WeatherToolkit(Gtk.Box):
         check = self._checks_list[color_check]
         check.set_active(True)
 
+    def _build_season_dict(self, season_name):
+        """Monta a estrutura (dict) do mapa atual no formato
+        season/occurrences/occurrence/name/severity/color/evolutions,
+        igual ao de verao.yaml, calculando 'evolutions' a partir da
+        adjacência fixa + bloqueios definidos na interface."""
+
+        names_by_idx = {}
+        for index, hex in enumerate(self._hexs_list):
+            names_by_idx[index] = weather_names_list[hex._get_text_ref()]
+
+        occurrences = []
+        for index, hex in enumerate(self._hexs_list):
+            name = names_by_idx[index]
+            evolutions = [name]  # posição 0 = "permanecer"
+
+            for dir_pos, n_idx in enumerate(ADJACENCY[index]):
+                blocked = bool(hex._blockers_list[dir_pos].get_opacity())
+                evolutions.append(name if blocked else names_by_idx[n_idx])
+
+            occurrences.append({
+                "occurrence": {
+                    "name": name,
+                    "severity": hex._severity,
+                    "color": hex._color,
+                    "evolutions": evolutions,
+                }
+            })
+
+        return {"season": {"name": season_name, "occurrences": occurrences}}
+
     def _serialize_flower(self, button):
 
-        serialized = []
+        def when_writed(gfile, error):
+            if error:
+                print(str(error.message))
 
-        for hex in self._hexs_list:
-            row = [hex._get_text_ref(),
-                   hex._severity,
-                   hex._color,
-                   ]
+        def _choose_dialog_callback(file_dialog: Gtk.FileDialog,
+                                    task: Gio.AsyncResult,
+                                    data=None):
+            try:
+                gfile = file_dialog.save_finish(task)
+            except GLib.GError as error:
+                print(str(error.message))
+                return
 
-            for block in hex._blockers_list:
-                row.append(int(block.get_opacity()))
+            season_name = gfile.get_basename()
+            if season_name.lower().endswith((".yaml", ".yml")):
+                season_name = season_name.rsplit(".", 1)[0]
 
-            serialized.append(row)
+            season_dict = self._build_season_dict(season_name)
+            yaml_text = yaml.dump(season_dict, allow_unicode=True,
+                                  sort_keys=False,
+                                  default_flow_style=False)
 
-        print(serialized)
+            self.last_loaded_file = gfile
+            write_to_disk_async(gfile,
+                                GLib.Bytes.new(yaml_text.encode("utf-8")),
+                                when_writed)
+
+        file_dialog = Gtk.FileDialog.new()
+        file_dialog.set_title("Exportar Mapa (YAML)")
+        file_dialog.set_initial_name("mapa.yaml")
+        file_dialog.save(None, None, _choose_dialog_callback)
+
+    def _apply_season_dict(self, season_dict):
+        """Aplica um dict no formato season/occurrences aos 19 hexágonos.
+        A ordem das occurrences deve corresponder à numeração 0-18 da
+        especificação."""
+
+        occurrences = season_dict["season"]["occurrences"]
+
+        for index, item in enumerate(occurrences):
+            occ = item["occurrence"]
+            hex = self._hexs_list[index]
+
+            try:
+                text_ref = weather_names_list.index(occ["name"])
+            except ValueError:
+                # Fenômeno não encontrado em weather_names_list - mantém
+                # o hexágono como está e avisa no console para revisão
+                # manual.
+                print(f"Aviso: fenômeno '{occ['name']}' não encontrado em "
+                      "weather_names_list (hexágono "
+                      f"{index} não foi atualizado).")
+                continue
+
+            hex._set_text(text_ref)
+            hex._set_severity(occ["severity"])
+            hex._set_color(occ.get("color", 0))
+
+            # Bloqueios: reconstruídos comparando cada entrada de
+            # 'evolutions' com o próprio nome do fenômeno (uma evolução
+            # igual ao nome do hexágono, fora a posição 0/"permanecer",
+            # indica bloqueio nessa direção).
+            evolutions = occ.get("evolutions", [])
+            for dir_pos, block_widget in enumerate(hex._blockers_list):
+                evo_pos = dir_pos + 1  # posição 0 é "permanecer"
+                is_blocked = (evo_pos < len(evolutions)
+                             and evolutions[evo_pos] == occ["name"])
+                block_widget.set_opacity(1 if is_blocked else 0)
 
     def _deserialize_flower(self, button):
 
-        climate_season = semi_arid_dry
+        def _choose_dialog_callback(file_dialog: Gtk.FileDialog,
+                                    task: Gio.AsyncResult,
+                                    data=None):
+            try:
+                gfile = file_dialog.open_finish(task)
+            except GLib.GError as error:
+                print(str(error.message))
+                return
 
-        for index, weather in enumerate(climate_season):
-            hex = self._hexs_list[index]
+            try:
+                ok, contents, _etag = gfile.load_contents(None)
+            except GLib.GError as error:
+                print(str(error.message))
+                return
 
-            hex._set_text(weather[0])
-            hex._set_severity(weather[1])
-            hex._set_color(weather[2])
+            if not ok:
+                print("Falha ao ler o arquivo selecionado.")
+                return
 
-            blockers = weather[3:]
+            try:
+                season_dict = yaml.safe_load(contents.decode("utf-8"))
+            except yaml.YAMLError as error:
+                print(f"Arquivo YAML inválido: {error}")
+                return
 
-            for index, block in enumerate(blockers):
-                if block == 1:
-                    hex._blockers_list[index].set_opacity(1)
+            self._apply_season_dict(season_dict)
 
+        file_dialog = Gtk.FileDialog.new()
+        file_dialog.set_title("Importar Mapa (YAML)")
+        file_dialog.open(None, None, _choose_dialog_callback)
+
+    # --- Métodos legados (CSV) mantidos apenas para referência; não são
+    # mais usados pelos botões de exportar/importar, que agora usam YAML.
     def _list_to_csv(self, season, csv_file):
 
         csv_writer = csv.writer(csv_file)

@@ -1,0 +1,231 @@
+season:
+  name: 'Mediterranean: Summer'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Ventos Fortes
+      - Brisa
+      - Brisa Morna
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Ensolarado e Quente
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Brisa
+      - Ondas de Calor Extremo
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Quente e Seco
+      - Parcialmente nublado
+      - Quente e Úmido
+      - Ensolarado e Quente
+      - Ensolarado e com Vento
+      - Quente e Seco
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Quente e Úmido
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Brisa Morna
+      - Ensolarado e Quente
+      - Névoa Esparsa
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Brisa
+      - Névoa Esparsa
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Quente e Seco
+      - Ensolarado e Quente
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Ensolarado e Quente
+      - Ventos Fortes
+      - Quente e Úmido
+      - Ventos Fortes
+      - Quente e Seco
+  - occurrence:
+      name: Quente e Úmido
+      severity: 1
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Quente e Seco
+      - Brisa
+      - Névoa Esparsa
+      - Ventos Fortes
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Brisa
+      - Névoa Esparsa
+      - Brisa
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+      - Brisa
+      - Brisa Morna
+      - Ensolarado e Quente
+      - Brisa Morna
+      - Brisa
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Névoa Esparsa
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Brisa Morna
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Quente e Úmido
+      - Parcialmente nublado
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ventos Fortes
+      - Ondas de Calor Extremo
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Ensolarado e Quente
+      - Quente e Úmido
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Brisa Morna
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Brisa
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Névoa Esparsa
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Névoa Esparsa
+      - Ensolarado e Quente
+      - Ondas de Calor Extremo
+      - Ventos Fortes
+      - Ensolarado e Quente
+  - occurrence:
+      name: Ondas de Calor Extremo
+      severity: 2
+      color: 0
+      evolutions:
+      - Ondas de Calor Extremo
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Quente e Seco
+      - Brisa
+      - Quente e Seco
+      - Ventos Fortes
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Ensolarado e Quente
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Brisa Morna
+      - Brisa
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+      - Quente e Úmido
+      - Brisa
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Brisa Morna
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Névoa Esparsa
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Ensolarado e com Vento
+      - Ondas de Calor Extremo
+      - Parcialmente nublado

@@ -1,0 +1,231 @@
+season:
+  name: 'Semi Arid: Dry Season'
+  occurrences:
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 3
+      evolutions:
+      - Brisa
+      - Quente e com Vento
+      - Ventos Fortes
+      - Ensolarado e Fresco
+      - Rajadas de Vento
+      - Nublado e com Vento
+      - Sereno Morno
+  - occurrence:
+      name: Rajadas de Vento
+      severity: 0
+      color: 3
+      evolutions:
+      - Rajadas de Vento
+      - Brisa
+      - Ensolarado e Fresco
+      - Brisa Morna
+      - Quente e com Vento
+      - Nublado e Fresco
+      - Ondas de Calor Extremo
+  - occurrence:
+      name: Quente e com Vento
+      severity: 0
+      color: 6
+      evolutions:
+      - Quente e com Vento
+      - Rajadas de Vento
+      - Brisa Morna
+      - Quente e Úmido
+      - Brisa
+      - Chuva com Vento
+      - Nuvem de Poeira
+  - occurrence:
+      name: Ventos Fortes
+      severity: 0
+      color: 3
+      evolutions:
+      - Ventos Fortes
+      - Quente e Úmido
+      - Nublado e com Vento
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Brisa
+      - Chuva Morna
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 6
+      evolutions:
+      - Ensolarado e Fresco
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Brisa Morna
+      - Rajadas de Vento
+      - Brisa
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 6
+      evolutions:
+      - Brisa Morna
+      - Ensolarado e Fresco
+      - Ensolarado e Quente
+      - Quente e Seco
+      - Quente e Úmido
+      - Quente e com Vento
+      - Rajadas de Vento
+  - occurrence:
+      name: Quente e Úmido
+      severity: 1
+      color: 7
+      evolutions:
+      - Quente e Úmido
+      - Brisa Morna
+      - Quente e Seco
+      - Nuvem de Poeira
+      - Ventos Fortes
+      - Chuva Morna
+      - Quente e com Vento
+  - occurrence:
+      name: Nublado e com Vento
+      severity: 0
+      color: 5
+      evolutions:
+      - Nublado e com Vento
+      - Nuvem de Poeira
+      - Brisa
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Chuva com Vento
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 5
+      evolutions:
+      - Parcialmente nublado
+      - Nublado e com Vento
+      - Nublado e Fresco
+      - Nublado e Úmido
+      - Ensolarado e Quente
+      - Ensolarado e Fresco
+      - Ventos Fortes
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 6
+      evolutions:
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Nublado e Úmido
+      - Nublado e Quente
+      - Quente e Seco
+      - Brisa Morna
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Quente e Seco
+      severity: 1
+      color: 7
+      evolutions:
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Nublado e Quente
+      - Ondas de Calor Extremo
+      - Nuvem de Poeira
+      - Quente e Úmido
+      - Brisa Morna
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 1
+      color: 7
+      evolutions:
+      - Nuvem de Poeira
+      - Quente e Seco
+      - Ondas de Calor Extremo
+      - Quente e com Vento
+      - Nublado e com Vento
+      - Sereno Morno
+      - Quente e Úmido
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 5
+      evolutions:
+      - Nublado e Fresco
+      - Ondas de Calor Extremo
+      - Rajadas de Vento
+      - Chuva com Vento
+      - Nublado e Úmido
+      - Parcialmente nublado
+      - Nublado e com Vento
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 5
+      evolutions:
+      - Nublado e Úmido
+      - Nublado e Fresco
+      - Chuva com Vento
+      - Chuva Morna
+      - Nublado e Quente
+      - Ensolarado e Quente
+      - Parcialmente nublado
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 5
+      evolutions:
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Chuva Morna
+      - Sereno Morno
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Ensolarado e Quente
+  - occurrence:
+      name: Ondas de Calor Extremo
+      severity: 2
+      color: 7
+      evolutions:
+      - Ondas de Calor Extremo
+      - Nublado e Quente
+      - Sereno Morno
+      - Rajadas de Vento
+      - Nublado e Fresco
+      - Nuvem de Poeira
+      - Quente e Seco
+  - occurrence:
+      name: Chuva com Vento
+      severity: 0
+      color: 2
+      evolutions:
+      - Chuva com Vento
+      - Sereno Morno
+      - Quente e com Vento
+      - Nublado e com Vento
+      - Chuva Morna
+      - Nublado e Úmido
+      - Nublado e Fresco
+  - occurrence:
+      name: Chuva Morna
+      severity: 0
+      color: 1
+      evolutions:
+      - Chuva Morna
+      - Chuva com Vento
+      - Quente e Úmido
+      - Ventos Fortes
+      - Sereno Morno
+      - Nublado e Quente
+      - Nublado e Úmido
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 1
+      evolutions:
+      - Sereno Morno
+      - Chuva Morna
+      - Nuvem de Poeira
+      - Brisa
+      - Chuva com Vento
+      - Ondas de Calor Extremo
+      - Nublado e Quente

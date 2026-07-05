@@ -1,0 +1,231 @@
+season:
+  name: 'Monsoon: Winter'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Névoa Esparsa
+      - Brisa
+      - Sereno
+      - Parcialmente nublado
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+      - Ventos Fortes
+      - Névoa Esparsa
+      - Vendaval
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Brisa
+      - Ensolarado e com Vento
+      - Nuvem de Poeira
+      - Ensolarado e Fresco
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Nuvem de Poeira
+      - Sereno
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Ensolarado e Fresco
+      - Brisa
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Brisa
+      - Ensolarado e com Vento
+      - Brisa
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Brisa
+      - Ventos Fortes
+      - Nuvem de Poeira
+      - Ventos Fortes
+      - Brisa
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 1
+      color: 0
+      evolutions:
+      - Nuvem de Poeira
+      - Ensolarado e com Vento
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Parcialmente nublado
+      - Brisa
+      - Ventos Fortes
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Sereno
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+      - Brisa
+      - Névoa Esparsa
+      - Parcialmente nublado
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Ensolarado e Fresco
+      - Ensolarado e com Vento
+      - Sereno
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Brisa
+      - Sereno
+      - Vendaval
+      - Parcialmente nublado
+      - Nuvem de Poeira
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Vendaval
+      - Ventos Fortes
+      - Sereno
+      - Parcialmente nublado
+      - Nuvem de Poeira
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Vendaval
+      - Brisa
+      - Ensolarado e Fresco
+      - Ensolarado e com Vento
+      - Ensolarado e Fresco
+      - Sereno
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Ensolarado e Fresco
+      - Brisa
+      - Sereno
+      - Brisa
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Ensolarado e com Vento
+      - Brisa
+      - Parcialmente nublado
+      - Vendaval
+      - Ventos Fortes
+      - Brisa
+  - occurrence:
+      name: Vendaval
+      severity: 2
+      color: 0
+      evolutions:
+      - Vendaval
+      - Sereno
+      - Parcialmente nublado
+      - Brisa
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Ventos Fortes
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Sereno
+      - Brisa
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Ensolarado e Fresco
+      - Nuvem de Poeira
+      - Parcialmente nublado
+      - Parcialmente nublado
+      - Sereno
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Ensolarado e Fresco
+      - Vendaval
+      - Sereno

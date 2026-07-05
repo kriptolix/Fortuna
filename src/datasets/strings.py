@@ -1,40 +1,43 @@
+
 rain = [
     "Garoa", "Garoa Morna", "Sereno", "Sereno Morno", "Chuva",
     "Chuva Morna", "Chuva Intensa", "Chuva torrencial", "Chuva com Vento",
     "Tempestade", "Tesmpestade Tropical", "Chuva com Neve",
     "Chuva de Granizo", "Chuva Congelante", "Chuva e Neblina",
+    "Furacão", "Temporal com Granizo",
 ]
-
+ 
 snow = [
     "Geada", "Nevando Leve", "Nevando Forte",
     "Nevando e com Vento", "Nevasca", "Chuva com Neve"
 ]
-
+ 
 wind = [
     "Brisa", "Brisa Morna", "Vento Frio",
     "Ventos Fortes", "Vendaval", "Rajadas de Vento"
 ]
-
+ 
 cloud = [
     "Nublado e com Vento", "Nublado e Congelante",
     "Nublado e Fresco", "Nublado e Frio",
     "Nublado e Quente", "Nublado e Úmido",
     "Parcialmente nublado",
 ]
-
+ 
 termic = [
     "Ensolarado e Frio",  "Ensolarado e Fresco", "Ensolarado e com Vento",
     "Ensolarado e Quente", "Quente e com Vento", "Quente e Seco",
     "Quente e Úmido", "Ondas de Calor Extremo", "Frio e com Vento",
     "Frio e Seco",  "Frio e Úmido", "Frio Extremo",
 ]
-
+ 
 fog = [
     "Neblina", "Névoa Densa",
     "Névoa Esparsa", "Nuvem de Poeira",
 ]
-
+ 
 weather_names_list = rain + snow + wind + cloud + termic + fog
+
 
 climate_names_list = [
     "Equatorial: No seasons",
@@ -58,6 +61,8 @@ climate_names_list = [
     "Alpine: Summer",
     "Alpine: Winter"
 ]
+
+#as descrições de estação estão ma mesma ordem de climate_name_list
 
 season_tips = [
     ["There are no distinct seasons, weather conditions remain almost constant"
@@ -161,6 +166,8 @@ semi_arid_dry = [
     [5, 0, 1, 0, 0, 0, 0, 0, 0],
     [3, 0, 1, 0, 0, 1, 0, 0, 1]
 ]
+
+## Definições de fenomenos para estações de clima temperado usando uma logica legada, podem ser reaproveitados atualizando a logica para a logica acima.
 
 temperate_summer = [
     ["Chuva", 0, 0, 0, 0],

@@ -1,0 +1,231 @@
+season:
+  name: 'Alpine: Summer'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Chuva com Vento
+      - Brisa
+      - Garoa
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Brisa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Garoa
+      - Névoa Esparsa
+      - Chuva com Vento
+      - Garoa
+      - Temporal com Granizo
+  - occurrence:
+      name: Chuva com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Nublado e Fresco
+      - Névoa Esparsa
+      - Chuva de Granizo
+      - Ensolarado e Fresco
+      - Ensolarado e Fresco
+      - Brisa
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Chuva de Granizo
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Garoa
+      - Ensolarado e Fresco
+      - Nublado e Fresco
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Brisa
+      - Ensolarado e Fresco
+      - Nublado e Fresco
+      - Névoa Esparsa
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Garoa
+      - Nublado e Fresco
+      - Nevando Leve
+      - Chuva de Granizo
+      - Chuva com Vento
+      - Nublado e Fresco
+  - occurrence:
+      name: Chuva de Granizo
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva de Granizo
+      - Névoa Esparsa
+      - Nevando Leve
+      - Brisa
+      - Brisa
+      - Nublado e Fresco
+      - Chuva com Vento
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa
+      - Ensolarado e Fresco
+      - Garoa
+      - Ensolarado e Fresco
+      - Brisa
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Garoa
+      - Névoa Esparsa
+      - Nublado e Fresco
+      - Garoa
+      - Brisa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Nevando Leve
+      - Névoa Esparsa
+      - Garoa
+  - occurrence:
+      name: Nevando Leve
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando Leve
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Temporal com Granizo
+      - Brisa
+      - Chuva de Granizo
+      - Névoa Esparsa
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Nevando Leve
+      - Temporal com Granizo
+      - Chuva com Vento
+      - Parcialmente nublado
+      - Brisa
+      - Chuva de Granizo
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Temporal com Granizo
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Garoa
+      - Ensolarado e Fresco
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Névoa Esparsa
+      - Nublado e Fresco
+      - Brisa
+      - Temporal com Granizo
+      - Nevando Leve
+      - Nublado e Fresco
+  - occurrence:
+      name: Temporal com Granizo
+      severity: 2
+      color: 0
+      evolutions:
+      - Temporal com Granizo
+      - Parcialmente nublado
+      - Brisa
+      - Nublado e Fresco
+      - Garoa
+      - Brisa
+      - Nevando Leve
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Brisa
+      - Chuva com Vento
+      - Parcialmente nublado
+      - Nublado e Fresco
+      - Névoa Esparsa
+      - Garoa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Chuva de Granizo
+      - Brisa
+      - Brisa
+      - Parcialmente nublado
+      - Névoa Esparsa
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Nublado e Fresco
+      - Brisa
+      - Ensolarado e Fresco
+      - Ensolarado e Fresco
+      - Temporal com Granizo
+      - Parcialmente nublado

@@ -1,0 +1,231 @@
+season:
+  name: 'Arid: No seasons'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Ventos Fortes
+      - Brisa
+      - Nuvem de Poeira
+      - Quente e Seco
+      - Parcialmente nublado
+      - Ensolarado e Quente
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Nuvem de Poeira
+      - Névoa Esparsa
+      - Ventos Fortes
+      - Quente e Seco
+      - Ondas de Calor Extremo
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Quente e Seco
+      - Névoa Esparsa
+      - Vendaval
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Vendaval
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Nuvem de Poeira
+      - Ensolarado e com Vento
+      - Parcialmente nublado
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 0
+      color: 0
+      evolutions:
+      - Nuvem de Poeira
+      - Brisa
+      - Ensolarado e Quente
+      - Garoa
+      - Névoa Esparsa
+      - Quente e Seco
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Nuvem de Poeira
+      - Garoa
+      - Rajadas de Vento
+      - Vendaval
+      - Ventos Fortes
+      - Quente e Seco
+  - occurrence:
+      name: Vendaval
+      severity: 1
+      color: 0
+      evolutions:
+      - Vendaval
+      - Névoa Esparsa
+      - Rajadas de Vento
+      - Ensolarado e com Vento
+      - Brisa
+      - Parcialmente nublado
+      - Ventos Fortes
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Ensolarado e com Vento
+      - Ensolarado e com Vento
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Brisa
+      - Névoa Esparsa
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Quente e Seco
+      - Brisa
+      - Garoa
+      - Nuvem de Poeira
+      - Brisa
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Ensolarado e Quente
+      - Brisa
+      - Nuvem de Poeira
+      - Rajadas de Vento
+      - Névoa Esparsa
+      - Nuvem de Poeira
+  - occurrence:
+      name: Rajadas de Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Rajadas de Vento
+      - Garoa
+      - Nuvem de Poeira
+      - Ondas de Calor Extremo
+      - Ensolarado e com Vento
+      - Vendaval
+      - Névoa Esparsa
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Rajadas de Vento
+      - Ondas de Calor Extremo
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Vendaval
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Névoa Esparsa
+      - Brisa
+      - Ensolarado e Quente
+      - Parcialmente nublado
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Quente e Seco
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Nuvem de Poeira
+      - Garoa
+      - Ensolarado e Quente
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 0
+      color: 0
+      evolutions:
+      - Nuvem de Poeira
+      - Brisa
+      - Parcialmente nublado
+      - Ensolarado e Quente
+      - Ondas de Calor Extremo
+      - Rajadas de Vento
+      - Garoa
+  - occurrence:
+      name: Ondas de Calor Extremo
+      severity: 2
+      color: 0
+      evolutions:
+      - Ondas de Calor Extremo
+      - Nuvem de Poeira
+      - Ensolarado e Quente
+      - Quente e Seco
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Rajadas de Vento
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Ensolarado e Quente
+      - Ventos Fortes
+      - Parcialmente nublado
+      - Parcialmente nublado
+      - Brisa
+      - Quente e Seco
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Névoa Esparsa
+      - Vendaval
+      - Brisa
+      - Ensolarado e Quente
+      - Nuvem de Poeira
+      - Brisa
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Parcialmente nublado
+      - Ensolarado e com Vento
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Ondas de Calor Extremo
+      - Nuvem de Poeira

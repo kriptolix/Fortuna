@@ -1,0 +1,231 @@
+season:
+  name: 'Sub Polar: Summer'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Chuva com Vento
+      - Névoa Esparsa
+      - Garoa
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Garoa
+      - Brisa
+      - Chuva com Vento
+      - Névoa Esparsa
+      - Tempestade
+  - occurrence:
+      name: Chuva com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Nublado e Fresco
+      - Brisa
+      - Névoa Densa
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Nublado e Fresco
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Névoa Densa
+      - Parcialmente nublado
+      - Sereno
+      - Garoa
+      - Ensolarado e Fresco
+      - Sereno
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Névoa Esparsa
+      - Sereno
+      - Ensolarado e Fresco
+      - Brisa
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Garoa
+      - Ensolarado e Fresco
+      - Vento Frio
+      - Névoa Densa
+      - Chuva com Vento
+      - Nublado e Fresco
+  - occurrence:
+      name: Névoa Densa
+      severity: 1
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Brisa
+      - Vento Frio
+      - Nublado e Fresco
+      - Névoa Esparsa
+      - Sereno
+      - Chuva com Vento
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Névoa Esparsa
+      - Sereno
+      - Névoa Esparsa
+      - Parcialmente nublado
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Parcialmente nublado
+      - Névoa Esparsa
+      - Garoa
+      - Ensolarado e Fresco
+      - Garoa
+      - Névoa Esparsa
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Sereno
+      - Garoa
+      - Brisa
+      - Vento Frio
+      - Brisa
+      - Garoa
+  - occurrence:
+      name: Vento Frio
+      severity: 1
+      color: 0
+      evolutions:
+      - Vento Frio
+      - Ensolarado e Fresco
+      - Brisa
+      - Tempestade
+      - Nublado e Fresco
+      - Névoa Densa
+      - Brisa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Vento Frio
+      - Tempestade
+      - Chuva com Vento
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Névoa Densa
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Tempestade
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Garoa
+      - Sereno
+      - Parcialmente nublado
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Sereno
+      - Brisa
+      - Ensolarado e Fresco
+      - Sereno
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Garoa
+      - Sereno
+      - Ensolarado e Fresco
+      - Tempestade
+      - Vento Frio
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Tempestade
+      severity: 2
+      color: 0
+      evolutions:
+      - Tempestade
+      - Brisa
+      - Ensolarado e Fresco
+      - Nublado e Fresco
+      - Névoa Esparsa
+      - Nublado e Fresco
+      - Vento Frio
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Chuva com Vento
+      - Parcialmente nublado
+      - Sereno
+      - Garoa
+      - Névoa Esparsa
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Parcialmente nublado
+      - Névoa Densa
+      - Névoa Esparsa
+      - Ensolarado e Fresco
+      - Brisa
+      - Garoa
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Sereno
+      - Nublado e Fresco
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Tempestade
+      - Brisa

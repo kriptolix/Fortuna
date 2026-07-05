@@ -1,0 +1,231 @@
+season:
+  name: 'Tropical: Dry Season'
+  occurrences:
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Ventos Fortes
+      - Brisa
+      - Brisa Morna
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Parcialmente nublado
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Garoa
+      - Ondas de Calor Extremo
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Quente e Seco
+      - Parcialmente nublado
+      - Vendaval
+      - Ensolarado e Quente
+      - Brisa
+      - Sereno Morno
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Vendaval
+      - Ensolarado e com Vento
+      - Névoa Esparsa
+      - Brisa Morna
+      - Ensolarado e Quente
+      - Brisa Morna
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Brisa
+      - Névoa Esparsa
+      - Nuvem de Poeira
+      - Parcialmente nublado
+      - Quente e Seco
+      - Ensolarado e Quente
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Nuvem de Poeira
+      - Nuvem de Poeira
+      - Vendaval
+      - Ventos Fortes
+      - Quente e Seco
+  - occurrence:
+      name: Vendaval
+      severity: 1
+      color: 0
+      evolutions:
+      - Vendaval
+      - Parcialmente nublado
+      - Nuvem de Poeira
+      - Sereno Morno
+      - Brisa
+      - Brisa Morna
+      - Ventos Fortes
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Sereno Morno
+      - Ensolarado e Quente
+      - Garoa
+      - Névoa Esparsa
+      - Brisa
+      - Brisa
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+      - Garoa
+      - Ensolarado e Quente
+      - Nuvem de Poeira
+      - Brisa Morna
+      - Brisa
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 0
+      color: 0
+      evolutions:
+      - Nuvem de Poeira
+      - Névoa Esparsa
+      - Ensolarado e Quente
+      - Quente e Seco
+      - Nuvem de Poeira
+      - Parcialmente nublado
+      - Brisa Morna
+  - occurrence:
+      name: Nuvem de Poeira
+      severity: 1
+      color: 0
+      evolutions:
+      - Nuvem de Poeira
+      - Nuvem de Poeira
+      - Quente e Seco
+      - Ondas de Calor Extremo
+      - Sereno Morno
+      - Vendaval
+      - Parcialmente nublado
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno Morno
+      - Nuvem de Poeira
+      - Ondas de Calor Extremo
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Parcialmente nublado
+      - Vendaval
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Brisa
+      - Ensolarado e Quente
+      - Névoa Esparsa
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Garoa
+      - Brisa
+      - Brisa Morna
+      - Quente e Seco
+      - Nuvem de Poeira
+      - Névoa Esparsa
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ensolarado e Quente
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ondas de Calor Extremo
+      - Nuvem de Poeira
+      - Nuvem de Poeira
+  - occurrence:
+      name: Ondas de Calor Extremo
+      severity: 2
+      color: 0
+      evolutions:
+      - Ondas de Calor Extremo
+      - Quente e Seco
+      - Parcialmente nublado
+      - Quente e Seco
+      - Garoa
+      - Sereno Morno
+      - Nuvem de Poeira
+  - occurrence:
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa
+      - Parcialmente nublado
+      - Ventos Fortes
+      - Ensolarado e com Vento
+      - Brisa Morna
+      - Ensolarado e Quente
+      - Garoa
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Brisa
+      - Vendaval
+      - Brisa
+      - Parcialmente nublado
+      - Quente e Seco
+      - Ensolarado e Quente
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Sereno Morno
+      - Ensolarado e Quente
+      - Brisa
+      - Ondas de Calor Extremo
+      - Quente e Seco

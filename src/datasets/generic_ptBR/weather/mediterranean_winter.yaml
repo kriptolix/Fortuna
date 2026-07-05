@@ -1,0 +1,231 @@
+season:
+  name: 'Mediterranean: Winter'
+  occurrences:
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Garoa
+      - Nublado e Úmido
+      - Chuva Morna
+      - Sereno
+      - Parcialmente nublado
+  - occurrence:
+      name: Chuva Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Morna
+      - Chuva
+      - Nublado e Úmido
+      - Névoa Densa
+      - Chuva Intensa
+      - Chuva Morna
+      - Tempestade
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Chuva Morna
+      - Névoa Densa
+      - Ventos Fortes
+      - Chuva
+      - Névoa Densa
+      - Chuva
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Ventos Fortes
+      - Sereno
+      - Parcialmente nublado
+      - Nublado e Úmido
+      - Chuva
+      - Sereno
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Garoa
+      - Parcialmente nublado
+      - Nublado e Fresco
+      - Névoa Densa
+      - Chuva Morna
+      - Chuva
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Nublado e Úmido
+      - Nublado e Fresco
+      - Chuva Intensa
+      - Ventos Fortes
+      - Chuva Intensa
+      - Chuva Morna
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Névoa Densa
+      - Chuva Intensa
+      - Chuva
+      - Garoa
+      - Sereno
+      - Chuva Intensa
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Chuva
+      - Chuva
+      - Chuva Morna
+      - Parcialmente nublado
+      - Garoa
+      - Névoa Densa
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Sereno
+      - Chuva Morna
+      - Garoa
+      - Nublado e Fresco
+      - Nublado e Úmido
+      - Garoa
+  - occurrence:
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Fresco
+      - Parcialmente nublado
+      - Garoa
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Névoa Densa
+      - Nublado e Úmido
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Nublado e Fresco
+      - Nublado e Úmido
+      - Tempestade
+      - Chuva
+      - Ventos Fortes
+      - Névoa Densa
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Tempestade
+      - Chuva Intensa
+      - Sereno
+      - Parcialmente nublado
+      - Ventos Fortes
+  - occurrence:
+      name: Chuva Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Morna
+      - Tempestade
+      - Chuva Morna
+      - Névoa Densa
+      - Garoa
+      - Parcialmente nublado
+      - Sereno
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Chuva Morna
+      - Névoa Densa
+      - Sereno
+      - Nublado e Úmido
+      - Nublado e Fresco
+      - Parcialmente nublado
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Garoa
+      - Sereno
+      - Parcialmente nublado
+      - Tempestade
+      - Chuva Intensa
+      - Nublado e Fresco
+  - occurrence:
+      name: Tempestade
+      severity: 2
+      color: 0
+      evolutions:
+      - Tempestade
+      - Nublado e Úmido
+      - Parcialmente nublado
+      - Chuva Morna
+      - Chuva Morna
+      - Chuva
+      - Chuva Intensa
+  - occurrence:
+      name: Névoa Densa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Densa
+      - Parcialmente nublado
+      - Chuva Intensa
+      - Sereno
+      - Sereno
+      - Garoa
+      - Chuva Morna
+  - occurrence:
+      name: Sereno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno
+      - Névoa Densa
+      - Ventos Fortes
+      - Garoa
+      - Parcialmente nublado
+      - Nublado e Úmido
+      - Garoa
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Sereno
+      - Chuva
+      - Chuva
+      - Névoa Densa
+      - Tempestade
+      - Nublado e Úmido

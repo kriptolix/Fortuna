@@ -1,0 +1,231 @@
+season:
+  name: 'Monsoon: Summer'
+  occurrences:
+  - occurrence:
+      name: Chuva Intensa
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Chuva torrencial
+      - Nublado e Úmido
+      - Chuva com Vento
+      - Chuva
+      - Nublado e Quente
+      - Chuva Intensa
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Chuva com Vento
+      - Quente e Úmido
+      - Chuva torrencial
+      - Nublado e Úmido
+      - Furacão
+  - occurrence:
+      name: Chuva torrencial
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva torrencial
+      - Chuva
+      - Quente e Úmido
+      - Tempestade
+      - Chuva Intensa
+      - Furacão
+      - Chuva torrencial
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Tempestade
+      - Nublado e Quente
+      - Chuva Intensa
+      - Chuva com Vento
+      - Chuva Intensa
+      - Nublado e Quente
+  - occurrence:
+      name: Chuva com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Chuva
+      - Quente e Úmido
+      - Chuva
+      - Chuva Intensa
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Chuva com Vento
+      - Chuva
+      - Vendaval
+      - Tempestade
+      - Chuva torrencial
+      - Chuva
+  - occurrence:
+      name: Tempestade
+      severity: 1
+      color: 0
+      evolutions:
+      - Tempestade
+      - Quente e Úmido
+      - Vendaval
+      - Chuva torrencial
+      - Nublado e Úmido
+      - Nublado e Quente
+      - Chuva torrencial
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Chuva torrencial
+      - Chuva Intensa
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Nublado e Úmido
+      - Furacão
+  - occurrence:
+      name: Chuva Intensa
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Chuva com Vento
+      - Chuva
+      - Chuva com Vento
+      - Nublado e Úmido
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Chuva com Vento
+      - Quente e Úmido
+      - Vendaval
+      - Quente e Úmido
+      - Chuva com Vento
+  - occurrence:
+      name: Vendaval
+      severity: 1
+      color: 0
+      evolutions:
+      - Vendaval
+      - Chuva
+      - Quente e Úmido
+      - Furacão
+      - Chuva torrencial
+      - Tempestade
+      - Quente e Úmido
+  - occurrence:
+      name: Chuva torrencial
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva torrencial
+      - Vendaval
+      - Furacão
+      - Chuva torrencial
+      - Nublado e Quente
+      - Chuva Intensa
+      - Tempestade
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Furacão
+      - Chuva
+      - Furacão
+      - Chuva com Vento
+      - Chuva Intensa
+      - Nublado e Quente
+  - occurrence:
+      name: Chuva com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Nublado e Úmido
+      - Furacão
+      - Nublado e Quente
+      - Quente e Úmido
+      - Chuva
+      - Chuva Intensa
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Chuva com Vento
+      - Nublado e Quente
+      - Chuva Intensa
+      - Furacão
+      - Vendaval
+      - Chuva
+  - occurrence:
+      name: Furacão
+      severity: 2
+      color: 0
+      evolutions:
+      - Furacão
+      - Quente e Úmido
+      - Chuva Intensa
+      - Chuva
+      - Nublado e Úmido
+      - Chuva torrencial
+      - Vendaval
+  - occurrence:
+      name: Furacão
+      severity: 2
+      color: 0
+      evolutions:
+      - Furacão
+      - Chuva Intensa
+      - Chuva torrencial
+      - Nublado e Quente
+      - Nublado e Quente
+      - Chuva com Vento
+      - Nublado e Úmido
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Furacão
+      - Tempestade
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Quente e Úmido
+      - Chuva com Vento
+  - occurrence:
+      name: Chuva Intensa
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Nublado e Quente
+      - Chuva torrencial
+      - Chuva Intensa
+      - Furacão
+      - Furacão
+      - Quente e Úmido

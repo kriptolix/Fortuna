@@ -1,0 +1,231 @@
+season:
+  name: 'Equatorial: No seasons'
+  occurrences:
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Garoa Morna
+      - Sereno Morno
+      - Chuva Morna
+      - Nublado e Quente
+      - Nublado e Úmido
+  - occurrence:
+      name: Chuva Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Morna
+      - Chuva
+      - Sereno Morno
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Névoa Esparsa
+      - Furacão
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Chuva Morna
+      - Nublado e Úmido
+      - Tempestade
+      - Chuva
+      - Garoa Morna
+      - Ensolarado e Quente
+  - occurrence:
+      name: Garoa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa Morna
+      - Tempestade
+      - Nublado e Quente
+      - Parcialmente nublado
+      - Sereno Morno
+      - Chuva
+      - Sereno Morno
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno Morno
+      - Garoa Morna
+      - Parcialmente nublado
+      - Quente e Úmido
+      - Nublado e Úmido
+      - Chuva Morna
+      - Chuva
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Sereno Morno
+      - Quente e Úmido
+      - Chuva com Vento
+      - Tempestade
+      - Chuva Intensa
+      - Chuva Morna
+  - occurrence:
+      name: Tempestade
+      severity: 1
+      color: 0
+      evolutions:
+      - Tempestade
+      - Nublado e Úmido
+      - Chuva com Vento
+      - Ensolarado e Quente
+      - Garoa Morna
+      - Sereno Morno
+      - Chuva Intensa
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Ensolarado e Quente
+      - Chuva
+      - Névoa Esparsa
+      - Parcialmente nublado
+      - Garoa Morna
+      - Garoa Morna
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Nublado e Quente
+      - Névoa Esparsa
+      - Chuva
+      - Quente e Úmido
+      - Sereno Morno
+      - Garoa Morna
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Parcialmente nublado
+      - Chuva
+      - Chuva Morna
+      - Chuva com Vento
+      - Nublado e Úmido
+      - Sereno Morno
+  - occurrence:
+      name: Chuva com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Quente e Úmido
+      - Chuva Morna
+      - Furacão
+      - Ensolarado e Quente
+      - Tempestade
+      - Nublado e Úmido
+  - occurrence:
+      name: Ensolarado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Quente
+      - Chuva com Vento
+      - Furacão
+      - Chuva Intensa
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Tempestade
+  - occurrence:
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - Névoa Esparsa
+      - Furacão
+      - Chuva Morna
+      - Garoa Morna
+      - Chuva
+      - Parcialmente nublado
+      - Nublado e Quente
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Névoa Esparsa
+      - Garoa Morna
+      - Sereno Morno
+      - Chuva Morna
+      - Quente e Úmido
+      - Parcialmente nublado
+  - occurrence:
+      name: Chuva Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva Morna
+      - Chuva
+      - Sereno Morno
+      - Nublado e Úmido
+      - Furacão
+      - Chuva com Vento
+      - Quente e Úmido
+  - occurrence:
+      name: Furacão
+      severity: 2
+      color: 0
+      evolutions:
+      - Furacão
+      - Chuva Morna
+      - Nublado e Úmido
+      - Chuva Morna
+      - Névoa Esparsa
+      - Ensolarado e Quente
+      - Chuva com Vento
+  - occurrence:
+      name: Garoa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa Morna
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Nublado e Quente
+      - Sereno Morno
+      - Chuva
+      - Névoa Esparsa
+  - occurrence:
+      name: Sereno Morno
+      severity: 0
+      color: 0
+      evolutions:
+      - Sereno Morno
+      - Garoa Morna
+      - Tempestade
+      - Garoa Morna
+      - Nublado e Úmido
+      - Chuva Morna
+      - Chuva
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Sereno Morno
+      - Ensolarado e Quente
+      - Chuva
+      - Garoa Morna
+      - Furacão
+      - Chuva Morna

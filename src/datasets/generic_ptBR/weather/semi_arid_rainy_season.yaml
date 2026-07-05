@@ -1,0 +1,231 @@
+season:
+  name: 'Semi Arid: Rainy Season'
+  occurrences:
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Chuva Intensa
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Chuva com Vento
+      - Brisa Morna
+      - Parcialmente nublado
+  - occurrence:
+      name: Chuva com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Chuva
+      - Ensolarado e com Vento
+      - Nublado e Quente
+      - Chuva Intensa
+      - Chuva com Vento
+      - Chuva torrencial
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Chuva com Vento
+      - Nublado e Quente
+      - Ventos Fortes
+      - Chuva
+      - Nublado e Quente
+      - Chuva
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Ventos Fortes
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ensolarado e com Vento
+      - Chuva
+      - Brisa Morna
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Quente e Seco
+      - Parcialmente nublado
+      - Quente e Úmido
+      - Nublado e Quente
+      - Chuva com Vento
+      - Chuva
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Ensolarado e com Vento
+      - Quente e Úmido
+      - Vendaval
+      - Ventos Fortes
+      - Chuva Intensa
+      - Chuva com Vento
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Nublado e Quente
+      - Vendaval
+      - Chuva
+      - Quente e Seco
+      - Brisa Morna
+      - Chuva Intensa
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Chuva
+      - Chuva
+      - Chuva com Vento
+      - Parcialmente nublado
+      - Quente e Seco
+      - Nublado e Quente
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Chuva com Vento
+      - Quente e Seco
+      - Quente e Úmido
+      - Ensolarado e com Vento
+      - Quente e Seco
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Parcialmente nublado
+      - Quente e Seco
+      - Ensolarado e com Vento
+      - Vendaval
+      - Nublado e Quente
+      - Ensolarado e com Vento
+  - occurrence:
+      name: Vendaval
+      severity: 1
+      color: 0
+      evolutions:
+      - Vendaval
+      - Quente e Úmido
+      - Ensolarado e com Vento
+      - Chuva torrencial
+      - Chuva
+      - Ventos Fortes
+      - Nublado e Quente
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Vendaval
+      - Chuva torrencial
+      - Chuva Intensa
+      - Brisa Morna
+      - Parcialmente nublado
+      - Ventos Fortes
+  - occurrence:
+      name: Chuva com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva com Vento
+      - Chuva torrencial
+      - Chuva com Vento
+      - Nublado e Quente
+      - Quente e Seco
+      - Parcialmente nublado
+      - Brisa Morna
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Chuva com Vento
+      - Nublado e Quente
+      - Brisa Morna
+      - Ensolarado e com Vento
+      - Quente e Úmido
+      - Parcialmente nublado
+  - occurrence:
+      name: Ensolarado e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e com Vento
+      - Quente e Seco
+      - Brisa Morna
+      - Parcialmente nublado
+      - Chuva torrencial
+      - Vendaval
+      - Quente e Úmido
+  - occurrence:
+      name: Chuva torrencial
+      severity: 2
+      color: 0
+      evolutions:
+      - Chuva torrencial
+      - Ensolarado e com Vento
+      - Parcialmente nublado
+      - Chuva com Vento
+      - Chuva com Vento
+      - Chuva
+      - Vendaval
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Parcialmente nublado
+      - Chuva Intensa
+      - Brisa Morna
+      - Brisa Morna
+      - Quente e Seco
+      - Chuva com Vento
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Nublado e Quente
+      - Ventos Fortes
+      - Quente e Seco
+      - Parcialmente nublado
+      - Ensolarado e com Vento
+      - Quente e Seco
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Brisa Morna
+      - Chuva
+      - Chuva
+      - Nublado e Quente
+      - Chuva torrencial
+      - Ensolarado e com Vento

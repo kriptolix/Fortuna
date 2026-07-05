@@ -1,0 +1,231 @@
+season:
+  name: 'Polar: Winter'
+  occurrences:
+  - occurrence:
+      name: Frio Extremo
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio Extremo
+      - Nevando e com Vento
+      - Frio e com Vento
+      - Nublado e Congelante
+      - Nevando Forte
+      - Frio Extremo
+      - Frio e com Vento
+  - occurrence:
+      name: Nevando Forte
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Forte
+      - Frio Extremo
+      - Nublado e Congelante
+      - Vento Frio
+      - Nevando e com Vento
+      - Nublado e Congelante
+      - Nevasca
+  - occurrence:
+      name: Nevando e com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando e com Vento
+      - Nevando Forte
+      - Vento Frio
+      - Ventos Fortes
+      - Frio Extremo
+      - Nevasca
+      - Ventos Fortes
+  - occurrence:
+      name: Frio e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e com Vento
+      - Ventos Fortes
+      - Frio Extremo
+      - Nevando Forte
+      - Nublado e Congelante
+      - Frio Extremo
+      - Nevando Forte
+  - occurrence:
+      name: Nublado e Congelante
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Congelante
+      - Frio e com Vento
+      - Nevando Forte
+      - Frio e com Vento
+      - Vento Frio
+      - Nevando Forte
+      - Frio Extremo
+  - occurrence:
+      name: Vento Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Vento Frio
+      - Nublado e Congelante
+      - Frio e com Vento
+      - Nevando e com Vento
+      - Ventos Fortes
+      - Nevando e com Vento
+      - Nevando Forte
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Vento Frio
+      - Nevando e com Vento
+      - Ventos Fortes
+      - Frio e com Vento
+      - Nevando Forte
+      - Nevando e com Vento
+  - occurrence:
+      name: Frio Extremo
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio Extremo
+      - Ventos Fortes
+      - Frio Extremo
+      - Nublado e Congelante
+      - Nevando Forte
+      - Frio e com Vento
+      - Nevasca
+  - occurrence:
+      name: Nevando Forte
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Forte
+      - Frio Extremo
+      - Nublado e Congelante
+      - Vento Frio
+      - Frio e com Vento
+      - Nublado e Congelante
+      - Frio e com Vento
+  - occurrence:
+      name: Frio e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e com Vento
+      - Nevando Forte
+      - Vento Frio
+      - Frio Extremo
+      - Nevando e com Vento
+      - Vento Frio
+      - Nublado e Congelante
+  - occurrence:
+      name: Nevando e com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando e com Vento
+      - Frio e com Vento
+      - Frio Extremo
+      - Nevasca
+      - Ventos Fortes
+      - Ventos Fortes
+      - Vento Frio
+  - occurrence:
+      name: Ventos Fortes
+      severity: 1
+      color: 0
+      evolutions:
+      - Ventos Fortes
+      - Nevando e com Vento
+      - Nevasca
+      - Nevando e com Vento
+      - Frio Extremo
+      - Frio e com Vento
+      - Ventos Fortes
+  - occurrence:
+      name: Nublado e Congelante
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Congelante
+      - Nevasca
+      - Nevando Forte
+      - Nevasca
+      - Vento Frio
+      - Nevando Forte
+      - Frio Extremo
+  - occurrence:
+      name: Vento Frio
+      severity: 0
+      color: 0
+      evolutions:
+      - Vento Frio
+      - Nublado e Congelante
+      - Nevasca
+      - Nevando Forte
+      - Frio Extremo
+      - Frio e com Vento
+      - Nevando Forte
+  - occurrence:
+      name: Frio Extremo
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio Extremo
+      - Vento Frio
+      - Nevando Forte
+      - Frio e com Vento
+      - Nevasca
+      - Nevando e com Vento
+      - Frio e com Vento
+  - occurrence:
+      name: Nevasca
+      severity: 2
+      color: 0
+      evolutions:
+      - Nevasca
+      - Frio Extremo
+      - Frio e com Vento
+      - Nevando Forte
+      - Nublado e Congelante
+      - Ventos Fortes
+      - Nevando e com Vento
+  - occurrence:
+      name: Nevasca
+      severity: 2
+      color: 0
+      evolutions:
+      - Nevasca
+      - Frio e com Vento
+      - Nevando e com Vento
+      - Frio Extremo
+      - Nevando Forte
+      - Vento Frio
+      - Nublado e Congelante
+  - occurrence:
+      name: Nevando Forte
+      severity: 0
+      color: 0
+      evolutions:
+      - Nevando Forte
+      - Nevasca
+      - Ventos Fortes
+      - Frio e com Vento
+      - Frio e com Vento
+      - Frio Extremo
+      - Vento Frio
+  - occurrence:
+      name: Frio e com Vento
+      severity: 0
+      color: 0
+      evolutions:
+      - Frio e com Vento
+      - Nevando Forte
+      - Ventos Fortes
+      - Frio Extremo
+      - Nevasca
+      - Nevasca
+      - Frio Extremo

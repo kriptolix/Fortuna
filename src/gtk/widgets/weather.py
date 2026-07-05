@@ -18,14 +18,47 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from gi.repository import Adw
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gio, GLib
 
 import os
 import random
+import yaml
 
-from ...datasets.strings import semi_arid_dry, weather_names_list
 from ...datasets.strings import climate_names_list, season_tips
-from ...utils import setup_animation, vertical, right, left
+from ...utils import setup_animation
+
+from ...utils import vertical, left, right
+
+_MOVE_DIRECTIONS = {
+    1: (vertical, -1),
+    2: (right, +1),
+    3: (left, +1),
+    4: (vertical, +1),
+    5: (right, -1),
+    6: (left, -1),
+}
+
+
+def _move_index(index, groups, step):
+    for group in groups:
+        if index in group:
+            pos = group.index(index) + step
+            if pos < 0:
+                pos = len(group) - 1
+            elif pos > len(group) - 1:
+                pos = 0
+            return group[pos]
+    raise ValueError(f"índice {index} não encontrado nos grupos")
+
+
+MAPS_DIR = os.path.join("/app/share/fortuna/src", "datasets", "generic_ptBR", "weather")
+
+
+def _slugify(climate_name):
+    return (climate_name.lower()
+            .replace(":", "")
+            .replace(",", "")
+            .replace(" ", "_"))
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -42,8 +75,9 @@ class Weather(Gtk.Box):
     def __init__(self):
         super().__init__()
 
-        self._selected_climate = semi_arid_dry
-        self._actual_weather = None
+        self._selected_climate = None   # lista de 19 "occurrence" (dict)
+        self._actual_index = None       # índice físico (0-18) atual
+        self._actual_weather = None     # dict "occurrence" atual
 
         self._text = ''
 
@@ -55,59 +89,88 @@ class Weather(Gtk.Box):
                                     self._item_selected)
 
         self._weather_button.connect('clicked', self._pick_weather)
+       
+        self._climate_combo.set_selected(0)
+
+    def _load_climate(self, climate_name):
+        
+        filename = os.path.join(MAPS_DIR, f"{_slugify(climate_name)}.yaml")
+
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f)
+        except (OSError, yaml.YAMLError) as error:
+            print(f"Não foi possível carregar o mapa '{filename}': {error}")
+            return None
+
+        return [item["occurrence"] for item in data["season"]["occurrences"]]
 
     def _item_selected(self, dropdown, parameter):
-        
-        tooltip = (season_tips[0][0] + '\n\n'
-                   + season_tips[0][1] + '\n\n'
-                   + season_tips[0][2])
 
-        self._info_icon.set_tooltip_text(tooltip)        
+        position = self._climate_combo.get_selected()
+
+        if position == Gtk.INVALID_LIST_POSITION:
+            return
+
+        climate_name = climate_names_list[position]
+
+        occurrences = self._load_climate(climate_name)
+        if occurrences is not None:
+            self._selected_climate = occurrences
+      
+        self._actual_index = None
+        self._actual_weather = None
+        
+        tips = season_tips[position] if position < len(season_tips) else None
+        if tips:
+            self._info_icon.set_tooltip_text('\n\n'.join(tips))
 
     def _pick_weather(self, button):
 
-        if not self._actual_weather:
-            self._actual_weather = random.choice(self._selected_climate)
-            self._text = weather_names_list[self._actual_weather[0]]
+        if not self._selected_climate:
+            print("Nenhum mapa climático carregado.")
+            return
+
+        if self._actual_index is None:
+            self._actual_index = random.randrange(len(self._selected_climate))
+            self._actual_weather = self._selected_climate[self._actual_index]
+            self._text = self._actual_weather["name"]
             self._fade_out()
             return
 
-        chances_wigths = [1, 1, 1, 2, 2, 2, 2]
+        chances_weights = [1, 1, 1, 2, 2, 2, 2]
+        move = random.choices([1, 2, 3, 4, 5, 6, 7], chances_weights)[0]
 
-        move = random.choices([1, 2, 3, 4, 5, 6, 7],
-                              chances_wigths)
+        print("Move: ", move)
 
-        print("Move: ", move[0])
-        # print(self._actual_weather)
+        evolutions = self._actual_weather["evolutions"]
+        current_name = self._actual_weather["name"]
 
-        blockers = self._actual_weather[3:]
+        if move == 7:
+            # Permanecer: nada muda.
+            self._text = current_name
+            self._fade_out()
+            return
 
-        print(blockers)
+        next_name = evolutions[move]
 
-        for index, element in enumerate(blockers):
-            if element == 1:
-                if index + 1 == move[0] or move == 7:
-                    if self._dramatic_mode.get_active():
-                        self._pick_weather(None)
-                        print("retry")
-                        return
-                    print("blocked")
-                    self._fade_out()
-                    return
+        if next_name == current_name:
+            # Direção bloqueada (ou coincidentemente igual): equivalente
+            # ao antigo "blocked" - não muda de hexágono nem de clima.
+            if self._dramatic_mode.get_active():
+                print("retry")
+                self._pick_weather(None)
+                return
 
-        match move[0]:
-            case 1:
-                self._make_move(-1, vertical)
-            case 4:
-                self._make_move(1, vertical)
-            case 5:
-                self._make_move(-1, right)
-            case 2:
-                self._make_move(1, right)
-            case 6:
-                self._make_move(-1, left)
-            case 3:
-                self._make_move(1, left)
+            print("blocked")
+            self._text = current_name
+            self._fade_out()
+            return
+
+        groups, step = _MOVE_DIRECTIONS[move]
+        self._actual_index = _move_index(self._actual_index, groups, step)
+        self._actual_weather = self._selected_climate[self._actual_index]
+        self._text = self._actual_weather["name"]
 
         self._fade_out()
 
@@ -135,33 +198,3 @@ class Weather(Gtk.Box):
 
         self._weather_button.set_sensitive(True)
         self._weather_button.grab_focus()
-
-    def _make_move(self, route, groups):
-
-        index = self._selected_climate.index(self._actual_weather)
-
-        # print("index: ", index)
-
-        for group in groups:
-            if index in group:
-
-                position = group.index(index)
-
-                print(group, position, route)
-
-                next_pos = position + route
-
-                if next_pos < 0:
-                    next_pos = len(group) - 1
-
-                if next_pos > len(group) - 1:
-                    next_pos = 0
-
-                next_ref = group[next_pos]
-
-                next_elem = self._selected_climate[next_ref]
-                self._text = weather_names_list[next_elem[0]]
-                self._actual_weather = next_elem
-
-                # print(self._text)
-                # print(next_elem)

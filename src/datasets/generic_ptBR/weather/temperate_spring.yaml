@@ -1,0 +1,231 @@
+season:
+  name: 'Temperate: Spring'
+  occurrences:
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Chuva Intensa
+      - Nublado e Quente
+      - Quente e Úmido
+      - Chuva
+      - Nublado e Úmido
+      - Nublado e Úmido
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Garoa
+      - Quente e Úmido
+      - Quente e Seco
+      - Chuva Intensa
+      - Garoa
+      - Temporal com Granizo
+  - occurrence:
+      name: Chuva Intensa
+      severity: 1
+      color: 0
+      evolutions:
+      - Chuva Intensa
+      - Chuva
+      - Quente e Seco
+      - Frio e Seco
+      - Garoa
+      - Quente e Úmido
+      - Brisa Morna
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Ensolarado e Fresco
+      - Quente e Úmido
+      - Garoa
+      - Quente e Seco
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Nublado e Quente
+      - Ensolarado e Fresco
+      - Parcialmente nublado
+      - Quente e Seco
+      - Chuva
+      - Garoa
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Quente e Úmido
+      - Parcialmente nublado
+      - Quente e Seco
+      - Quente e Seco
+      - Chuva Intensa
+      - Chuva
+  - occurrence:
+      name: Frio e Seco
+      severity: 1
+      color: 0
+      evolutions:
+      - Frio e Seco
+      - Frio e Seco
+      - Nevando Forte
+      - Brisa Morna
+      - Frio e Seco
+      - Frio e Seco
+      - Chuva Intensa
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Brisa Morna
+      - Garoa
+      - Garoa
+      - Ensolarado e Fresco
+      - Nublado e Quente
+      - Quente e Úmido
+  - occurrence:
+      name: Ensolarado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - Ensolarado e Fresco
+      - Nublado e Úmido
+      - Garoa
+      - Chuva
+      - Parcialmente nublado
+      - Quente e Úmido
+      - Nublado e Quente
+  - occurrence:
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+      - Chuva
+      - Nublado e Quente
+      - Nevando Forte
+      - Quente e Seco
+      - Quente e Úmido
+  - occurrence:
+      name: Nevando Forte
+      severity: 1
+      color: 0
+      evolutions:
+      - Nevando Forte
+      - Parcialmente nublado
+      - Nevando Forte
+      - Temporal com Granizo
+      - Brisa Morna
+      - Frio e Seco
+      - Nevando Forte
+  - occurrence:
+      name: Brisa Morna
+      severity: 0
+      color: 0
+      evolutions:
+      - Brisa Morna
+      - Nevando Forte
+      - Temporal com Granizo
+      - Chuva Intensa
+      - Nublado e Úmido
+      - Nublado e Úmido
+      - Frio e Seco
+  - occurrence:
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - Garoa
+      - Temporal com Granizo
+      - Chuva
+      - Quente e Úmido
+      - Chuva
+      - Ensolarado e Fresco
+      - Nublado e Úmido
+  - occurrence:
+      name: Chuva
+      severity: 0
+      color: 0
+      evolutions:
+      - Chuva
+      - Garoa
+      - Quente e Úmido
+      - Quente e Seco
+      - Nublado e Quente
+      - Parcialmente nublado
+      - Ensolarado e Fresco
+  - occurrence:
+      name: Nublado e Quente
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Quente
+      - Chuva
+      - Quente e Seco
+      - Nublado e Úmido
+      - Temporal com Granizo
+      - Nublado e Quente
+      - Parcialmente nublado
+  - occurrence:
+      name: Temporal com Granizo
+      severity: 2
+      color: 0
+      evolutions:
+      - Temporal com Granizo
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Chuva
+      - Garoa
+      - Brisa Morna
+      - Nevando Forte
+  - occurrence:
+      name: Quente e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Úmido
+      - Nublado e Úmido
+      - Chuva Intensa
+      - Nublado e Úmido
+      - Quente e Seco
+      - Chuva
+      - Garoa
+  - occurrence:
+      name: Quente e Seco
+      severity: 0
+      color: 0
+      evolutions:
+      - Quente e Seco
+      - Quente e Úmido
+      - Quente e Seco
+      - Nublado e Quente
+      - Nublado e Úmido
+      - Nublado e Quente
+      - Chuva
+  - occurrence:
+      name: Nublado e Úmido
+      severity: 0
+      color: 0
+      evolutions:
+      - Nublado e Úmido
+      - Quente e Seco
+      - Brisa Morna
+      - Garoa
+      - Quente e Úmido
+      - Temporal com Granizo
+      - Nublado e Quente
