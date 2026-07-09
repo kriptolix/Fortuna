@@ -144,6 +144,10 @@ class HexBase(Gtk.Box):
         block = self._blockers_list[position]
         block.set_opacity(value)
 
+    def _get_block(self, position):
+        block = self._blockers_list[position]
+        return block.get_opacity()
+
     def _get_text_ref(self):
         return self._text_ref
 

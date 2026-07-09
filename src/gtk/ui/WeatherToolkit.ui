@@ -103,6 +103,26 @@
         <property name="spacing">10</property>
         <property name="margin-start">25</property>
         <child>
+          <object class="GtkBox">
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">File:</property>
+                <style>
+                  <class name="heading"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="_file">
+                <property name="label">...</property>
+                <property name="halign">2</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
           <object class="GtkLabel">
             <property name="label" translatable="yes">Block Diagram:</property>
             <style>
@@ -111,8 +131,7 @@
           </object>
         </child>
         <child>
-          <object class="HexBase" id="_hex_diagram">
-          </object>
+          <object class="HexBase" id="_hex_diagram"></object>
         </child>
         <child>
           <object class="GtkBox">

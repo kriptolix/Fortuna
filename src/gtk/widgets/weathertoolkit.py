@@ -37,6 +37,13 @@ from ...datasets.strings import weather_names_list, semi_arid_dry
 # e corresponde a "Superior", etc. - ver comentário completo em weather.py).
 from ...utils import vertical, left, right
 
+EVOLUTION_WEIGHTS = {
+            "none": 0,
+            "rare": 1,
+            "normal": 10,
+            "high": 20,
+        }
+
 _DIRECTIONS = [
     ("Superior", vertical, -1),
     ("Superior direita", right, +1),
@@ -100,6 +107,7 @@ class WeatherToolkit(Gtk.Box):
     _import_button = Gtk.Template.Child()
     _save_button = Gtk.Template.Child()
     _used_label = Gtk.Template.Child()
+    _file = Gtk.Template.Child()
 
     _check_01 = Gtk.Template.Child()
     _check_02 = Gtk.Template.Child()
@@ -111,7 +119,7 @@ class WeatherToolkit(Gtk.Box):
     _check_08 = Gtk.Template.Child()
 
     def __init__(self):
-        super().__init__()
+        super().__init__()        
 
         self._hex_selected = None
         self._drag_coords = [0, 0]
@@ -258,23 +266,58 @@ class WeatherToolkit(Gtk.Box):
         check.set_active(True)
 
     def _build_season_dict(self, season_name):
-        """Monta a estrutura (dict) do mapa atual no formato
-        season/occurrences/occurrence/name/severity/color/evolutions,
-        igual ao de verao.yaml, calculando 'evolutions' a partir da
-        adjacência fixa + bloqueios definidos na interface."""
+        """Monta o YAML final expandindo os relacionamentos do hexflower.
+
+        As chances padrão vêm da geometria do hexflower.
+        Exceções de transição:
+            normal  -> usa peso geométrico
+            rare    -> usa peso raro
+            blocked -> peso zero
+        """        
 
         names_by_idx = {}
         for index, hex in enumerate(self._hexs_list):
             names_by_idx[index] = weather_names_list[hex._get_text_ref()]
 
         occurrences = []
+
         for index, hex in enumerate(self._hexs_list):
             name = names_by_idx[index]
-            evolutions = [name]  # posição 0 = "permanecer"
 
+            evolutions = []
+
+            # Permanecer no estado atual.
+            # A posição 0 representa estabilidade do clima.
+            evolutions.append({
+                "name": name,
+                "weight": self._get_stay_weight(index)
+            })
+
+            # Evoluções para os 6 vizinhos
             for dir_pos, n_idx in enumerate(ADJACENCY[index]):
-                blocked = bool(hex._blockers_list[dir_pos].get_opacity())
-                evolutions.append(name if blocked else names_by_idx[n_idx])
+
+                neighbor_name = names_by_idx[n_idx]
+
+                relation = hex._relations_list[dir_pos]
+                # relation esperado:
+                # "normal", "rare" ou "blocked"
+
+                if relation == "blocked":
+                    weight = "blocked"
+
+                elif relation == "rare":
+                    weight = "rare"
+
+                else:
+                    if dir_pos in [0, 1, 2]:
+                        weight = "normal"
+                    else:
+                        weight = "high"
+
+                evolutions.append({
+                    "name": neighbor_name,
+                    "weight": weight
+                })
 
             occurrences.append({
                 "occurrence": {
@@ -285,7 +328,12 @@ class WeatherToolkit(Gtk.Box):
                 }
             })
 
-        return {"season": {"name": season_name, "occurrences": occurrences}}
+        return {
+            "season": {
+                "name": season_name,
+                "occurrences": occurrences
+            }
+        }
 
     def _serialize_flower(self, button):
 
