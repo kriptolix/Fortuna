@@ -181,6 +181,11 @@ class WeatherToolkit(Gtk.Box):
     def _on_text_selected(self, dropdown, parameter):
  
         position = self._text_combo.get_selected()
+        if position == Gtk.INVALID_LIST_POSITION:
+            # Nenhum item selecionado no combo: hexágono fica "vazio"
+            # (sem fenômeno definido), em vez de propagar o valor
+            # sentinela do GTK adiante.
+            position = None
         self._used_label.set_opacity(0)
  
         for hex in self._hexs_list:
@@ -188,7 +193,7 @@ class WeatherToolkit(Gtk.Box):
                 # o próprio hexágono selecionado já tem esse texto (é o
                 # valor atual dele) - não conta como "em uso" por outro.
                 continue
-            if position == hex._text_ref:
+            if position is not None and position == hex._text_ref:
                 self._used_label.set_opacity(1)
  
         self._hex_diagram._set_text(position)
@@ -256,7 +261,7 @@ class WeatherToolkit(Gtk.Box):
         severity = self._hex_diagram._severity
         color_check = self._hex_diagram._color
 
-        if not text_ref:
+        if text_ref is None:
             text_ref = Gtk.INVALID_LIST_POSITION
 
         self._text_combo.set_selected(text_ref)
@@ -265,24 +270,63 @@ class WeatherToolkit(Gtk.Box):
         check = self._checks_list[color_check]
         check.set_active(True)
 
+    def _resolve_target(self, index, dir_pos, names_by_idx):
+        """Retorna o índice do primeiro hexágono não-vazio encontrado a
+        partir de `index`, andando na mesma linha (vertical, diagonal
+        esquerda ou direita, conforme `dir_pos`) na direção indicada.
+
+        Hexágonos vazios (sem fenômeno definido, ou seja
+        names_by_idx[i] is None) são pulados - o alvo da transição
+        passa a ser o próximo hex preenchido na mesma linha. Se a linha
+        inteira (fora o próprio índice) estiver vazia, retorna None.
+        """
+
+        _, groups, step = _DIRECTIONS[dir_pos]
+
+        for group in groups:
+            if index in group:
+                n = len(group)
+                pos = group.index(index)
+                for i in range(1, n):
+                    candidate = group[(pos + step * i) % n]
+                    if names_by_idx.get(candidate) is not None:
+                        return candidate
+                return None
+
+        raise ValueError(f"índice {index} não encontrado nos grupos")
+
     def _build_season_dict(self, season_name):
         """Monta o YAML final expandindo os relacionamentos do hexflower.
 
         As chances padrão vêm da geometria do hexflower.
-        Exceções de transição:
-            normal  -> usa peso geométrico
-            rare    -> usa peso raro
-            blocked -> peso zero
-        """        
+        Níveis de bloqueio (hex._get_block(dir_pos)):
+            0    -> transição normal, usa peso geométrico (normal/high)
+            0.05 -> transição rara, usa peso "rare"
+            1    -> bloqueado, usa peso "none"
+
+        Hexágonos vazios (sem fenômeno definido) não geram occurrence
+        própria, mas também não interrompem a exportação: se o vizinho
+        de uma transição estiver vazio, a transição aponta para o
+        próximo hexágono preenchido na mesma linha (vertical, diagonal
+        esquerda ou direita).
+        """
 
         names_by_idx = {}
         for index, hex in enumerate(self._hexs_list):
-            names_by_idx[index] = weather_names_list[hex._get_text_ref()]
+            ref = hex._get_text_ref()
+            names_by_idx[index] = (
+                weather_names_list[ref] if ref is not None else None
+            )
 
         occurrences = []
 
         for index, hex in enumerate(self._hexs_list):
             name = names_by_idx[index]
+
+            if name is None:
+                # Hexágono vazio: sem fenômeno definido, não entra na
+                # lista de occurrences, mas não gera erro.
+                continue
 
             evolutions = []
 
@@ -290,29 +334,37 @@ class WeatherToolkit(Gtk.Box):
             # A posição 0 representa estabilidade do clima.
             evolutions.append({
                 "name": name,
-                "weight": self._get_stay_weight(index)
+                "weight": "high"
             })
 
             # Evoluções para os 6 vizinhos
-            for dir_pos, n_idx in enumerate(ADJACENCY[index]):
+            for dir_pos in range(6):
 
-                neighbor_name = names_by_idx[n_idx]
+                relation = hex._get_block(dir_pos)
+                # relation esperado: 0 (normal), 0.05 (raro) ou 1
+                # (bloqueado)
 
-                relation = hex._relations_list[dir_pos]
-                # relation esperado:
-                # "normal", "rare" ou "blocked"
+                if relation == 1:
+                    weight = "none"
 
-                if relation == "blocked":
-                    weight = "blocked"
-
-                elif relation == "rare":
+                elif relation == 0.05:
                     weight = "rare"
 
                 else:
-                    if dir_pos in [0, 1, 2]:
+                    if dir_pos in (0, 1, 2):
                         weight = "normal"
                     else:
                         weight = "high"
+
+                target_idx = self._resolve_target(index, dir_pos,
+                                                   names_by_idx)
+                if target_idx is None:
+                    # Linha inteira vazia nessa direção: não há alvo
+                    # válido, então a transição aponta para o próprio
+                    # estado (equivalente a "permanecer").
+                    neighbor_name = name
+                else:
+                    neighbor_name = names_by_idx[target_idx]
 
                 evolutions.append({
                     "name": neighbor_name,
@@ -321,6 +373,7 @@ class WeatherToolkit(Gtk.Box):
 
             occurrences.append({
                 "occurrence": {
+                    "index": index,
                     "name": name,
                     "severity": hex._severity,
                     "color": hex._color,
@@ -360,6 +413,7 @@ class WeatherToolkit(Gtk.Box):
                                   default_flow_style=False)
 
             self.last_loaded_file = gfile
+            self._file.set_text(gfile.get_basename())
             write_to_disk_async(gfile,
                                 GLib.Bytes.new(yaml_text.encode("utf-8")),
                                 when_writed)
@@ -371,20 +425,48 @@ class WeatherToolkit(Gtk.Box):
 
     def _apply_season_dict(self, season_dict):
         """Aplica um dict no formato season/occurrences aos 19 hexágonos.
-        A ordem das occurrences deve corresponder à numeração 0-18 da
-        especificação."""
+
+        Cada occurrence pode carregar seu próprio 'index' (0-18), o que
+        permite que a ordem no YAML não precise corresponder à ordem da
+        lista - é o que permite reimportar corretamente hexágonos
+        vazios (que não geram occurrence nenhuma): qualquer hexágono
+        cujo índice não apareça no YAML é limpo. Arquivos exportados
+        antes dessa mudança (sem a chave 'index') continuam funcionando:
+        nesse caso a posição de cada item na lista é usada como índice,
+        igual ao comportamento antigo.
+        """
 
         occurrences = season_dict["season"]["occurrences"]
 
-        for index, item in enumerate(occurrences):
+        # Limpa todos os hexágonos primeiro. Qualquer um que não seja
+        # tocado pelo loop abaixo (por estar vazio no momento da
+        # exportação) permanece vazio aqui também.
+        for hex in self._hexs_list:
+            hex._set_text(None)
+            hex._set_severity(0)
+            hex._set_color(0)
+            for block in hex._blockers_list:
+                block.set_opacity(0)
+
+        for pos, item in enumerate(occurrences):
             occ = item["occurrence"]
+            # Compatibilidade com YAMLs antigos (sem a chave 'index'):
+            # nesse caso a posição do item na lista é o próprio índice
+            # do hexágono, igual ao comportamento anterior.
+            index = occ.get("index", pos)
+
+            if index is None or not (0 <= index < len(self._hexs_list)):
+                print(f"Aviso: occurrence sem índice válido "
+                      f"({occ.get('name')}) - ignorada.")
+                continue
+
             hex = self._hexs_list[index]
 
             try:
                 text_ref = weather_names_list.index(occ["name"])
             except ValueError:
                 # Fenômeno não encontrado em weather_names_list - mantém
-                # o hexágono como está e avisa no console para revisão
+                # o hexágono vazio e avisa no console para revisão
                 # manual.
                 print(f"Aviso: fenômeno '{occ['name']}' não encontrado em "
                       "weather_names_list (hexágono "
@@ -395,16 +477,42 @@ class WeatherToolkit(Gtk.Box):
             hex._set_severity(occ["severity"])
             hex._set_color(occ.get("color", 0))
 
-            # Bloqueios: reconstruídos comparando cada entrada de
-            # 'evolutions' com o próprio nome do fenômeno (uma evolução
-            # igual ao nome do hexágono, fora a posição 0/"permanecer",
-            # indica bloqueio nessa direção).
+            # Bloqueios: reconstruídos a partir de cada entrada de
+            # 'evolutions' (posição 0 é "permanecer", posições 1-6
+            # correspondem às 6 direções na mesma ordem de
+            # hex._blockers_list).
+            # Suporta dois formatos:
+            #   - novo: entrada é um dict {"name": ..., "weight": ...},
+            #     bloqueio vem do campo 'weight' ("none"/"rare"/outro).
+            #   - legado: entrada é só uma string com o nome do
+            #     fenômeno; bloqueio era indicado por essa string ser
+            #     igual ao nome do próprio hexágono.
             evolutions = occ.get("evolutions", [])
             for dir_pos, block_widget in enumerate(hex._blockers_list):
                 evo_pos = dir_pos + 1  # posição 0 é "permanecer"
-                is_blocked = (evo_pos < len(evolutions)
-                             and evolutions[evo_pos] == occ["name"])
-                block_widget.set_opacity(1 if is_blocked else 0)
+
+                entry = evolutions[evo_pos] if evo_pos < len(evolutions) \
+                    else None
+
+                if isinstance(entry, dict):
+                    weight = entry.get("weight")
+                    if weight == "none":
+                        opacity = 1
+                    elif weight == "rare":
+                        opacity = 0.05
+                    else:
+                        opacity = 0
+                elif isinstance(entry, str):
+                    opacity = 1 if entry == occ["name"] else 0
+                else:
+                    opacity = 0
+
+                block_widget.set_opacity(opacity)
+
+        # Atualiza a visualização (hex em destaque + combos) já que os
+        # dados subjacentes do hexágono selecionado podem ter mudado.
+        self._clone_state(self._hex_selected, self._hex_diagram)
+        self._update_hex_config()
 
     def _deserialize_flower(self, button):
 
@@ -434,6 +542,9 @@ class WeatherToolkit(Gtk.Box):
                 return
 
             self._apply_season_dict(season_dict)
+
+            self.last_loaded_file = gfile
+            self._file.set_text(gfile.get_basename())
 
         file_dialog = Gtk.FileDialog.new()
         file_dialog.set_title("Importar Mapa (YAML)")

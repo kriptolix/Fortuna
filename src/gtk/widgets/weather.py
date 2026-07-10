@@ -27,28 +27,15 @@ import yaml
 from ...datasets.strings import climate_names_list, season_tips
 from ...utils import setup_animation
 
-from ...utils import vertical, left, right
-
-_MOVE_DIRECTIONS = {
-    1: (vertical, -1),
-    2: (right, +1),
-    3: (left, +1),
-    4: (vertical, +1),
-    5: (right, -1),
-    6: (left, -1),
+# NOTA: os pesos abaixo duplicam EVOLUTION_WEIGHTS de weathertoolkit.py.
+# Se for possível, vale mover essa constante para utils.py para manter
+# uma única fonte de verdade entre o editor e o consumo em jogo.
+EVOLUTION_WEIGHTS = {
+    "none": 0,
+    "rare": 1,
+    "normal": 10,
+    "high": 20,
 }
-
-
-def _move_index(index, groups, step):
-    for group in groups:
-        if index in group:
-            pos = group.index(index) + step
-            if pos < 0:
-                pos = len(group) - 1
-            elif pos > len(group) - 1:
-                pos = 0
-            return group[pos]
-    raise ValueError(f"índice {index} não encontrado nos grupos")
 
 
 MAPS_DIR = os.path.join("/app/share/fortuna/src", "datasets", "generic_ptBR", "weather")
@@ -91,6 +78,9 @@ class Weather(Gtk.Box):
         self._weather_button.connect('clicked', self._pick_weather)
        
         self._climate_combo.set_selected(0)
+
+        self._item_selected(self._climate_combo, None)
+  
 
     def _load_climate(self, climate_name):
         
@@ -138,37 +128,60 @@ class Weather(Gtk.Box):
             self._fade_out()
             return
 
-        chances_weights = [1, 1, 1, 2, 2, 2, 2]
-        move = random.choices([1, 2, 3, 4, 5, 6, 7], chances_weights)[0]
-
-        print("Move: ", move)
-
-        evolutions = self._actual_weather["evolutions"]
         current_name = self._actual_weather["name"]
+        evolutions = self._actual_weather.get("evolutions", [])
 
-        if move == 7:
-            # Permanecer: nada muda.
+        # evolutions[0] é "permanecer"; evolutions[1:7] são as 6
+        # direções do hexflower. O peso de cada uma vem do YAML
+        # ("none"/"rare"/"normal"/"high"), já resolvido pelo editor
+        # (inclusive pulando vizinhos vazios).
+        weights = [
+            EVOLUTION_WEIGHTS.get(evo.get("weight"), 0)
+            if isinstance(evo, dict) else 0
+            for evo in evolutions
+        ]
+
+        if not evolutions or not any(weights):
+            # Sem evoluções cadastradas, ou todas com peso zero
+            # (bloqueadas): permanece no estado atual.
             self._text = current_name
             self._fade_out()
             return
 
-        next_name = evolutions[move]
+        chosen = random.choices(range(len(evolutions)), weights=weights)[0]
+        chosen_evo = evolutions[chosen]
+        next_name = chosen_evo.get("name") if isinstance(chosen_evo, dict) \
+            else None
 
-        if next_name == current_name:
-            # Direção bloqueada (ou coincidentemente igual): equivalente
-            # ao antigo "blocked" - não muda de hexágono nem de clima.
-            if self._dramatic_mode.get_active():
+        if not next_name or next_name == current_name:
+            # Permanecer no estado atual - seja porque a posição 0
+            # ("permanecer") foi sorteada, seja porque a direção
+            # sorteada aponta para o mesmo fenômeno (vizinho ausente ou
+            # coincidentemente igual).
+            if chosen != 0 and self._dramatic_mode.get_active():
                 print("retry")
                 self._pick_weather(None)
                 return
 
-            print("blocked")
             self._text = current_name
             self._fade_out()
             return
 
-        groups, step = _MOVE_DIRECTIONS[move]
-        self._actual_index = _move_index(self._actual_index, groups, step)
+        candidates = [i for i, occ in enumerate(self._selected_climate)
+                     if occ.get("name") == next_name]
+
+        if not candidates:
+            # Fenômeno referenciado na evolução não existe (mais) no
+            # mapa carregado - mantém o estado atual e avisa.
+            print(f"Aviso: fenômeno '{next_name}' não encontrado no mapa "
+                  "carregado; permanecendo no estado atual.")
+            self._text = current_name
+            self._fade_out()
+            return
+
+        # Se mais de um hexágono do mapa tiver o mesmo fenômeno, escolhe
+        # um deles aleatoriamente entre os candidatos.
+        self._actual_index = random.choice(candidates)
         self._actual_weather = self._selected_climate[self._actual_index]
         self._text = self._actual_weather["name"]
 

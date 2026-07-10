@@ -42,6 +42,7 @@ weather_names_list = sorted(rain + snow + wind + cloud + termic + fog)
 
 
 climate_names_list = [
+    "Teste: No seasons",
     "Equatorial: No seasons",
     "Tropical: Dry Season",
     "Tropical: Rainy Season",

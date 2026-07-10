@@ -1,0 +1,323 @@
+season:
+  name: teste
+  occurrences:
+  - occurrence:
+      index: 1
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Nublado e Fresco
+        weight: high
+      - name: Chuva com Vento
+        weight: normal
+      - name: Garoa
+        weight: normal
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Chuva com Vento
+        weight: high
+      - name: Garoa
+        weight: high
+      - name: Temporal com Granizo
+        weight: high
+  - occurrence:
+      index: 2
+      name: Chuva com Vento
+      severity: 1
+      color: 0
+      evolutions:
+      - name: Chuva com Vento
+        weight: high
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Chuva de Granizo
+        weight: normal
+      - name: Nublado e Fresco
+        weight: high
+      - name: Névoa Esparsa
+        weight: high
+      - name: Brisa
+        weight: high
+  - occurrence:
+      index: 3
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Brisa
+        weight: high
+      - name: Chuva de Granizo
+        weight: normal
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Garoa
+        weight: high
+      - name: Parcialmente nublado
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+  - occurrence:
+      index: 4
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Garoa
+        weight: high
+      - name: Brisa
+        weight: normal
+      - name: Garoa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Névoa Esparsa
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+      - name: Brisa
+        weight: high
+  - occurrence:
+      index: 5
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Névoa Esparsa
+        weight: high
+      - name: Garoa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Nevando Leve
+        weight: normal
+      - name: Chuva de Granizo
+        weight: high
+      - name: Chuva com Vento
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+  - occurrence:
+      index: 6
+      name: Chuva de Granizo
+      severity: 1
+      color: 0
+      evolutions:
+      - name: Chuva de Granizo
+        weight: high
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Nevando Leve
+        weight: normal
+      - name: Brisa
+        weight: normal
+      - name: Brisa
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+      - name: Chuva com Vento
+        weight: high
+  - occurrence:
+      index: 7
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Parcialmente nublado
+        weight: high
+      - name: Brisa
+        weight: normal
+      - name: Brisa
+        weight: normal
+      - name: Garoa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: high
+      - name: Brisa
+        weight: high
+      - name: Garoa
+        weight: high
+  - occurrence:
+      index: 9
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Nublado e Fresco
+        weight: high
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Nevando Leve
+        weight: high
+      - name: Névoa Esparsa
+        weight: high
+      - name: Garoa
+        weight: high
+  - occurrence:
+      index: 10
+      name: Nevando Leve
+      severity: 1
+      color: 0
+      evolutions:
+      - name: Nevando Leve
+        weight: high
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Temporal com Granizo
+        weight: normal
+      - name: Brisa
+        weight: high
+      - name: Chuva de Granizo
+        weight: high
+      - name: Névoa Esparsa
+        weight: high
+  - occurrence:
+      index: 11
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Brisa
+        weight: high
+      - name: Nevando Leve
+        weight: normal
+      - name: Temporal com Granizo
+        weight: normal
+      - name: Chuva com Vento
+        weight: normal
+      - name: Parcialmente nublado
+        weight: high
+      - name: Brisa
+        weight: none
+      - name: Chuva de Granizo
+        weight: high
+  - occurrence:
+      index: 12
+      name: Garoa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Garoa
+        weight: high
+      - name: Temporal com Granizo
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Névoa Esparsa
+        weight: high
+      - name: Garoa
+        weight: high
+      - name: Parcialmente nublado
+        weight: high
+  - occurrence:
+      index: 13
+      name: Névoa Esparsa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Névoa Esparsa
+        weight: high
+      - name: Garoa
+        weight: normal
+      - name: Chuva com Vento
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Parcialmente nublado
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+      - name: Brisa
+        weight: high
+  - occurrence:
+      index: 14
+      name: Parcialmente nublado
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Parcialmente nublado
+        weight: high
+      - name: Névoa Esparsa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Brisa
+        weight: normal
+      - name: Temporal com Granizo
+        weight: high
+      - name: Nevando Leve
+        weight: high
+      - name: Nublado e Fresco
+        weight: high
+  - occurrence:
+      index: 15
+      name: Temporal com Granizo
+      severity: 2
+      color: 0
+      evolutions:
+      - name: Temporal com Granizo
+        weight: high
+      - name: Parcialmente nublado
+        weight: normal
+      - name: Brisa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Garoa
+        weight: high
+      - name: Brisa
+        weight: high
+      - name: Nevando Leve
+        weight: high
+  - occurrence:
+      index: 17
+      name: Nublado e Fresco
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Nublado e Fresco
+        weight: high
+      - name: Brisa
+        weight: normal
+      - name: Chuva de Granizo
+        weight: normal
+      - name: Brisa
+        weight: normal
+      - name: Brisa
+        weight: high
+      - name: Parcialmente nublado
+        weight: high
+      - name: Névoa Esparsa
+        weight: high
+  - occurrence:
+      index: 18
+      name: Brisa
+      severity: 0
+      color: 0
+      evolutions:
+      - name: Brisa
+        weight: high
+      - name: Nublado e Fresco
+        weight: normal
+      - name: Brisa
+        weight: none
+      - name: Garoa
+        weight: normal
+      - name: Nublado e Fresco
+        weight: high
+      - name: Temporal com Granizo
+        weight: high
+      - name: Parcialmente nublado
+        weight: high

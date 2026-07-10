@@ -132,7 +132,15 @@ class HexBase(Gtk.Box):
 
     def _set_text(self, position):
 
-        if not position:
+        # position pode ser None (hex vazio, sem fenômeno definido) ou
+        # Gtk.INVALID_LIST_POSITION (nenhum item selecionado no combo).
+        # Antes o teste era "if not position", o que também descartava
+        # a posição 0 (o primeiro item de weather_names_list), impedindo
+        # que ele fosse selecionado. Agora comparamos explicitamente com
+        # None/INVALID_LIST_POSITION e limpamos o hex nesse caso.
+        if position is None or position == Gtk.INVALID_LIST_POSITION:
+            self._text_ref = None
+            self._display._description.set_text("")
             return
 
         text = weather_names_list[position]
