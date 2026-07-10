@@ -5,6 +5,7 @@
     <file preprocess="xml-stripblanks">src/gtk/ui/MainWindow.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/help-overlay.ui</file>       
     <file preprocess="xml-stripblanks">src/gtk/ui/Weather.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/Cycles.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/Oracle.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/HexBase.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/HexDisplay.ui</file>

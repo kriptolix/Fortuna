@@ -43,4 +43,6 @@ configure_file(
   install_dir: get_option('datadir') / 'dbus-1' / 'services'
 )
 
+install_subdir('images', install_dir: get_option('datadir'))
+
 subdir('icons')

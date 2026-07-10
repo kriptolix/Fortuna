@@ -23,6 +23,7 @@ from gi.repository import Gtk, Gdk, GObject
 from .weather import Weather
 from .oracle import Oracle
 from .character import Character
+from .cycles import Cycles
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Fortuna'
@@ -37,8 +38,11 @@ class MainWindow(Adw.ApplicationWindow):
     _toggle_b_oracle = Gtk.Template.Child()
     _toggle_t_character = Gtk.Template.Child()
     _toggle_b_character = Gtk.Template.Child()
+    _toggle_t_cycles = Gtk.Template.Child()
+    _toggle_b_cycles = Gtk.Template.Child()
     _oracle = Gtk.Template.Child()
     _weather = Gtk.Template.Child()
+    _cycles = Gtk.Template.Child()
     _character = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -55,7 +59,8 @@ class MainWindow(Adw.ApplicationWindow):
         toggles = [
             [self._toggle_t_weather, self._toggle_b_weather],
             [self._toggle_t_character, self._toggle_b_character],
-            [self._toggle_t_oracle, self._toggle_b_oracle]
+            [self._toggle_t_oracle, self._toggle_b_oracle],
+            [self._toggle_t_cycles, self._toggle_b_cycles]
         ]
 
         flags = GObject.BindingFlags.SYNC_CREATE | GObject.BindingFlags.BIDIRECTIONAL
@@ -81,3 +86,6 @@ class MainWindow(Adw.ApplicationWindow):
         if (toggle == (self._toggle_t_oracle or self._toggle_t_oracle)
                 and toggle.get_active()):
             self._stack.set_visible_child(self._oracle)
+
+        if (toggle == self._toggle_t_cycles) and toggle.get_active():
+            self._stack.set_visible_child(self._cycles)

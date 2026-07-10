@@ -1,0 +1,335 @@
+biomas:
+  - id: floresta_tropical_umida
+    nome: "Floresta Tropical Úmida"
+    descricao: "Vegetação densa, chuvas constantes, biodiversidade altíssima"
+    arquetipo_climatico: tropical_umido
+    sabor_sensorial:
+      - "ar pesado, abafado, cheiro de terra molhada e vegetação em decomposição"
+      - "coro contínuo de insetos e pássaros invisíveis na copa"
+      - "luz do sol fragmentada em raios finos por entre as folhas"
+    economia_primaria_tipica: [agricola]
+
+  - id: floresta_tropical_sazonal
+    nome: "Floresta Tropical Sazonal"
+    descricao: "Floresta com estação seca bem marcada"
+    arquetipo_climatico: tropical_sazonal
+    sabor_sensorial:
+      - "folhas secas cobrindo o chão na estação seca, lama espessa na chuvosa"
+      - "silêncio da fauna em retirada quando a seca se prolonga"
+    economia_primaria_tipica: [agricola]
+
+  - id: floresta_temperada
+    nome: "Floresta Temperada"
+    descricao: "Quatro estações bem definidas, árvores caducifólias"
+    arquetipo_climatico: temperado_umido
+    sabor_sensorial:
+      - "cheiro de folhas mudando conforme a estação — verde, depois terra, depois neve"
+      - "galhos estalando ao vento, luz dourada filtrada no outono"
+    economia_primaria_tipica: [agricola]
+
+  - id: floresta_boreal
+    nome: "Floresta Boreal (Taiga)"
+    descricao: "Florestas frias e extensas de coníferas"
+    arquetipo_climatico: frio_boreal
+    sabor_sensorial:
+      - "cheiro forte de resina e pinho, silêncio abafado pela neve"
+      - "distâncias enganosas — as árvores se repetem por quilômetros iguais"
+    economia_primaria_tipica: []
+
+  - id: floresta_de_montanha
+    nome: "Floresta de Montanha"
+    descricao: "Vegetação adaptada à altitude, encostas íngremes"
+    arquetipo_climatico: montanhoso
+    sabor_sensorial:
+      - "ar rarefeito e frio mesmo sob sol forte"
+      - "névoa que sobe do vale e engole a trilha sem aviso"
+    economia_primaria_tipica: []
+
+  - id: floresta_costeira
+    nome: "Floresta Costeira"
+    descricao: "Vegetação densa próxima ao mar, exposta a ventos salgados"
+    arquetipo_climatico: costeiro_temperado
+    sabor_sensorial:
+      - "árvores tortas, moldadas por anos de vento constante do mar"
+      - "cheiro de sal misturado a musgo e folhas úmidas"
+    economia_primaria_tipica: [pesqueira]
+
+  - id: manguezal
+    nome: "Manguezal"
+    descricao: "Florestas costeiras alagadas de água salgada"
+    arquetipo_climatico: tropical_umido
+    sabor_sensorial:
+      - "raízes retorcidas emergindo da lama escura na maré baixa"
+      - "cheiro forte de matéria orgânica em decomposição e sal"
+    economia_primaria_tipica: [pesqueira]
+
+  - id: pantano_brejo
+    nome: "Pântano / Brejo"
+    descricao: "Solo encharcado, águas lentas, matéria orgânica abundante"
+    arquetipo_climatico: temperado_umido
+    sabor_sensorial:
+      - "neblina baixa que nunca parece dissipar totalmente"
+      - "som de insetos e água parada, chão que suga as botas"
+    economia_primaria_tipica: []
+
+  - id: turfeira
+    nome: "Turfeira"
+    descricao: "Pântanos frios com acúmulo denso de matéria vegetal"
+    arquetipo_climatico: frio_boreal
+    sabor_sensorial:
+      - "chão esponjoso que afunda levemente a cada passo"
+      - "coloração acastanhada da água parada, cheiro de turfa"
+    economia_primaria_tipica: []
+
+  - id: varzea_planicie_aluvial
+    nome: "Várzea / Planície Aluvial"
+    descricao: "Áreas inundáveis próximas a rios, solo fértil"
+    arquetipo_climatico: temperado_umido
+    sabor_sensorial:
+      - "marcas de enchentes antigas visíveis no solo e nos troncos"
+      - "terra escura e fértil, contraste entre verde intenso e água parada"
+    economia_primaria_tipica: [agricola]
+
+  - id: pradaria_temperada
+    nome: "Pradaria Temperada"
+    descricao: "Campos abertos, poucas árvores"
+    arquetipo_climatico: temperado_seco
+    sabor_sensorial:
+      - "vento constante fazendo a relva ondular até o horizonte"
+      - "horizonte vazio, sem referências além do próprio céu"
+    economia_primaria_tipica: [agricola]
+
+  - id: savana_tropical
+    nome: "Savana Tropical"
+    descricao: "Campos com árvores espaçadas e estação seca marcada"
+    arquetipo_climatico: tropical_sazonal
+    sabor_sensorial:
+      - "capim alto e dourado na seca, verde intenso após as primeiras chuvas"
+      - "manadas visíveis a distância, poeira levantada pelo vento quente"
+    economia_primaria_tipica: []
+
+  - id: estepe
+    nome: "Estepe"
+    descricao: "Campos secos de clima continental"
+    arquetipo_climatico: temperado_seco
+    sabor_sensorial:
+      - "vento cortante sem nenhuma barreira natural"
+      - "amplitude térmica brutal entre dia e noite"
+    economia_primaria_tipica: []
+
+  - id: cerrado
+    nome: "Cerrado"
+    descricao: "Vegetação adaptada ao fogo e a solo pobre"
+    arquetipo_climatico: tropical_sazonal
+    sabor_sensorial:
+      - "árvores retorcidas e casca grossa, cicatrizes de queimadas antigas"
+      - "cheiro de fumaça distante na estação seca"
+    economia_primaria_tipica: []
+
+  - id: chaparral_mediterraneo
+    nome: "Chaparral / Vegetação Mediterrânea"
+    descricao: "Arbustos densos, verões secos, invernos amenos e chuvosos"
+    arquetipo_climatico: mediterraneo
+    sabor_sensorial:
+      - "cheiro forte de ervas aromáticas aquecidas pelo sol"
+      - "vegetação seca e crepitante, risco constante de fogo no verão"
+    economia_primaria_tipica: [agricola, comercio]
+
+  - id: deserto_arenoso
+    nome: "Deserto Arenoso"
+    descricao: "Dunas extensas, pouca água superficial"
+    arquetipo_climatico: arido_quente
+    sabor_sensorial:
+      - "areia fina que se infiltra em tudo, movida pelo menor vento"
+      - "miragem tremulando no horizonte sob o calor do meio-dia"
+    economia_primaria_tipica: []
+
+  - id: deserto_rochoso
+    nome: "Deserto Rochoso"
+    descricao: "Pedras e planaltos áridos"
+    arquetipo_climatico: arido_quente
+    sabor_sensorial:
+      - "rocha rachada pela variação brusca de temperatura"
+      - "eco estranho do vento entre formações de pedra"
+    economia_primaria_tipica: [mineracao]
+
+  - id: deserto_de_sal
+    nome: "Deserto de Sal"
+    descricao: "Planícies salinas áridas"
+    arquetipo_climatico: arido_quente
+    sabor_sensorial:
+      - "superfície branca ofuscante, reflexo do sol quase insuportável"
+      - "crosta de sal que estala sob os pés"
+    economia_primaria_tipica: [mineracao]
+
+  - id: deserto_frio
+    nome: "Deserto Frio"
+    descricao: "Regiões áridas de baixa temperatura"
+    arquetipo_climatico: arido_frio
+    sabor_sensorial:
+      - "solo ressecado e rachado, mas ar cortante de frio"
+      - "poeira fina levantada por ventos gelados"
+    economia_primaria_tipica: []
+
+  - id: tundra_artica
+    nome: "Tundra Ártica"
+    descricao: "Solo congelado (permafrost), vegetação baixa e esparsa"
+    arquetipo_climatico: polar
+    sabor_sensorial:
+      - "silêncio absoluto, quebrado só pelo vento"
+      - "solo que cede de forma estranha, semicongelado por baixo"
+    economia_primaria_tipica: []
+
+  - id: tundra_alpina
+    nome: "Tundra Alpina"
+    descricao: "Alta altitude, acima da linha das árvores"
+    arquetipo_climatico: montanhoso
+    sabor_sensorial:
+      - "ar fino, respiração pesada mesmo parado"
+      - "vento que corta sem nenhum obstáculo natural pra frear"
+    economia_primaria_tipica: []
+
+  - id: geleira_calota_polar
+    nome: "Geleira / Calota Polar"
+    descricao: "Gelo permanente, paisagem quase sem vida visível"
+    arquetipo_climatico: polar
+    sabor_sensorial:
+      - "estalos e rachaduras profundas ecoando sob o gelo"
+      - "brancura total que desorienta a noção de distância"
+    economia_primaria_tipica: []
+
+  - id: deserto_de_gelo
+    nome: "Deserto de Gelo"
+    descricao: "Regiões polares extremamente secas, além do frio"
+    arquetipo_climatico: polar
+    sabor_sensorial:
+      - "ar tão seco que racha os lábios apesar do frio"
+      - "isolamento absoluto, nenhum sinal de vida por dias"
+    economia_primaria_tipica: []
+
+  - id: costa_rochosa
+    nome: "Costa Rochosa"
+    descricao: "Falésias, pedras, ondas fortes"
+    arquetipo_climatico: costeiro_temperado
+    sabor_sensorial:
+      - "estrondo constante das ondas quebrando contra a pedra"
+      - "spray salgado no ar mesmo longe da água"
+    economia_primaria_tipica: [pesqueira]
+
+  - id: praia_arenosa_litoral_baixo
+    nome: "Praia Arenosa / Litoral Baixo"
+    descricao: "Costas planas e arenosas"
+    arquetipo_climatico: costeiro_temperado
+    sabor_sensorial:
+      - "areia quente durante o dia, fria e úmida à noite"
+      - "linha de maré marcada por destroços e conchas"
+    economia_primaria_tipica: [pesqueira, comercio]
+
+  - id: recifes_aguas_rasas
+    nome: "Recifes e Águas Rasas"
+    descricao: "Ecossistemas marinhos costeiros, ricos e frágeis"
+    arquetipo_climatico: oceanico
+    sabor_sensorial:
+      - "água cristalina revelando cores vívidas logo abaixo da superfície"
+      - "correntes traiçoeiras entre formações de coral"
+    economia_primaria_tipica: [pesqueira]
+
+  - id: mar_aberto
+    nome: "Mar Aberto"
+    descricao: "Grandes áreas oceânicas, sem terra à vista"
+    arquetipo_climatico: oceanico
+    sabor_sensorial:
+      - "horizonte igual em todas as direções, sem referência"
+      - "mudança de humor do mar sem aviso claro"
+    economia_primaria_tipica: [pesqueira, comercio]
+
+  - id: ilhas_vulcanicas
+    nome: "Ilhas Vulcânicas"
+    descricao: "Terrenos formados por atividade vulcânica recente"
+    arquetipo_climatico: vulcanico
+    sabor_sensorial:
+      - "cheiro de enxofre carregado pelo vento"
+      - "solo negro e irregular, ainda quente em alguns pontos"
+    economia_primaria_tipica: [pesqueira]
+
+  - id: regiao_vulcanica_continental
+    nome: "Região Vulcânica Continental"
+    descricao: "Campos de lava e cinzas antigas"
+    arquetipo_climatico: vulcanico
+    sabor_sensorial:
+      - "cinzas finas cobrindo tudo, carregadas pelo vento a cada passo"
+      - "tremores ocasionais quase imperceptíveis sob os pés"
+    economia_primaria_tipica: [mineracao]
+
+  - id: regiao_montanhosa
+    nome: "Região Montanhosa"
+    descricao: "Cadeias elevadas, terrenos inclinados"
+    arquetipo_climatico: montanhoso
+    sabor_sensorial:
+      - "eco que multiplica qualquer som na rocha"
+      - "névoa e nuvens abaixo do nível do observador"
+    economia_primaria_tipica: [mineracao]
+
+  - id: planalto_elevado
+    nome: "Planalto Elevado"
+    descricao: "Grandes áreas altas e relativamente planas"
+    arquetipo_climatico: temperado_seco
+    sabor_sensorial:
+      - "vento constante e forte, sem barreiras pra conter"
+      - "variação térmica brusca entre sol e sombra"
+    economia_primaria_tipica: []
+
+  - id: canion_regiao_arida_escavada
+    nome: "Cânion / Região Árida Escavada"
+    descricao: "Vales profundos moldados por erosão intensa"
+    arquetipo_climatico: arido_quente
+    sabor_sensorial:
+      - "paredes de rocha estratificada revelando eras passadas"
+      - "eco prolongado, sombra e calor extremos lado a lado"
+    economia_primaria_tipica: []
+
+  - id: regiao_carstica
+    nome: "Região Cárstica"
+    descricao: "Calcário, cavernas, rios subterrâneos — clima de superfície varia conforme a região"
+    arquetipo_climatico: temperado_umido
+    sabor_sensorial:
+      - "sumidouros e buracos inesperados escondidos na vegetação"
+      - "som de água correndo em algum lugar abaixo do chão"
+    economia_primaria_tipica: []
+
+  - id: regiao_rios_gigantes
+    nome: "Região de Rios Gigantes"
+    descricao: "Grandes bacias hidrográficas"
+    arquetipo_climatico: temperado_umido
+    sabor_sensorial:
+      - "correnteza larga demais pra ver a outra margem em alguns pontos"
+      - "tráfego constante de barcos e vida ribeirinha"
+    economia_primaria_tipica: [comercio, pesqueira]
+
+  - id: regiao_permafrost
+    nome: "Região de Permafrost"
+    descricao: "Solo congelado permanentemente"
+    arquetipo_climatico: polar
+    sabor_sensorial:
+      - "solo que parece firme mas esconde instabilidade abaixo"
+      - "objetos e restos antigos preservados de forma perturbadora pelo gelo"
+    economia_primaria_tipica: []
+
+  - id: subterraneo_profundo
+    nome: "Subterrâneo Profundo (Cavernas Extensas)"
+    descricao: "Redes de cavernas abaixo da superfície, sem luz solar"
+    arquetipo_climatico: subterraneo
+    sabor_sensorial:
+      - "escuridão absoluta fora do alcance de qualquer luz carregada"
+      - "gotejamento constante e ecos que enganam a direção do som"
+      - "ar parado, sem vento, temperatura quase invariável"
+    economia_primaria_tipica: [mineracao]
+
+  - id: oasis
+    nome: "Oásis"
+    descricao: "Bolsão isolado de água e vegetação dentro de um deserto — clima de fundo é do deserto ao redor, mas o microambiente local contrasta fortemente"
+    arquetipo_climatico: arido_quente
+    sabor_sensorial:
+      - "sombra e umidade repentinas depois de horas de areia e sol"
+      - "som de água corrente destoando completamente do silêncio do deserto"
+    economia_primaria_tipica: [agricola, comercio]

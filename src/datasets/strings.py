@@ -1,42 +1,73 @@
 
 rain = [
-    "Garoa", "Garoa Morna", "Sereno", "Sereno Morno", "Chuva",
-    "Chuva Morna", "Chuva Intensa", "Chuva torrencial", "Chuva com Vento",
-    "Tempestade", "Tempestade Tropical", "Chuva com Neve",
-    "Chuva de Granizo", "Chuva Congelante", "Chuva e Neblina",
-    "Furacão", "Temporal com Granizo",
+    "Garoa", 
+    "Garoa Morna",     
+    "Chuva Morna",
+    "Chuva", 
+    "Chuva Gelada",
+    "Chuva Intensa", 
+    "Chuva torrencial", 
+    "Chuva com Vento", 
+    "Tempestade", 
+    "Tempestade Tropical", 
+    "Chuva de Granizo",
+    "Temporal com Granizo",
+    "Chuva com Neve",  
+    "Chuva e Neblina", 
 ]
  
 snow = [
-    "Geada", "Nevando Leve", "Nevando Forte",
-    "Nevando e com Vento", "Nevasca" 
+    "Geada", 
+    "Nevando Leve", 
+    "Nevando Forte", 
+    "Nevando e com Vento", 
+    "Nevasca", 
 ]
  
-wind = [
-    "Brisa", "Brisa Morna", "Vento Frio",
-    "Ventos Fortes", "Vendaval", "Rajadas de Vento"
+wind = [    
+    "Brisa Fresca", 
+    "Brisa Fria",
+    "Vento Quente",
+    "Vento Gelado",
+    "Rajadas de Vento", 
+    "Ventos Fortes", 
+    "Vendaval", 
 ]
  
 cloud = [
-    "Nublado e com Vento", "Nublado e Congelante",
-    "Nublado e Fresco", "Nublado e Frio",
-    "Nublado e Quente", "Nublado e Úmido",
-    "Parcialmente nublado", "Nublado e Seco"
+    "Nublado e Quente",
+    "Nublado e Fresco",
+    "Nublado e Frio",     
+    "Nublado e Congelante",
+    "Nublado e Seco", 
+    "Nublado e com Vento",     
+    "Nublado e Úmido",
+    "Parcialmente nublado",    
 ]
  
 termic = [
-    "Céu Limpo, Tempo Frio",  "Céu Limpo, Tempo Fresco", "Céu Limpo e com Vento",
-    "Céu Limpo, Tempo Quente", "Quente e com Vento", "Quente e Seco",
-    "Quente e Úmido", "Ondas de Calor Extremo", "Frio e com Vento",
-    "Frio e Seco",  "Frio e Úmido", "Frio Extremo",
+    "Céu Limpo, Quente",
+    "Céu Limpo, Fresco", 
+    "Céu Limpo, Frio",
+    "Céu Limpo, Congelante",    
+    "Céu Limpo e com Vento",     
+    "Quente e Seco",
+    "Quente e com Vento",
+    "Quente e Úmido", 
+    "Ondas de Calor Extremo",    
+    "Frio e Seco",
+    "Frio e com Vento",  
+    "Frio e Úmido", 
+    "Frio Extremo", 
 ]
  
 fog = [
-    "Neblina", "Névoa Densa",
-    "Névoa Esparsa", "Nuvem de Poeira","Tempestade de Areia", "Tempestade de Poeira"
+    "Névoa Densa",
+    "Névoa Esparsa", 
+    "Nuvem de Poeira",
+    "Tempestade de Areia", 
+    "Tempestade de Poeira"
 ]
-
-
  
 weather_names_list = sorted(rain + snow + wind + cloud + termic + fog)
 

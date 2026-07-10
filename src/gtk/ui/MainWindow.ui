@@ -37,6 +37,12 @@
                   </object>
                 </child>
                 <child>
+                  <object class="GtkToggleButton" id="_toggle_t_cycles">
+                    <property name="label" translatable="yes">Cycles</property>
+                    <property name="group">_toggle_t_oracle</property>
+                  </object>
+                </child>
+                <child>
                   <object class="GtkToggleButton" id="_toggle_t_character">
                     <property name="label" translatable="yes">Characters</property>
                     <property name="group">_toggle_t_oracle</property>
@@ -77,6 +83,10 @@
               </object>
             </child>
             <child>
+              <object class="Cycles" id="_cycles">
+              </object>
+            </child>
+            <child>
               <object class="Character" id="_character">
               </object>
             </child>
@@ -101,6 +111,12 @@
                 <child>
                   <object class="GtkToggleButton" id="_toggle_b_weather">
                     <property name="icon-name">weather-showers-symbolic</property>
+                    <property name="group">_toggle_b_oracle</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="_toggle_b_cycles">
+                    <property name="icon-name">system-users-symbolic</property>
                     <property name="group">_toggle_b_oracle</property>
                   </object>
                 </child>

@@ -1,5 +1,6 @@
 season:
-  name: 'Equatorial: No seasons'
+  name: Equatorial
+  season: No seasons
   occurrences:
   - occurrence:
       name: Chuva

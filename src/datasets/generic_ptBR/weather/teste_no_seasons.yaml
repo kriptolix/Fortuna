@@ -1,5 +1,6 @@
 season:
-  name: teste
+  name: Teste
+  season: No seasons
   occurrences:
   - occurrence:
       index: 1
